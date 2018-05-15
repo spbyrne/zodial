@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var data = require('gulp-data');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
@@ -9,6 +10,8 @@ var csso = require('gulp-csso'); // Minify CSS with CSSO.
 var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
 var nunjucksRender = require('gulp-nunjucks-render'); // Render Nunjucks templates
 var htmlmin = require('gulp-htmlmin'); // gulp plugin to minify HTML.
+
+var date = new Date();
 
 var sassOptions = {
   outputStyle: 'expanded'
@@ -36,9 +39,17 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('public/js'));
 });
 
+function globalData() {
+  return {
+    site_title: 'Bones',
+    year: date.getFullYear()
+  };
+}
+
 gulp.task('pages', function() {
   return gulp
     .src('source/pages/*.njk')
+    .pipe(data(globalData))
     .pipe(
       nunjucksRender({
         path: ['source/pages/'] // String or Array

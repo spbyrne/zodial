@@ -1,3 +1,4 @@
+//$enable-gradients: true;
 @import 'theme/theme-pre';
 @import 'bootstrap/bootstrap';
 //@import 'theme/theme-post';
@@ -34,4 +35,8 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+.jumbotron {
+  border-radius: 0;
 }

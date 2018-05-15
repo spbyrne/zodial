@@ -1,7 +1,6 @@
-//$enable-gradients: true;
-@import 'theme/theme-pre';
-@import 'bootstrap/bootstrap';
-//@import 'theme/theme-post';
+@import 'theme/signal-pre';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'theme/signal-post';
 
 *,
 *::before,
@@ -37,6 +36,18 @@ body {
   align-items: center;
 }
 
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
 .jumbotron {
   border-radius: 0;
+}
+
+$pages: home, about, blog, contact, services, team, pricing, news, faq;
+
+@each $page in $pages {
+  :root .#{$page} .navbar .nav-link--#{$page} {
+    color: white;
+  }
 }

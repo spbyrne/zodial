@@ -1,6 +1,7 @@
 {% set body_class = "home" %}
 {% extends "templates/main.njk" %}
 
+{% set main_class = "bg-light" %}
 {% block main %}
   <div class="jumbotron bg-dark text-light">
     <div class="container">
@@ -10,21 +11,70 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    <div class="card-columns">
+      <div class="card box-shadow p-3">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="card box-shadow">
+        <img class="card-img-top" src="https://source.unsplash.com/random/300x150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title that wraps to a new line</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="card box-shadow">
+        <img class="card-img-top" src="https://source.unsplash.com/random/300x150?r=1" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card box-shadow bg-primary text-white p-3">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+          <footer class="blockquote-footer text-dark">
+            <small>
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="card box-shadow text-center">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Here's a card footer.</small>
+        </div>
+      </div>
+      <div class="card box-shadow p-3">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="card box-shadow">
+        <img class="card-img" src="https://source.unsplash.com/random/300x150?r=2" alt="Card image">
+      </div>
+      <div class="card box-shadow">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
       </div>
     </div>
   </div>

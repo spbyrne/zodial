@@ -1,8 +1,5 @@
 var gulp = require('gulp');
 var data = require('gulp-data');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-var nodemon = require('gulp-nodemon');
 var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily.
 var sass = require('gulp-sass'); // Sass plugin for Gulp.
 var uglify = require('gulp-uglify'); // Minify JavaScript with UglifyJS3.
@@ -10,6 +7,7 @@ var csso = require('gulp-csso'); // Minify CSS with CSSO.
 var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
 var nunjucksRender = require('gulp-nunjucks-render'); // Render Nunjucks templates
 var htmlmin = require('gulp-htmlmin'); // gulp plugin to minify HTML.
+var imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images with imagemin
 
 var date = new Date();
 
@@ -31,12 +29,19 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('javascript', function() {
+gulp.task('scripts', function() {
   return gulp
     .src('source/js/site.js')
     .pipe(uglify())
     .pipe(rename('site.js'))
     .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('images', function() {
+  return gulp
+    .src('source/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('public/img'));
 });
 
 function globalData() {
@@ -61,39 +66,12 @@ gulp.task('pages', function() {
 
 gulp.task('watch', function() {
   gulp.watch('source/scss/**/*.scss', gulp.series('styles'));
-  gulp.watch('source/js/**/*.js', gulp.series('javascript'));
+  gulp.watch('source/js/**/*.js', gulp.series('scripts'));
   gulp.watch('source/pages/**/*.njk', gulp.series('pages'));
+  gulp.watch('source/img/**/*', gulp.series('images'));
 });
 
-gulp.task('default', gulp.series('watch'));
-
-gulp.task('nodemon', function(cb) {
-  var called = false;
-  return nodemon({
-    script: 'server.js',
-    ignore: ['gulpfile.js', 'node_modules/']
-  })
-    .on('start', function() {
-      if (!called) {
-        called = true;
-        cb();
-      }
-    })
-    .on('restart', function() {
-      setTimeout(function() {
-        reload({ stream: false });
-      }, 1000);
-    });
-});
-
-gulp.task('browser-sync', gulp.series('nodemon'), function() {
-  browserSync({
-    proxy: 'localhost:3000', // local node app address
-    port: 5000, // use *different* port than above
-    notify: true
-  });
-});
-
-gulp.task('serve', gulp.series('browser-sync'), function() {
-  gulp.watch('public/*.html', reload);
-});
+gulp.task(
+  'default',
+  gulp.series(gulp.parallel('styles', 'scripts', 'pages', 'images'), 'watch')
+);

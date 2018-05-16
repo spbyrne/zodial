@@ -87,6 +87,13 @@ $pages: home, about, blog, contact, services, team, pricing, news, faq;
   }
 }
 
+.card .card-body:first-child {
+  border-radius: 0.25rem 0.25rem 0 0;
+  &:last-child {
+    border-radius: 0.25rem;
+  }
+}
+
 .card-columns .card {
   margin-bottom: 1.25rem;
 }

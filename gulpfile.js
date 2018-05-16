@@ -47,6 +47,7 @@ gulp.task('images', function() {
 function globalData() {
   return {
     site_title: 'Bones',
+    meta_description: 'Simple static website generator boilerplate',
     year: date.getFullYear()
   };
 }

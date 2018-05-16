@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "templates/blank.njk" %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{{ site_title }}</title>
-  <link rel="stylesheet" type="text/css" href="css/site.css">
-  <meta name="description" content="{{ meta_description }}">
-  {% block head %}
-  {% endblock %}
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-</head>
-
-<body class="{{ body_class }}">
-
+{% block body %}
   <div class="site-wrapper">
 
   {% include "../partials/header.njk" %}
@@ -27,11 +14,4 @@
   </div> <!-- End Site Wrapper -->
 
   {% include "../partials/footer.njk" %}
-
-  {% include "../partials/scripts.njk" %}
-  {% block scripts %}
-  {% endblock %}
-  <script src="js/site.js"></script>
-</body>
-
-</html>
+{% endblock %}

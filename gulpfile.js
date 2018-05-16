@@ -89,3 +89,5 @@ gulp.task(
   'default',
   gulp.series(gulp.series('scripts', 'pages', 'styles', 'images'), 'watch')
 );
+
+gulp.task('build', gulp.series('scripts', 'pages', 'styles', 'images'));

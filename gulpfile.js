@@ -5,6 +5,8 @@ var data = require('gulp-data'); // Pipe data to gulp plugins
 var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily
 var cssimport = require("gulp-cssimport"); // Import several css files into a single file
 var sass = require('gulp-sass'); // Sass plugin for Gulp
+var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules for web browsers using Gulp.
+var babel = require("gulp-babel"); // Compile javascript
 var uglify = require('gulp-uglify'); // Minify JavaScript with UglifyJS3
 var csso = require('gulp-csso'); // Minify CSS with CSSO
 var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
@@ -14,8 +16,8 @@ var imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images
 var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 var purify = require('gulp-purifycss'); // Remove unused CSS with PurifyCSS
 var size = require('gulp-size'); // Logs out the total size of files in the stream and optionally the individual file-sizes.
-var realFavicon = require('gulp-real-favicon');
-var fs = require('fs');
+var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
+var fs = require('fs'); // File system access
 
 var date = new Date();
 var siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
@@ -66,6 +68,8 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp
     .src('source/js/site.js')
+    .pipe(webmake())
+    .pipe(babel())
     .pipe(uglify())
     .pipe(rename('site.js'))
     .pipe(size())
@@ -104,7 +108,7 @@ gulp.task('pages', function () {
 
 gulp.task('favicon', function (done) {
   realFavicon.generateFavicon({
-    masterPicture: 'source/img/favicon/favicon.png',
+    masterPicture: 'source/favicon/favicon.png',
     dest: 'public',
     iconsPath: '/',
     design: {

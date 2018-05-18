@@ -24,7 +24,13 @@
   {% include "../partials/scripts.njk" %}
   {% block scripts %}
   {% endblock %}
-  <script src="js/site.js"></script>
+  {% if users %}
+    <script>
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', '{{ google_analytics }}', 'auto'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  {% endif %}
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var clean = require('gulp-rimraf');
 var clean = require('gulp-clean'); // Removes files and folders.
 var data = require('gulp-data'); // Pipe data to gulp plugins
 var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily
@@ -13,17 +14,12 @@ var imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images
 var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 var purify = require('gulp-purifycss'); // Remove unused CSS with PurifyCSS
 var size = require('gulp-size'); // Logs out the total size of files in the stream and optionally the individual file-sizes.
-var favicons = require("favicons").stream; // A Node.js module for generating favicons and their associated files.
-var gutil = require("gulp-util");
+var realFavicon = require('gulp-real-favicon');
+var fs = require('fs');
 
 var date = new Date();
-
-var siteData = {
-  site_title: 'Bones',
-  site_color: '#FFF',
-  site_description: 'Simple static website generator boilerplate',
-  year: date.getFullYear()
-}
+var siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
+siteData.year = date.getFullYear();
 
 var sassOptions = {
   outputStyle: 'expanded'
@@ -37,20 +33,7 @@ var cssImportOptions = {
   filter: /^https:\/\//gi // process only https imports
 };
 
-var faviconConfig = {
-  appName: siteData.site_title,
-  appDescription: siteData.site_description,
-  background: siteData.site_color,
-  path: "public/",
-  url: "http://scottbyrne.ca/",
-  display: "standalone",
-  orientation: "portrait",
-  start_url: "/",
-  version: 1.0,
-  logging: false,
-  pipeHTML: false,
-  replace: true
-}
+var FAVICON_DATA_FILE = 'source/img/favicon/settings.json';
 
 function globalData() {
   return {
@@ -62,10 +45,9 @@ function globalData() {
 }
 
 gulp.task('clean', function () {
-  return gulp.src('./public/**/*', {
-      read: false
-    })
-    .pipe(clean());
+  return gulp.src("public/*", {
+    read: false
+  }).pipe(clean());
 });
 
 gulp.task('styles', function () {
@@ -104,13 +86,6 @@ gulp.task('images', function () {
     .pipe(gulp.dest('public/img'));
 });
 
-gulp.task('favicon', function () {
-  return gulp.src("source/img/favicon/favicon.png")
-    .pipe(favicons(faviconConfig))
-    .on("error", gutil.log)
-    .pipe(gulp.dest("./public/"));
-});
-
 gulp.task('pages', function () {
   return gulp
     .src('source/pages/*.njk')
@@ -120,10 +95,74 @@ gulp.task('pages', function () {
         path: ['source/pages/']
       })
     )
+    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
     .pipe(gulp.dest('public'));
+});
+
+gulp.task('favicon', function (done) {
+  realFavicon.generateFavicon({
+    masterPicture: 'source/img/favicon/favicon.png',
+    dest: 'public',
+    iconsPath: '/',
+    design: {
+      ios: {
+        pictureAspect: 'noChange',
+        assets: {
+          ios6AndPriorIcons: false,
+          ios7AndLaterIcons: false,
+          precomposedIcons: false,
+          declareOnlyDefaultIcon: true
+        }
+      },
+      desktopBrowser: {},
+      windows: {
+        pictureAspect: 'noChange',
+        backgroundColor: '#2d89ef',
+        onConflict: 'override',
+        assets: {
+          windows80Ie10Tile: false,
+          windows10Ie11EdgeTiles: {
+            small: false,
+            medium: true,
+            big: false,
+            rectangle: false
+          }
+        }
+      },
+      androidChrome: {
+        pictureAspect: 'shadow',
+        themeColor: siteData.site_color,
+        manifest: {
+          display: 'standalone',
+          orientation: 'notSet',
+          onConflict: 'override',
+          declared: true
+        },
+        assets: {
+          legacyIcon: false,
+          lowResolutionIcons: false
+        }
+      },
+      safariPinnedTab: {
+        pictureAspect: 'blackAndWhite',
+        threshold: 99.21875,
+        themeColor: siteData.site_color
+      }
+    },
+    settings: {
+      scalingAlgorithm: 'Mitchell',
+      errorOnImageTooSmall: false,
+      readmeFile: false,
+      htmlCodeFile: false,
+      usePathAsIs: false
+    },
+    markupFile: FAVICON_DATA_FILE
+  }, function () {
+    done();
+  });
 });
 
 gulp.task('watch', function () {
@@ -136,7 +175,7 @@ gulp.task('watch', function () {
 
 gulp.task(
   'default',
-  gulp.series(gulp.series('clean', 'scripts', 'pages', 'styles', 'images', 'favicon'), 'watch')
+  gulp.series(gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'), 'watch')
 );
 
-gulp.task('build', gulp.series('clean', 'scripts', 'pages', 'styles', 'images', 'favicon'));
+gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'));

@@ -33,7 +33,7 @@ var cssImportOptions = {
   filter: /^https:\/\//gi // process only https imports
 };
 
-var FAVICON_DATA_FILE = 'source/img/favicon/settings.json';
+var FAVICON_DATA_FILE = 'public/favicon-settings.json';
 
 function globalData() {
   return {
@@ -112,7 +112,7 @@ gulp.task('favicon', function (done) {
         pictureAspect: 'noChange',
         assets: {
           ios6AndPriorIcons: false,
-          ios7AndLaterIcons: false,
+          ios7AndLaterIcons: true,
           precomposedIcons: false,
           declareOnlyDefaultIcon: true
         }
@@ -142,8 +142,8 @@ gulp.task('favicon', function (done) {
           declared: true
         },
         assets: {
-          legacyIcon: false,
-          lowResolutionIcons: false
+          legacyIcon: true,
+          lowResolutionIcons: true
         }
       },
       safariPinnedTab: {
@@ -170,7 +170,6 @@ gulp.task('watch', function () {
   gulp.watch('source/js/**/*.js', gulp.series('scripts', 'styles'));
   gulp.watch('source/pages/**/*.njk', gulp.series('pages', 'styles'));
   gulp.watch('source/img/*', gulp.series('images'));
-  gulp.watch('source/img/favicon/*', gulp.series('favicon'));
 });
 
 gulp.task(

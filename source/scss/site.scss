@@ -1,3 +1,4 @@
+@import 'https://use.fontawesome.com/releases/v5.0.13/css/all.css';
 @import 'theme/signal-pre'; // Bootstrap variable customization comes first
 @import '../../node_modules/bootstrap/scss/bootstrap'; // Include bootstrap from node modules so it's kept up to date
 @import 'theme/signal-post'; // Post bootstrap overrides for the theme

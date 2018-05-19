@@ -1,4 +1,4 @@
-var $ = require('jQuery');
+var $ = require('jquery');
 //=require ../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
 
 document.addEventListener('DOMContentLoaded', function () {

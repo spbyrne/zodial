@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var gulpif = require('gulp-if'); // A ternary gulp plugin
+var include = require("gulp-include"); // Makes inclusion of files a breeze.
 var clean = require('gulp-clean'); // Removes files and folders.
 var data = require('gulp-data'); // Pipe data to gulp plugins
 var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily
@@ -18,28 +18,15 @@ var purify = require('gulp-purifycss'); // Remove unused CSS with PurifyCSS
 var size = require('gulp-size'); // Logs out the total size of files in the stream and optionally the individual file-sizes.
 var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
 var fs = require('fs'); // File system access
+var inlinesource = require('gulp-inline-source'); // Inline all <script>, <link> and <img> tags that contain the inline attribute with inline-source.
+var svgmin = require('gulp-svgmin'); // Minify SVG with SVGO.
+var htmlclean = require('gulp-htmlclean'); // Cleans/removes whitespace from HTML/SVG files
 
 var date = new Date();
 var siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
 siteData.year = date.getFullYear();
 
-var sassOptions = {
-  outputStyle: 'expanded'
-};
-
-var prefixerOptions = {
-  browsers: ['last 4 versions']
-};
-
-var cssImportOptions = {
-  filter: /^https:\/\//gi // process only https imports
-};
-
-var FAVICON_DATA_FILE = 'public/favicon-settings.json';
-
-function globalData() {
-  return siteData;
-}
+var FAVICON_DATA_FILE = 'source/favicon/favicon-settings.json';
 
 gulp.task('clean', function () {
   siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
@@ -49,6 +36,15 @@ gulp.task('clean', function () {
 });
 
 gulp.task('styles', function () {
+  var sassOptions = {
+    outputStyle: 'expanded'
+  };
+  var prefixerOptions = {
+    browsers: ['last 4 versions']
+  };
+  var cssImportOptions = {
+    filter: /^https:\/\//gi // process only https imports
+  };
   return gulp
     .src('source/scss/site.scss')
     .pipe(cssimport(cssImportOptions))
@@ -64,6 +60,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp
     .src('source/js/site.js')
+    .pipe(include())
     .pipe(webmake())
     .pipe(babel())
     .pipe(uglify())
@@ -86,21 +83,28 @@ gulp.task('images', function () {
     .pipe(gulp.dest('public/img'));
 });
 
+gulp.task('icons', function () {
+  return gulp.src('source/icons/**/*')
+    .pipe(htmlclean())
+    .pipe(svgmin())
+    .pipe(size())
+    .pipe(gulp.dest('/public/icons'));
+});
+
 gulp.task('pages', function () {
+  var inlineSourceOptions = {
+    rootpath: 'public'
+  };
   return gulp
     .src('source/pages/*.njk')
-    .pipe(data(globalData))
+    .pipe(data(siteData))
+    .pipe(inlinesource(inlineSourceOptions))
     .pipe(
       nunjucksRender({
         path: ['source/pages/']
       })
     )
-    .pipe(
-      gulpif(
-        fs.existsSync(FAVICON_DATA_FILE), // if
-        realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code) // then
-      )
-    )
+    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
@@ -179,7 +183,7 @@ gulp.task('watch', function () {
 
 gulp.task(
   'default',
-  gulp.series(gulp.series('clean', 'scripts', 'pages', 'styles', 'images'), 'watch')
+  gulp.series(gulp.series('clean', 'scripts', 'icons', 'pages', 'styles', 'images'), 'watch')
 );
 
-gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'));
+gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'icons', 'pages', 'styles', 'images'));

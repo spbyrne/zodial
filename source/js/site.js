@@ -1,8 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+var $ = require('jQuery');
+//=require ../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
+
+document.addEventListener('DOMContentLoaded', function () {
   headerPush();
 });
 
-var headerPush = function() {
+var headerPush = function () {
   var siteHeader = document.querySelector('.site-header');
   var siteMain = document.querySelector('.site-main');
   if (siteHeader.classList.contains('site-header--absolute')) {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>folder-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="folder-add" stroke="#000000" stroke-width="2">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M30,17 L30,7 C30,7 30,6 29,6 L5,6 C5,6 4,6 4,7 L4,24 C4,24 4,26 2,26 C0,26 0,24 0,24 L0,1 C0,1 0,0 1,0 L7,0 L9,2 L25,2" id="Stroke-1"></path>
+                <path d="M22,24 L26,24" id="Stroke-3"></path>
+                <path d="M24,26 L24,22" id="Stroke-5"></path>
+                <path d="M30,24 C30,20.687 27.313,18 24,18 C20.687,18 18,20.687 18,24 C18,27.313 20.687,30 24,30 C27.313,30 30,27.313 30,24 L30,24 Z" id="Stroke-7"></path>
+                <path d="M17,30 L3,30" id="Stroke-9"></path>
+            </g>
+        </g>
+    </g>
+</svg>

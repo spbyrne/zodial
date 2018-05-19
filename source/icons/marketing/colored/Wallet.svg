@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Wallet</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="colored" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Marketing_sliced" sketch:type="MSLayerGroup" transform="translate(-720.000000, -360.000000)"></g>
+        <g id="Marketing" sketch:type="MSLayerGroup" transform="translate(-718.000000, -350.000000)" stroke="#314E55" stroke-width="2" stroke-linejoin="round">
+            <g id="Wallet" transform="translate(722.000000, 362.000000)" sketch:type="MSShapeGroup">
+                <path d="M4,13.4677056 L4,3.99842669 C4,1.7901566 5.78506374,0 8.00719357,0 L46.9928064,0 C49.2059183,0 51,1.78185079 51,3.99484381 L51,34.0051562 C51,36.2114475 49.2149363,38 46.9928064,38 L8.00719357,38 C5.79408167,38 4,36.2021946 4,33.9954211 L4,23.277381" id="Rectangle-1482" stroke-linecap="round" fill="#C59981"></path>
+                <path d="M1,4 L1,34.0161247" id="Line" stroke-linecap="round"></path>
+                <rect id="Rectangle-1483" stroke-linecap="round" fill="#D8D8D8" x="1" y="14" width="12" height="9"></rect>
+                <circle id="Oval-1378" stroke-linecap="round" cx="8.5" cy="18.5" r="1.5"></circle>
+                <path d="M36,33 L45,33" id="Line" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

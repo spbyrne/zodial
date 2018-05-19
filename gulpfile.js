@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var clean = require('gulp-rimraf');
+var gulpif = require('gulp-if'); // A ternary gulp plugin
 var clean = require('gulp-clean'); // Removes files and folders.
 var data = require('gulp-data'); // Pipe data to gulp plugins
 var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily
@@ -38,15 +38,11 @@ var cssImportOptions = {
 var FAVICON_DATA_FILE = 'public/favicon-settings.json';
 
 function globalData() {
-  return {
-    site_title: siteData.site_title,
-    site_color: siteData.site_color,
-    site_description: siteData.site_description,
-    year: date.getFullYear()
-  };
+  return siteData;
 }
 
 gulp.task('clean', function () {
+  siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
   return gulp.src("public/*", {
     read: false
   }).pipe(clean());
@@ -99,7 +95,12 @@ gulp.task('pages', function () {
         path: ['source/pages/']
       })
     )
-    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+    .pipe(
+      gulpif(
+        fs.existsSync(FAVICON_DATA_FILE), // if
+        realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code) // then
+      )
+    )
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
@@ -178,7 +179,7 @@ gulp.task('watch', function () {
 
 gulp.task(
   'default',
-  gulp.series(gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'), 'watch')
+  gulp.series(gulp.series('clean', 'scripts', 'pages', 'styles', 'images'), 'watch')
 );
 
 gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'));

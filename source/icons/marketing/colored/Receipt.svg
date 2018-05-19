@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Receipt</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="colored" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Marketing_sliced" sketch:type="MSLayerGroup" transform="translate(-600.000000, -240.000000)"></g>
+        <g id="Marketing" sketch:type="MSLayerGroup" transform="translate(-598.000000, -230.000000)" stroke="#314E55" stroke-width="2" stroke-linejoin="round">
+            <g id="Receipt" transform="translate(608.000000, 234.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-1463" stroke-linecap="round" fill="#EAEAEA" x="0" y="0" width="44" height="53" rx="6"></rect>
+                <path d="M43.0199928,35 L1.01999283,35" id="Line" stroke-linecap="square" stroke-dasharray="4"></path>
+                <rect id="Rectangle-1464" stroke-linecap="round" fill="#D26CBA" x="5" y="5" width="13" height="8"></rect>
+                <path d="M7,20 L25.0262985,20" id="Line" stroke-linecap="square"></path>
+                <path d="M7,24 L20,24" id="Line" stroke-linecap="square"></path>
+                <path d="M7,45 L11.1231055,45" id="Line" stroke-linecap="square"></path>
+                <path d="M7,41 L16,41" id="Line" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

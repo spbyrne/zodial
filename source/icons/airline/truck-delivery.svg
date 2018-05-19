@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>truck-delivery</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="truck-delivery" stroke="#000000" stroke-width="2">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M27,27 C27,25.344 25.656,24 24,24 C22.344,24 21,25.344 21,27 C21,28.656 22.344,30 24,30 C25.656,30 27,28.656 27,27 L27,27 Z" id="Stroke-1"></path>
+                <path d="M10,27 C10,25.344 8.656,24 7,24 C5.344,24 4,25.344 4,27 C4,28.656 5.344,30 7,30 C8.656,30 10,28.656 10,27 L10,27 Z" id="Stroke-3"></path>
+                <path d="M10,27 L18,27 L18,1 C18,0.484 17.515,0 17,0 L2,0 C0.656,0 -0.203,0.344 0.078,2 L1,8" id="Stroke-5"></path>
+                <path d="M28,16 L21,16" id="Stroke-7"></path>
+                <path d="M27,27 L30,27 L30,18 C30,17 29,16 28,16 L27,5 C26.906,4.266 26.531,4 26,4 L21,4" id="Stroke-9"></path>
+                <path d="M7,15 L1,15" id="Stroke-11"></path>
+                <path d="M8,19 L2,19" id="Stroke-13"></path>
+                <path d="M6,11 L0,11" id="Stroke-15"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Coins</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="stroked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Marketing" sketch:type="MSLayerGroup" transform="translate(-118.000000, -350.000000)" stroke="#535353" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <g id="Coins" transform="translate(122.000000, 356.000000)" sketch:type="MSShapeGroup">
+                <circle id="Oval-1368" cx="15" cy="34" r="15"></circle>
+                <ellipse id="Oval-1368" cx="38.6128307" cy="11" rx="11" ry="11"></ellipse>
+                <circle id="Oval-1369" cx="15" cy="34" r="11"></circle>
+                <ellipse id="Oval-1369" cx="38.6128307" cy="11" rx="7.22691798" ry="7.22691798"></ellipse>
+                <path d="M14,49 L35,49" id="Line"></path>
+                <path d="M39,22 L52,22" id="Line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>speaker</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="speaker" stroke="#000000" stroke-width="2">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M25,29 C25,29.553 24.553,30 24,30 L6,30 C5.447,30 5,29.553 5,29 L5,1 C5,0.447 5.447,0 6,0 L24,0 C24.553,0 25,0.447 25,1 L25,29 L25,29 Z" id="Stroke-1"></path>
+                <path d="M21,20 C21,16.686 18.314,14 15,14 C11.686,14 9,16.686 9,20 C9,23.314 11.686,26 15,26 C18.314,26 21,23.314 21,20 L21,20 Z" id="Stroke-3"></path>
+                <path d="M28.5166,18.5547 C29.4326,17.6487 29.9996,16.3907 29.9996,14.9997 C29.9996,13.6187 29.4406,12.3687 28.5356,11.4647" id="Stroke-5"></path>
+                <path d="M1.4834,11.4648 C0.5674,12.3708 0.0004,13.6288 0.0004,15.0198 C0.0004,16.4008 0.5594,17.6508 1.4644,18.5548" id="Stroke-7"></path>
+                <path d="M18,7 C18,5.344 16.656,4 15,4 C13.344,4 12,5.344 12,7 C12,8.656 13.344,10 15,10 C16.656,10 18,8.656 18,7 L18,7 Z" id="Stroke-9"></path>
+                <path d="M16,20 C16,19.447 15.553,19 15,19 C14.447,19 14,19.447 14,20 C14,20.553 14.447,21 15,21 C15.553,21 16,20.553 16,20 L16,20 Z" id="Stroke-11"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -20,7 +20,6 @@ var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images
 var fs = require('fs'); // File system access
 var inlinesource = require('gulp-inline-source'); // Inline all <script>, <link> and <img> tags that contain the inline attribute with inline-source.
 var svgmin = require('gulp-svgmin'); // Minify SVG with SVGO.
-var htmlclean = require('gulp-htmlclean'); // Cleans/removes whitespace from HTML/SVG files
 
 var date = new Date();
 var siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
@@ -83,17 +82,9 @@ gulp.task('images', function () {
     .pipe(gulp.dest('public/img'));
 });
 
-gulp.task('icons', function () {
-  return gulp.src('source/icons/**/*')
-    .pipe(htmlclean())
-    .pipe(svgmin())
-    .pipe(size())
-    .pipe(gulp.dest('/public/icons'));
-});
-
 gulp.task('pages', function () {
   var inlineSourceOptions = {
-    rootpath: 'public'
+    rootpath: 'source/'
   };
   return gulp
     .src('source/pages/*.njk')
@@ -183,7 +174,7 @@ gulp.task('watch', function () {
 
 gulp.task(
   'default',
-  gulp.series(gulp.series('clean', 'scripts', 'icons', 'pages', 'styles', 'images'), 'watch')
+  gulp.series(gulp.series('clean', 'scripts', 'pages', 'styles', 'images'), 'watch')
 );
 
-gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'icons', 'pages', 'styles', 'images'));
+gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'));

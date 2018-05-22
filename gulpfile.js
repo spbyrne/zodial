@@ -1,180 +1,40 @@
 var gulp = require('gulp');
-var include = require("gulp-include"); // Makes inclusion of files a breeze.
-var clean = require('gulp-clean'); // Removes files and folders.
-var data = require('gulp-data'); // Pipe data to gulp plugins
-var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily
-var cssimport = require("gulp-cssimport"); // Import several css files into a single file
-var sass = require('gulp-sass'); // Sass plugin for Gulp
-var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules for web browsers using Gulp.
-var babel = require("gulp-babel"); // Compile javascript
-var uglify = require('gulp-uglify'); // Minify JavaScript with UglifyJS3
-var csso = require('gulp-csso'); // Minify CSS with CSSO
+var rename = require('gulp-rename'); // Gulp-rename is a gulp plugin to rename files easily.
+var sass = require('gulp-sass'); // Sass plugin for Gulp.
+var csso = require('gulp-csso'); // Minify CSS with CSSO.
 var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
-var nunjucksRender = require('gulp-nunjucks-render'); // Render Nunjucks templates
-var htmlmin = require('gulp-htmlmin'); // gulp plugin to minify HTML
-var imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images with imagemin
-var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
-var purify = require('gulp-purifycss'); // Remove unused CSS with PurifyCSS
-var size = require('gulp-size'); // Logs out the total size of files in the stream and optionally the individual file-sizes.
-var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
-var fs = require('fs'); // File system access
-var inlinesource = require('gulp-inline-source'); // Inline all <script>, <link> and <img> tags that contain the inline attribute with inline-source.
-var svgmin = require('gulp-svgmin'); // Minify SVG with SVGO.
-
-var date = new Date();
-var siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
-siteData.year = date.getFullYear();
-
-var FAVICON_DATA_FILE = 'source/favicon/favicon-settings.json';
-
-gulp.task('clean', function () {
-  siteData = JSON.parse(fs.readFileSync('site.json', 'utf8'));
-  return gulp.src("public/*", {
-    read: false
-  }).pipe(clean());
-});
+var plumber = require('gulp-plumber');
 
 gulp.task('styles', function () {
   var sassOptions = {
     outputStyle: 'expanded'
   };
   var prefixerOptions = {
-    browsers: ['last 4 versions']
+    browsers: ['last 2 versions']
   };
-  var cssImportOptions = {
-    filter: /^https:\/\//gi // process only https imports
-  };
-  return gulp
-    .src('source/scss/site.scss')
-    .pipe(cssimport(cssImportOptions))
-    .pipe(sass(sassOptions))
-    .pipe(prefixer(prefixerOptions))
-    .pipe(rename('site.css'))
-    .pipe(purify(['./public/js/**/*.js', './public/**/*.html']))
-    .pipe(csso())
-    .pipe(size())
-    .pipe(gulp.dest('public/css'));
+  return gulp.
+  src('source/scss/site.scss').
+  pipe(plumber()).
+  pipe(sass(sassOptions)).
+  pipe(prefixer(prefixerOptions)).
+  pipe(csso()).
+  pipe(rename('quote.css')).
+  pipe(gulp.dest('public/css'));
 });
 
-gulp.task('scripts', function () {
-  return gulp
-    .src('source/js/site.js')
-    .pipe(include())
-    .pipe(webmake())
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(rename('site.js'))
-    .pipe(size())
-    .pipe(gulp.dest('public/js'));
-});
-
-gulp.task('images', function () {
-  return gulp
-    .src('source/img/*')
-    .pipe(imagemin())
-    .pipe(size())
-    .pipe(
-      image({
-        quiet: true
-      })
-    )
-    .pipe(size())
-    .pipe(gulp.dest('public/img'));
-});
-
-gulp.task('pages', function () {
-  var inlineSourceOptions = {
-    rootpath: 'source/'
-  };
-  return gulp
-    .src('source/pages/*.njk')
-    .pipe(data(siteData))
-    .pipe(inlinesource(inlineSourceOptions))
-    .pipe(
-      nunjucksRender({
-        path: ['source/pages/']
-      })
-    )
-    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest('public'));
-});
-
-gulp.task('favicon', function (done) {
-  realFavicon.generateFavicon({
-    masterPicture: 'source/favicon/favicon.png',
-    dest: 'public',
-    iconsPath: '/',
-    design: {
-      ios: {
-        pictureAspect: 'noChange',
-        assets: {
-          ios6AndPriorIcons: false,
-          ios7AndLaterIcons: true,
-          precomposedIcons: false,
-          declareOnlyDefaultIcon: true
-        }
-      },
-      desktopBrowser: {},
-      windows: {
-        pictureAspect: 'noChange',
-        backgroundColor: '#2d89ef',
-        onConflict: 'override',
-        assets: {
-          windows80Ie10Tile: false,
-          windows10Ie11EdgeTiles: {
-            small: false,
-            medium: true,
-            big: false,
-            rectangle: false
-          }
-        }
-      },
-      androidChrome: {
-        pictureAspect: 'shadow',
-        themeColor: siteData.site_color,
-        manifest: {
-          display: 'standalone',
-          orientation: 'notSet',
-          onConflict: 'override',
-          declared: true
-        },
-        assets: {
-          legacyIcon: true,
-          lowResolutionIcons: true
-        }
-      },
-      safariPinnedTab: {
-        pictureAspect: 'blackAndWhite',
-        threshold: 99.21875,
-        themeColor: siteData.site_color
-      }
-    },
-    settings: {
-      scalingAlgorithm: 'Mitchell',
-      errorOnImageTooSmall: false,
-      readmeFile: false,
-      htmlCodeFile: false,
-      usePathAsIs: false
-    },
-    markupFile: FAVICON_DATA_FILE
-  }, function () {
-    done();
-  });
+gulp.task('javascript', function () {
+  return gulp.
+  src('source/js/site.js').
+  pipe(plumber()).
+  pipe(rename('site.js')).
+  pipe(gulp.dest('public/js'));
 });
 
 gulp.task('watch', function () {
   gulp.watch('source/scss/**/*.scss', gulp.series('styles'));
-  gulp.watch('source/js/**/*.js', gulp.series('scripts', 'styles'));
-  gulp.watch('source/pages/**/*.njk', gulp.series('pages', 'styles'));
-  gulp.watch('source/img/*', gulp.series('images'));
+  gulp.watch('source/js/**/*.js', gulp.series('javascript'));
 });
 
-gulp.task(
-  'default',
-  gulp.series(gulp.series('clean', 'scripts', 'pages', 'styles', 'images'), 'watch')
-);
+gulp.task('default', gulp.series('javascript', 'styles', 'watch'));
 
-gulp.task('build', gulp.series('clean', 'scripts', 'favicon', 'pages', 'styles', 'images'));
+gulp.task('build', gulp.series('javascript', 'styles'));

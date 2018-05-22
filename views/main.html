@@ -1,9 +1,9 @@
-{% extends "templates/blank.njk" %}
+{% extends "blank.html" %}
 
 {% block body %}
   <div class="site-wrapper">
 
-  {% include "../partials/header.njk" %}
+  {% include "partials/header.html" %}
 
   <main role="main" class="site-main {{ main_class }}">
   {% block main %}
@@ -13,5 +13,5 @@
 
   </div> <!-- End Site Wrapper -->
 
-  {% include "../partials/footer.njk" %}
+  {% include "partials/footer.html" %}
 {% endblock %}

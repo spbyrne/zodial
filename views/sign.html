@@ -2,7 +2,7 @@
 
 {% block main %}
   <h1>{{ sign.name }}</h1>
-  <p><a href="{{ slug }}/today"><b>Daily Horoscope</b></a></p>
+  <p><a href="/sign/{{ slug }}/today"><b>Daily Horoscope</b></a></p>
   <p>Symbol: <b>{{ sign["symbol name"] }}</b></p>
   <p>Celestial Body: <b>{{ sign["celestial body"] }}</b></p>
   <p>Element: <b>{{ sign["element"] }}</b></p>

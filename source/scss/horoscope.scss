@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+$pages: home;
+@each $page in $pages {
+  :root .#{$page} .menu__link--#{$page} {
+    // Active color
+  }
+}
+
+.site-header {
+  &--absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.site-wrapper {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  &--large {
+    box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.3), 0 0.25rem 0.75rem rgba(0, 0, 0, 0.22);
+  }
+}
+
+.bg-translucent {
+  background: rgba(0, 0, 0, 0.15);
+  background: linear-gradient( to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05));
+  &.navbar {
+    border-bottom: 1px solid rgba(100, 100, 100, 0.05);
+    box-shadow: 0 1px 0 rgba(200, 200, 200, 0.05);
+  }
+}

@@ -1,17 +1,17 @@
 {
-  "name": "bones",
+  "name": "horoscope",
   "version": "1.0.0",
-  "description": "Get the basics going for a static site project",
+  "description": "Horoscope app thingy",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Scott Byrne",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "bootstrap": "^4.1.1",
+    "barba.js": "^1.0.0",
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "gulp": "^4.0.0",

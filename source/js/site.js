@@ -4,3 +4,7 @@ var $ = require('jquery');
 document.addEventListener('DOMContentLoaded', function () {
 
 });
+
+function goBack() {
+  window.history.back();
+};

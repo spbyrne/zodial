@@ -18,7 +18,7 @@ gulp.task('styles', function () {
   pipe(sass(sassOptions)).
   pipe(prefixer(prefixerOptions)).
   pipe(csso()).
-  pipe(rename('quote.css')).
+  pipe(rename('site.css')).
   pipe(gulp.dest('public/css'));
 });
 

@@ -1,7 +1,6 @@
 {% extends "main.html" %}
 
 {% block main %}
-  <h1>{{ title }}</h1>
   <ul>
     {% for slug, sign in signs %}
       <li><a href="sign/{{ slug }}">{{ sign.name }}</a></li>

@@ -20,12 +20,13 @@
     "nodemon": "^1.17.4"
   },
   "dependencies": {
-    "morgan": "^1.9.0",
+    "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
-    "compression": "^1.7.2",
     "express-nunjucks": "^2.2.3",
+    "morgan": "^1.9.0",
     "nunjucks": "^3.1.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.87.0"
   }
 }

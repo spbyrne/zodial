@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+
+{% block main %}
+  <h1>{{ sign.name }}</h1>
+  <h3>Daily Horoscope</h3>
+  <p>{{ date }}</p>
+  <p>{{ horoscope }}</p>
+  <p><a href="#" onclick="window.history.back()"><small>Back</small></a></p>
+{% endblock %}

@@ -3,8 +3,8 @@
 {% block main %}
   <h1>{{ title }}</h1>
   <ul>
-    {% for sign in signs %}
-      <li><a href="sign/{{ sign.name | lower }}">{{ sign.name }}</a></li>
+    {% for slug, sign in signs %}
+      <li><a href="sign/{{ slug }}">{{ sign.name }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

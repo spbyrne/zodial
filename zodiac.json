@@ -1,5 +1,6 @@
 {
-  "signs": [{
+  "signs": {
+    "aries": {
       "name": "Aries",
       "celestial longitude": "0° to 30°",
       "polarity": "positive",
@@ -11,7 +12,7 @@
       "start date": "03/21",
       "end date": "04/19"
     },
-    {
+    "taurus": {
       "name": "Taurus",
       "celestial longitude": "30° to 60°",
       "polarity": "negative",
@@ -23,7 +24,7 @@
       "start date": "04/20",
       "end date": "05/20"
     },
-    {
+    "gemini": {
       "name": "Gemini",
       "celestial longitude": "60° to 90°",
       "polarity": "positive",
@@ -35,7 +36,7 @@
       "start date": "05/21",
       "end date": "06/20"
     },
-    {
+    "cancer": {
       "name": "Cancer",
       "celestial longitude": "90° to 120°",
       "polarity": "negative",
@@ -47,7 +48,7 @@
       "start date": "06/21",
       "end date": "07/22"
     },
-    {
+    "leo": {
       "name": "Leo",
       "celestial longitude": "120° to 150°",
       "polarity": "positive",
@@ -59,7 +60,7 @@
       "start date": "07/23",
       "end date": "08/22"
     },
-    {
+    "virgo": {
       "name": "Virgo",
       "celestial longitude": "150° to 180°",
       "polarity": "negative",
@@ -71,7 +72,7 @@
       "start date": "08/23",
       "end date": "09/22"
     },
-    {
+    "libra": {
       "name": "Libra",
       "celestial longitude": "180° to 210°",
       "polarity": "positive",
@@ -83,7 +84,7 @@
       "start date": "09/23",
       "end date": "10/22"
     },
-    {
+    "scorpio": {
       "name": "Scorpio",
       "celestial longitude": "210° to 240°",
       "polarity": "negative",
@@ -95,7 +96,7 @@
       "start date": "10/23",
       "end date": "11/21"
     },
-    {
+    "sagittarius": {
       "name": "Sagittarius",
       "celestial longitude": "240° to 270°",
       "polarity": "positive",
@@ -107,7 +108,7 @@
       "start date": "11/22",
       "end date": "12/21"
     },
-    {
+    "capricorn": {
       "name": "Capricorn",
       "celestial longitude": "270° to 300°",
       "polarity": "negative",
@@ -119,7 +120,7 @@
       "start date": "12/22",
       "end date": "01/19"
     },
-    {
+    "aquarius": {
       "name": "Aquarius",
       "celestial longitude": "300° to 330°",
       "polarity": "positive",
@@ -131,7 +132,7 @@
       "start date": "01/20",
       "end date": "02/18"
     },
-    {
+    "pisces": {
       "name": "Pisces",
       "celestial longitude": "330° to 360°",
       "polarity": "negative",
@@ -143,7 +144,7 @@
       "start date": "02/19",
       "end date": "03/20"
     }
-  ],
+  },
   "elements": [{
       "name": "Fire",
       "meaning": "passion, energy, impulse, enthusiasm, inspiration, idealism, and faith"

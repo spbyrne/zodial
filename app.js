@@ -7,16 +7,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var isDev = app.get('env') === 'development';
 var fs = require('fs');
+var router = require('./routes/routes');
 
-var siteData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
+var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 var njk = expressNunjucks(app, {
   watch: isDev,
   noCache: isDev,
-  globals: siteData
+  globals: zodiacData
 });
-
-var indexRouter = require('./routes/index');
-var signRouter = require('./routes/sign');
 
 app.set('views', __dirname + '/views');
 
@@ -29,7 +27,6 @@ app.use(cookieParser());
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/sign/:name', signRouter);
+app.use('/', router);
 
 module.exports = app;

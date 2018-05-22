@@ -1,0 +1,254 @@
+{
+  "signs": [{
+      "name": "Aries",
+      "celestial longitude": "0° to 30°",
+      "polarity": "positive",
+      "element": "Fire",
+      "modality": "Cardinal",
+      "celestial body": "Mars",
+      "symbol": "",
+      "symbol name": "The Ram",
+      "start date": "03/21",
+      "end date": "04/19"
+    },
+    {
+      "name": "Taurus",
+      "celestial longitude": "30° to 60°",
+      "polarity": "negative",
+      "element": "Earth",
+      "modality": "Fixed",
+      "celestial body": "Venus and Earth",
+      "symbol": "",
+      "symbol name": "The Bull",
+      "start date": "04/20",
+      "end date": "05/20"
+    },
+    {
+      "name": "Gemini",
+      "celestial longitude": "60° to 90°",
+      "polarity": "positive",
+      "element": "Air",
+      "modality": "Mutable",
+      "celestial body": "Mercury",
+      "symbol": "",
+      "symbol name": "The Twins",
+      "start date": "05/21",
+      "end date": "06/20"
+    },
+    {
+      "name": "Cancer",
+      "celestial longitude": "90° to 120°",
+      "polarity": "negative",
+      "element": "Water",
+      "modality": "Cardinal",
+      "celestial body": "Moon",
+      "symbol": "",
+      "symbol name": "The Crab",
+      "start date": "06/21",
+      "end date": "07/22"
+    },
+    {
+      "name": "Leo",
+      "celestial longitude": "120° to 150°",
+      "polarity": "positive",
+      "element": "Fire",
+      "modality": "Fixed",
+      "celestial body": "Sun",
+      "symbol": "",
+      "symbol name": "The Lion",
+      "start date": "07/23",
+      "end date": "08/22"
+    },
+    {
+      "name": "Virgo",
+      "celestial longitude": "150° to 180°",
+      "polarity": "negative",
+      "element": "Earth",
+      "modality": "Mutable",
+      "celestial body": "Mercury and Ceres",
+      "symbol": "",
+      "symbol name": "The Maiden",
+      "start date": "08/23",
+      "end date": "09/22"
+    },
+    {
+      "name": "Libra",
+      "celestial longitude": "180° to 210°",
+      "polarity": "positive",
+      "element": "Air",
+      "modality": "Cardinal",
+      "celestial body": "Venus",
+      "symbol": "",
+      "symbol name": "The Scales",
+      "start date": "09/23",
+      "end date": "10/22"
+    },
+    {
+      "name": "Scorpio",
+      "celestial longitude": "210° to 240°",
+      "polarity": "negative",
+      "element": "Water",
+      "modality": "Fixed",
+      "celestial body": "Pluto",
+      "symbol": "",
+      "symbol name": "The Scorpion",
+      "start date": "10/23",
+      "end date": "11/21"
+    },
+    {
+      "name": "Sagittarius",
+      "celestial longitude": "240° to 270°",
+      "polarity": "positive",
+      "element": "Fire",
+      "modality": "Mutable",
+      "celestial body": "Jupiter",
+      "symbol": "",
+      "symbol name": "The Archer",
+      "start date": "11/22",
+      "end date": "12/21"
+    },
+    {
+      "name": "Capricorn",
+      "celestial longitude": "270° to 300°",
+      "polarity": "negative",
+      "element": "Earth",
+      "modality": "Cardinal",
+      "celestial body": "Saturn",
+      "symbol": "",
+      "symbol name": "The Goat",
+      "start date": "12/22",
+      "end date": "01/19"
+    },
+    {
+      "name": "Aquarius",
+      "celestial longitude": "300° to 330°",
+      "polarity": "positive",
+      "element": "Air",
+      "modality": "Fixed",
+      "celestial body": "Uranus",
+      "symbol": "",
+      "symbol name": "The Water Bearer",
+      "start date": "01/20",
+      "end date": "02/18"
+    },
+    {
+      "name": "Pisces",
+      "celestial longitude": "330° to 360°",
+      "polarity": "negative",
+      "element": "Water",
+      "modality": "Mutable",
+      "celestial body": "Neptune",
+      "symbol": "",
+      "symbol name": "The Fish",
+      "start date": "02/19",
+      "end date": "03/20"
+    }
+  ],
+  "elements": [{
+      "name": "Fire",
+      "meaning": "passion, energy, impulse, enthusiasm, inspiration, idealism, and faith"
+    },
+    {
+      "name": "Air",
+      "meaning": "mental processes, language, intellect, reason, human communication, and social relationships"
+    },
+    {
+      "name": "Earth",
+      "meaning": "practicality, stability, materialism, and realism"
+    },
+    {
+      "name": "Water",
+      "meaning": "emotion, psychism, mysticism, and intuition"
+    }
+  ],
+  "modalities": [{
+      "name": "Cardinal",
+      "definition": "the beginning of the season and the power of initiation",
+      "traits": "enterprising, creative, and assertive"
+    },
+    {
+      "name": "Fixed",
+      "definition": "the middle of the season and the power of sustaining",
+      "traits": "stable, reliable, and determined"
+    },
+    {
+      "name": "Mutable",
+      "definition": "the end of the season and the power of change",
+      "traits": "adaptable, flexible, and communicative"
+    }
+  ],
+  "planets": [{
+      "name": "Sun",
+      "rules": "personality & ego"
+    },
+    {
+      "name": "Moon",
+      "rules": "moods & emotion"
+    },
+    {
+      "name": "Mercury",
+      "rules": "mind & communication"
+    },
+    {
+      "name": "Venus",
+      "rules": "love & attraction"
+    },
+    {
+      "name": "Mars",
+      "rules": "drive & energy"
+    },
+    {
+      "name": "Jupiter",
+      "rules": "luck, growth & wisdom"
+    },
+    {
+      "name": "Saturn",
+      "rules": "discipline, fears & challenges"
+    },
+    {
+      "name": "Uranus",
+      "rules": "change & originality"
+    },
+    {
+      "name": "Neptune",
+      "rules": "dreams & healing"
+    },
+    {
+      "name": "Pluto",
+      "rules": "power & transformation"
+    }
+  ],
+  "moon phases": [{
+      "name": "New Moon",
+      "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
+    },
+    {
+      "name": "Crescent Moon",
+      "time for": "gaining momentum, taking action"
+    },
+    {
+      "name": "First Quarter Moon",
+      "time for": "staying focused, committing to the task"
+    },
+    {
+      "name": "Gibbous Moon",
+      "time for": "breaking through obstacles, making progress"
+    },
+    {
+      "name": "Full Moon",
+      "time for": "experiencing success or failure"
+    },
+    {
+      "name": "Disseminating Moon",
+      "time for": "reaping benefits, engaging with others and getting ready"
+    },
+    {
+      "name": "Last Quarter Moon",
+      "time for": "leaving the past behind and working on hopes, goals and dreams"
+    },
+    {
+      "name": "Dark Moon",
+      "time for": "release, transition and introspection"
+    }
+  ]
+}

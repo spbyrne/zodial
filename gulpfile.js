@@ -4,6 +4,9 @@ var sass = require('gulp-sass'); // Sass plugin for Gulp.
 var csso = require('gulp-csso'); // Minify CSS with CSSO.
 var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
 var plumber = require('gulp-plumber');
+var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules for web browsers using Gulp.
+var include = require("gulp-include"); // Makes inclusion of files a breeze.
+
 
 gulp.task('styles', function () {
   var sassOptions = {
@@ -25,6 +28,8 @@ gulp.task('styles', function () {
 gulp.task('javascript', function () {
   return gulp.
   src('source/js/site.js').
+  pipe(include()).
+  pipe(webmake()).
   pipe(plumber()).
   pipe(rename('site.js')).
   pipe(gulp.dest('public/js'));

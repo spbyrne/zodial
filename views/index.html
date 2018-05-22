@@ -1,9 +1,11 @@
 {% extends "main.html" %}
 
 {% block main %}
-  <ul>
-    {% for slug, sign in signs %}
-      <li><a href="/sign/{{ slug }}">{{ sign.name }}</a></li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <ul>
+      {% for slug, sign in signs %}
+        <li><a href="/sign/{{ slug }}">{{ sign.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

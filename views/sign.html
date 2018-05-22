@@ -1,13 +1,15 @@
 {% extends "main.html" %}
 
 {% block main %}
-  <h1>{{ sign.name }}</h1>
-  <p><a href="/sign/{{ slug }}/today"><b>Daily Horoscope</b></a></p>
-  <p>Symbol: <b>{{ sign["symbol name"] }}</b></p>
-  <p>Celestial Body: <b>{{ sign["celestial body"] }}</b></p>
-  <p>Element: <b>{{ sign["element"] }}</b></p>
-  <p>Polarity: <b>{{ sign["polarity"] }}</b></p>
-  <p>Modality: <b>{{ sign["modality"] }}</b></p>
-  <p>{{ sign["start date"] }} - {{sign["end date"] }}</p>
-  <p><a href="#" onclick="window.history.back()"><small>Back</small></a></p>
+  <div class="container">
+    <h1>{{ sign.name }}</h1>
+    <p><a href="/sign/{{ slug }}/today"><b>Daily Horoscope</b></a></p>
+    <p>Symbol: <b>{{ sign["symbol name"] }}</b></p>
+    <p>Celestial Body: <b>{{ sign["celestial body"] }}</b></p>
+    <p>Element: <b>{{ sign["element"] }}</b></p>
+    <p>Polarity: <b>{{ sign["polarity"] }}</b></p>
+    <p>Modality: <b>{{ sign["modality"] }}</b></p>
+    <p>{{ sign["start date"] }} - {{sign["end date"] }}</p>
+    <p><a href="#" onclick="window.history.back()"><small>Back</small></a></p>
+  </div>
 {% endblock %}

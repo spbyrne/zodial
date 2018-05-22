@@ -9,13 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "barba.js": "^1.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-csso": "^3.0.1",
+    "gulp-include": "^2.3.1",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
+    "gulp-webmake": "0.0.41",
     "jquery": "^3.3.1",
     "nodemon": "^1.17.4"
   },

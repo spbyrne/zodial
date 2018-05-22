@@ -1,10 +1,25 @@
 var $ = require('jquery');
-//=require ../../node_modules/barba.js/dist/barba.js
+var smoothState = require('./_smoothState.js');
 
-document.addEventListener('DOMContentLoaded', function () {
-
+$(function () {
+  'use strict';
+  var options = {
+      prefetch: true,
+      cacheLength: 4,
+      onStart: {
+        duration: 250,
+        render: function ($container) {
+          $container.addClass('is-exiting');
+          smoothState.restartCSSAnimations();
+        }
+      },
+      onReady: {
+        duration: 0,
+        render: function ($container, $newContent) {
+          $container.removeClass('is-exiting');
+          $container.html($newContent);
+        }
+      }
+    },
+    smoothState = $('#main').smoothState(options).data('smoothState');
 });
-
-function goBack() {
-  window.history.back();
-};

@@ -3,7 +3,7 @@
     "aries": {
       "name": "Aries",
       "celestial longitude": "0° to 30°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Fire",
       "modality": "Cardinal",
       "celestial body": "Mars",
@@ -15,7 +15,7 @@
     "taurus": {
       "name": "Taurus",
       "celestial longitude": "30° to 60°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Earth",
       "modality": "Fixed",
       "celestial body": "Venus and Earth",
@@ -27,7 +27,7 @@
     "gemini": {
       "name": "Gemini",
       "celestial longitude": "60° to 90°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Air",
       "modality": "Mutable",
       "celestial body": "Mercury",
@@ -39,7 +39,7 @@
     "cancer": {
       "name": "Cancer",
       "celestial longitude": "90° to 120°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Water",
       "modality": "Cardinal",
       "celestial body": "Moon",
@@ -51,7 +51,7 @@
     "leo": {
       "name": "Leo",
       "celestial longitude": "120° to 150°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Fire",
       "modality": "Fixed",
       "celestial body": "Sun",
@@ -63,7 +63,7 @@
     "virgo": {
       "name": "Virgo",
       "celestial longitude": "150° to 180°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Earth",
       "modality": "Mutable",
       "celestial body": "Mercury and Ceres",
@@ -75,7 +75,7 @@
     "libra": {
       "name": "Libra",
       "celestial longitude": "180° to 210°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Air",
       "modality": "Cardinal",
       "celestial body": "Venus",
@@ -87,7 +87,7 @@
     "scorpio": {
       "name": "Scorpio",
       "celestial longitude": "210° to 240°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Water",
       "modality": "Fixed",
       "celestial body": "Pluto",
@@ -99,7 +99,7 @@
     "sagittarius": {
       "name": "Sagittarius",
       "celestial longitude": "240° to 270°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Fire",
       "modality": "Mutable",
       "celestial body": "Jupiter",
@@ -111,7 +111,7 @@
     "capricorn": {
       "name": "Capricorn",
       "celestial longitude": "270° to 300°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Earth",
       "modality": "Cardinal",
       "celestial body": "Saturn",
@@ -123,7 +123,7 @@
     "aquarius": {
       "name": "Aquarius",
       "celestial longitude": "300° to 330°",
-      "polarity": "positive",
+      "polarity": "Positive",
       "element": "Air",
       "modality": "Fixed",
       "celestial body": "Uranus",
@@ -135,7 +135,7 @@
     "pisces": {
       "name": "Pisces",
       "celestial longitude": "330° to 360°",
-      "polarity": "negative",
+      "polarity": "Negative",
       "element": "Water",
       "modality": "Mutable",
       "celestial body": "Neptune",

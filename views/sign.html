@@ -3,14 +3,43 @@
 {% set main_class = "fadeFromRight" %}
 {% block main %}
   <div class="container">
-    <h1>{{ sign.name }}</h1>
-    <p><a href="/sign/{{ slug }}/today"><b>Daily Horoscope</b></a></p>
-    <p>Symbol: <b>{{ sign["symbol name"] }}</b></p>
-    <p>Celestial Body: <b>{{ sign["celestial body"] }}</b></p>
-    <p>Element: <b>{{ sign["element"] }}</b></p>
-    <p>Polarity: <b>{{ sign["polarity"] }}</b></p>
-    <p>Modality: <b>{{ sign["modality"] }}</b></p>
-    <p>{{ sign["start date"] }} - {{sign["end date"] }}</p>
-    <p><a href="#" onclick="window.history.back()"><small>Back</small></a></p>
+    <ul class="main-nav">
+      {% for slug, sign in signs %}
+        <li><a href="/sign/{{ slug }}">{{ sign.name }}</a></li>
+      {% endfor %}
+    </ul>
+    <div class="page-content">
+      <div class="page-header">
+        <h1 class="page-header__title">{{ sign.name }}</h1>
+        <a class="page-header__back" href="#" onclick="window.history.back()">Back</a>
+      </div>
+      <p>{{ horoscope }}</p>
+      <div class="info">
+        <div class="info__item">
+          <span class="info__label">Symbol</span>
+          <span class="info__data">{{ sign["symbol name"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Celestial Body</span>
+          <span class="info__data">{{ sign["celestial body"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Element</span>
+          <span class="info__data">{{ sign["element"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Polarity</span>
+          <span class="info__data">{{ sign["polarity"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Modality</span>
+          <span class="info__data">{{ sign["modality"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Period</span>
+          <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

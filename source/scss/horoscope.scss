@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,500,700');
 $color-dark: #263238;
 $color-light: #ECEFF1;
 $color-link: #039BE5;
@@ -47,11 +47,11 @@ b {
 h1,
 h2,
 h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 ul {
@@ -107,14 +107,72 @@ $pages: home;
 .container {
   padding: 0 1rem;
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 35rem;
+  position: relative;
 }
 
 #main {
   position: relative;
+}
+
+.page-content {
+  position: relative;
   transition: all 250ms ease-out;
-  &.is-exiting {
+  .is-exiting & {
     transform: translate3d(2rem, 0, 0);
     opacity: 0;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 24rem;
+}
+
+.info__item {
+  flex: 0 0 33%;
+  padding: 0 0 0.5rem 0;
+}
+
+.info__label {
+  font-weight: 500;
+  line-height: 1;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  display: block;
+}
+
+.info__data {
+  font-weight: 700;
+  display: block;
+}
+
+.page-header {
+  position: relative;
+}
+
+.page-header__title {
+  line-height: 1;
+}
+
+.page-header__back {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-nav {
+  text-align: right;
+  position: absolute;
+  top: 0;
+  margin-left: -1.5rem;
+  transition: all 0.25s ease-out;
+  transform: translate3d( -100%, 0, 0);
+  &--home {
+    transform: translate3d(1.5rem, 0, 0);
   }
 }

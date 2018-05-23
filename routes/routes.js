@@ -15,9 +15,22 @@ router.get('/', function (req, res) {
 });
 
 router.get('/sign/:slug', function (req, res) {
-  res.render('sign', {
-    slug: req.params.slug,
-    sign: zodiacData.signs[req.params.slug]
+  var slug = req.params.slug;
+  var sign = zodiacData.signs[req.params.slug];
+  var url = horoscopeURL('today', slug);
+  request(url, function (err, response, body) {
+    if (err || response.statusCode !== 200) {
+      console.log(url);
+      return res.sendStatus(500);
+    }
+    data = JSON.parse(body);
+    res.render('sign', {
+      interval: req.params.interval,
+      slug: req.params.slug,
+      sign: zodiacData.signs[req.params.slug],
+      horoscope: data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', ''),
+      date: data.date
+    });
   });
 });
 

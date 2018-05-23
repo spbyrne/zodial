@@ -4,8 +4,8 @@
 {% block main %}
   <div class="container">
     <ul class="main-nav">
-      {% for slug, sign in signs %}
-        <li><a href="/sign/{{ slug }}">{{ sign.name }}</a></li>
+      {% for navSlug, navSign in signs %}
+        <li class="main-nav__item {% if (navSlug == slug) %}active{% endif %}"><a href="/sign/{{ navSlug }}">{{ navSign.name }}</a></li>
       {% endfor %}
     </ul>
     <div class="page-content">

@@ -3,9 +3,9 @@
 {% block main %}
   <div class="container" data-depth="1">
     {% if sign %}
-      {{ mainNav(id,'sign') }}
+      {{ navList(id,signs,'sign','sign') }}
     {% else %}
-      {{ mainNav(id,'sign-index') }}
+      {{ navList(id,signs,'sign','sign-index') }}
     {% endif %}
     <div class="page-content">
       {% if sign %}
@@ -32,7 +32,7 @@
           </div>
           <div class="info__item">
             <span class="info__label">Modality</span>
-            <span class="info__data"><a href="/modality/">{{ sign["modality"] }}</a></span>
+            <span class="info__data"><a href="/modality/{{ sign["modality"] | lower }}">{{ sign["modality"] }}</a></span>
           </div>
           <div class="info__item">
             <span class="info__label">Period</span>

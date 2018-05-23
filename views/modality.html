@@ -2,11 +2,17 @@
 
 {% block main %}
   <div class="container" data-depth="1">
-    {{ mainNav(slug,'sign-index') }}
+    {% if modality %}
+      {{ navList(id,modalities,'modality','modality') }}
+    {% else %}
+      {{ navList(id,modalities,'modality','modality-index') }}
+    {% endif %}
     <div class="page-content">
-      <div class="page-header">
-        <h1 class="page-header__title">{{ sign.name }}</h1>
-      </div>
+      {% if modality %}
+        <div class="page-header">
+          <h1 class="page-header__title">{{ modality.name }}</h1>
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endblock %}

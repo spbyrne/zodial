@@ -18,9 +18,14 @@ router.get('/celestial-body/:id', function (req, res) {
   });
 });
 
+router.get('/modality', function (req, res) {
+  res.render('modality', {});
+});
+
 router.get('/modality/:id', function (req, res) {
   res.render('modality', {
-    id: req.params.id
+    id: req.params.id,
+    modality: zodiacData.modalities[req.params.id]
   });
 });
 

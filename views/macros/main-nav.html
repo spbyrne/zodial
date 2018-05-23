@@ -1,7 +1,0 @@
-{% macro mainNav(id,pageName) %}
-  <ul class="main-nav main-nav--{{ pageName }}">
-    {% for navSlug, navSign in signs %}
-      <li class="main-nav__item {% if (navSlug == id) %}active{% endif %}"><a href="/sign/{{ navSlug }}" data-target="1">{{ navSign.name }}</a></li>
-    {% endfor %}
-  </ul>
-{% endmacro %}

@@ -38,10 +38,10 @@
 
 .page-content {
   position: relative;
-  transition: all 250ms ease-out;
+  transition: all 250ms $easing;
   animation-name: fadeIn;
   animation-duration: 0.25s;
-  animation-timing-function: ease-out;
+  animation-timing-function: $easing;
   .is-exiting & {
     transform: translate3d(3rem, 0, 0);
     opacity: 0;
@@ -103,16 +103,16 @@
   position: absolute;
   top: 0;
   padding-right: 2rem;
-  transition: all 0.25s ease-out;
+  transition: all 0.25s $easing;
   &--home,
   &--sign-index,
   &--modality-index {
     .main-nav__item {
       animation-name: slideUp;
       animation-iteration-count: 1;
-      animation-timing-function: ease-out;
+      animation-timing-function: $easing;
       animation-fill-mode: both;
-      transition: all 0.25s ease-out;
+      transition: all 0.25s $easing;
       a {
         transform: translate3d(1.5rem, 0, 0);
         .is-exiting & {
@@ -140,7 +140,7 @@
       position: relative;
       display: inline-block;
       line-height: 1;
-      transition: all 0.25s ease-out;
+      transition: all 0.25s $easing;
       transform: translate3d(-100%, 0, 0);
       &:after {
         display: block;

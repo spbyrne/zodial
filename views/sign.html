@@ -1,45 +1,45 @@
 {% extends "main.html" %}
 
-{% set main_class = "fadeFromRight" %}
 {% block main %}
-  <div class="container">
-    <ul class="main-nav">
-      {% for navSlug, navSign in signs %}
-        <li class="main-nav__item {% if (navSlug == slug) %}active{% endif %}"><a href="/sign/{{ navSlug }}">{{ navSign.name }}</a></li>
-      {% endfor %}
-    </ul>
+  <div class="container" data-depth="1">
+    {% if sign %}
+      {{ mainNav(id,'sign') }}
+    {% else %}
+      {{ mainNav(id,'sign-index') }}
+    {% endif %}
     <div class="page-content">
-      <div class="page-header">
-        <h1 class="page-header__title">{{ sign.name }}</h1>
-        <a class="page-header__back" href="#" onclick="window.history.back()">Back</a>
-      </div>
-      <p>{{ horoscope }}</p>
-      <div class="info">
-        <div class="info__item">
-          <span class="info__label">Symbol</span>
-          <span class="info__data">{{ sign["symbol name"] }}</span>
+      {% if sign %}
+        <div class="page-header">
+          <h1 class="page-header__title">{{ sign.name }}</h1>
         </div>
-        <div class="info__item">
-          <span class="info__label">Celestial Body</span>
-          <span class="info__data">{{ sign["celestial body"] }}</span>
+        <p>{{ horoscope }}</p>
+        <div class="info">
+          <div class="info__item">
+            <span class="info__label">Symbol</span>
+            <span class="info__data">{{ sign["symbol name"] }}</span>
+          </div>
+          <div class="info__item">
+            <span class="info__label">Celestial Body</span>
+            <span class="info__data">{{ sign["celestial body"] }}</span>
+          </div>
+          <div class="info__item">
+            <span class="info__label">Element</span>
+            <span class="info__data">{{ sign["element"] }}</span>
+          </div>
+          <div class="info__item">
+            <span class="info__label">Polarity</span>
+            <span class="info__data">{{ sign["polarity"] }}</span>
+          </div>
+          <div class="info__item">
+            <span class="info__label">Modality</span>
+            <span class="info__data"><a href="/modality/">{{ sign["modality"] }}</a></span>
+          </div>
+          <div class="info__item">
+            <span class="info__label">Period</span>
+            <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
+          </div>
         </div>
-        <div class="info__item">
-          <span class="info__label">Element</span>
-          <span class="info__data">{{ sign["element"] }}</span>
-        </div>
-        <div class="info__item">
-          <span class="info__label">Polarity</span>
-          <span class="info__data">{{ sign["polarity"] }}</span>
-        </div>
-        <div class="info__item">
-          <span class="info__label">Modality</span>
-          <span class="info__data">{{ sign["modality"] }}</span>
-        </div>
-        <div class="info__item">
-          <span class="info__label">Period</span>
-          <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 {% endblock %}

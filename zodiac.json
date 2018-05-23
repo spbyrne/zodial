@@ -162,22 +162,23 @@
       "meaning": "emotion, psychism, mysticism, and intuition"
     }
   ],
-  "modalities": [{
+  "modalities": {
+    "cardinal": {
       "name": "Cardinal",
       "definition": "the beginning of the season and the power of initiation",
       "traits": "enterprising, creative, and assertive"
     },
-    {
+    "fixed": {
       "name": "Fixed",
       "definition": "the middle of the season and the power of sustaining",
       "traits": "stable, reliable, and determined"
     },
-    {
+    "mutable": {
       "name": "Mutable",
       "definition": "the end of the season and the power of change",
       "traits": "adaptable, flexible, and communicative"
     }
-  ],
+  },
   "planets": [{
       "name": "Sun",
       "rules": "personality & ego"

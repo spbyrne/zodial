@@ -1,0 +1,114 @@
+.site {
+  &__header {
+    padding: 0.5rem 0;
+    margin: 0 0 1rem 0;
+    color: $color-light;
+    background-color: $color-dark;
+  }
+  &__wrapper {
+    flex: 1 0 auto;
+  }
+  &__footer {
+    padding-top: 0.5rem;
+    flex-shrink: 0;
+  }
+  &__title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    color: $color-light;
+    margin: 0;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.container {
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 35rem;
+  position: relative;
+}
+
+#main {
+  position: relative;
+}
+
+.page-content {
+  position: relative;
+  transition: all 250ms ease-out;
+  animation-name: fadeIn;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  .is-exiting & {
+    transform: translate3d(2rem, 0, 0);
+    opacity: 0;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80%;
+  &__item {
+    flex: 0 0 33%;
+    padding: 0 1rem 0.5rem 0;
+  }
+  &__label {
+    font-weight: 500;
+    line-height: 1;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    display: block;
+  }
+  &__data {
+    font-weight: 700;
+    display: block;
+  }
+}
+
+.page-header {
+  position: relative;
+  &__title {
+    line-height: 1;
+  }
+}
+
+.main-nav {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  margin-left: -1.5rem;
+  transition: all 0.25s ease-out;
+  transform: translate3d( -100%, 0, 0);
+  &--home,
+  &--sign-index {
+    transform: translate3d( 1.5rem, 0, 0);
+    .is-exiting & {
+      transform: translate3d( -100%, 0, 0);
+    }
+    .main-nav__item {
+      animation-name: slideUp;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: both;
+      @for $i from 0 through 12 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.05s;
+          animation-duration: 0.3s - ($i * 0.01s);
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    &.active {
+      font-weight: bold;
+    }
+  }
+}

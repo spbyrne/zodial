@@ -9,15 +9,41 @@ function horoscopeURL(interval, sign) {
 };
 
 router.get('/', function (req, res) {
-  res.render('index', {
-    title: 'Express'
+  res.render('index', {});
+});
+
+router.get('/celestial-body/:id', function (req, res) {
+  res.render('celestial-body', {
+    id: req.params.id
   });
 });
 
-router.get('/sign/:slug', function (req, res) {
-  var slug = req.params.slug;
-  var sign = zodiacData.signs[req.params.slug];
-  var url = horoscopeURL('today', slug);
+router.get('/modality/:id', function (req, res) {
+  res.render('modality', {
+    id: req.params.id
+  });
+});
+
+router.get('/element/:id', function (req, res) {
+  res.render('element', {
+    id: req.params.id
+  });
+});
+
+router.get('/polarity/:id', function (req, res) {
+  res.render('polarity', {
+    id: req.params.id
+  });
+});
+
+router.get('/sign', function (req, res) {
+  res.render('sign', {});
+});
+
+router.get('/sign/:id', function (req, res) {
+  var id = req.params.id;
+  var sign = zodiacData.signs[req.params.id];
+  var url = horoscopeURL('today', id);
   request(url, function (err, response, body) {
     if (err || response.statusCode !== 200) {
       console.log(url);
@@ -26,30 +52,9 @@ router.get('/sign/:slug', function (req, res) {
     data = JSON.parse(body);
     res.render('sign', {
       interval: req.params.interval,
-      slug: req.params.slug,
-      sign: zodiacData.signs[req.params.slug],
+      id: req.params.id,
+      sign: zodiacData.signs[req.params.id],
       horoscope: data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', ''),
-      date: data.date
-    });
-  });
-});
-
-router.get('/sign/:slug/:interval', function (req, res) {
-  var interval = req.params.interval;
-  var slug = req.params.slug;
-  var sign = zodiacData.signs[req.params.slug];
-  var url = horoscopeURL(interval, slug);
-  request(url, function (err, response, body) {
-    if (err || response.statusCode !== 200) {
-      console.log(url);
-      return res.sendStatus(500);
-    }
-    data = JSON.parse(body);
-    res.render('horoscope', {
-      interval: req.params.interval,
-      slug: req.params.slug,
-      sign: zodiacData.signs[req.params.slug],
-      horoscope: data.horoscope,
       date: data.date
     });
   });

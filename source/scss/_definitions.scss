@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,500,700');
+$color-dark: #263238;
+$color-light: #ECEFF1;
+$color-link: #039BE5;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d( -2rem, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0)
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate3d( 0, 2rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+  }
+}

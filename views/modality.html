@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block main %}
+  <div class="container" data-depth="1">
+    {{ mainNav(slug,'sign-index') }}
+    <div class="page-content">
+      <div class="page-header">
+        <h1 class="page-header__title">{{ sign.name }}</h1>
+      </div>
+    </div>
+  </div>
+{% endblock %}

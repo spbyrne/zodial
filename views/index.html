@@ -1,13 +1,11 @@
 {% extends "main.html" %}
 
-{% set main_class = "fadeFromRight" %}
 {% block main %}
-  <div class="container">
-    <ul class="main-nav main-nav--home">
-      {% for slug, sign in signs %}
-        <li><a href="/sign/{{ slug }}">{{ sign.name }}</a></li>
-      {% endfor %}
-    </ul>
-    <div class="page-content"></div>
+  <div class="container" data-depth="0">
+    <div class="page-content">
+      <ul>
+        <li><a href="/sign">View Signs</a></li>
+      </ul>
+    </div>
   </div>
 {% endblock %}

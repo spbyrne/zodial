@@ -26,7 +26,7 @@
 }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 1rem 0 6rem;
   margin: 0 auto;
   max-width: 35rem;
   position: relative;
@@ -43,7 +43,7 @@
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
   .is-exiting & {
-    transform: translate3d(2rem, 0, 0);
+    transform: translate3d(3rem, 0, 0);
     opacity: 0;
   }
 }
@@ -55,8 +55,11 @@
   flex-wrap: wrap;
   max-width: 80%;
   &__item {
-    flex: 0 0 33%;
+    flex: 1 0 33%;
     padding: 0 1rem 0.5rem 0;
+    &--wide {
+      flex-basis: 100%;
+    }
   }
   &__label {
     font-weight: 500;
@@ -72,6 +75,23 @@
   }
 }
 
+.sentence-list {
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      &:after {
+        content: ', ';
+      }
+    }
+    &:last-child {
+      &:before {
+        content: 'and ';
+      }
+    }
+  }
+  &__link {}
+}
+
 .page-header {
   position: relative;
   &__title {
@@ -84,20 +104,21 @@
   top: 0;
   padding-right: 2rem;
   transition: all 0.25s ease-out;
-  transform: translate3d( -100%, 0, 0);
   &--home,
   &--sign-index,
   &--modality-index {
-    transform: translate3d( 0, 0, 0);
-    .is-exiting & {
-      transform: translate3d( -100%, 0, 0);
-    }
     .main-nav__item {
       animation-name: slideUp;
       animation-iteration-count: 1;
       animation-timing-function: ease-out;
       animation-fill-mode: both;
       transition: all 0.25s ease-out;
+      a {
+        transform: translate3d(1.5rem, 0, 0);
+        .is-exiting & {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
       @for $i from 0 through 12 {
         &:nth-child(#{$i}) {
           animation-delay: $i * 0.05s;
@@ -109,12 +130,18 @@
   &__item {
     position: relative;
     display: block;
+    margin-left: -1.5rem;
     &.active {
       a {
         font-weight: bold;
       }
     }
     a {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      transition: all 0.25s ease-out;
+      transform: translate3d(-100%, 0, 0);
       &:after {
         display: block;
         content: attr(title);

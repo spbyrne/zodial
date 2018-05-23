@@ -31,7 +31,8 @@ router.get('/modality/:id', function (req, res) {
 
 router.get('/element/:id', function (req, res) {
   res.render('element', {
-    id: req.params.id
+    id: req.params.id,
+    element: zodiacData.elements[req.params.id]
   });
 });
 
@@ -59,7 +60,7 @@ router.get('/sign/:id', function (req, res) {
       interval: req.params.interval,
       id: req.params.id,
       sign: zodiacData.signs[req.params.id],
-      horoscope: data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', ''),
+      horoscope: data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', '').replace('--', '–'),
       date: data.date
     });
   });

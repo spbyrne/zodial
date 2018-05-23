@@ -1,0 +1,7 @@
+{% macro sentenceList(array) %}
+  <ul class="sentence-list">
+    {% for element in array %}
+      <li class="sentence-list__item">{{ element | title }}</li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

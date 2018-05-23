@@ -145,38 +145,50 @@
       "end date": "03/20"
     }
   },
-  "elements": [{
+  "elements": {
+    "fire": {
       "name": "Fire",
-      "meaning": "passion, energy, impulse, enthusiasm, inspiration, idealism, and faith"
+      "definition": "Fire has to deal with bravery.",
+      "traits": ["passion", "energy", "impulse", "enthusiasm", "inspiration", "idealism", "faith"],
+      "signs": ["aries", "leo", "sagittarius"]
     },
-    {
+    "air": {
       "name": "Air",
-      "meaning": "mental processes, language, intellect, reason, human communication, and social relationships"
+      "definition": "Air has to deal with playfulness and wits.",
+      "traits": ["mental processes", "language", "intellect", "reason", "human communication", "social relationships"],
+      "signs": ["gemini", "libra", "aquarius"]
     },
-    {
+    "earth": {
       "name": "Earth",
-      "meaning": "practicality, stability, materialism, and realism"
+      "definition": "Earth has to deal with loyalty..",
+      "traits": ["practicality", "stability", "materialism", "realism"],
+      "signs": ["taurus", "virgo", "capricorn"]
     },
-    {
+    "water": {
       "name": "Water",
-      "meaning": "emotion, psychism, mysticism, and intuition"
+      "definition": "Water has to deal with emotion, intuition, and intelligence.",
+      "traits": ["emotion", "psychism", "mysticism", "intuition"],
+      "signs": ["cancer", "scorpio", "pisces"]
     }
-  ],
+  },
   "modalities": {
     "cardinal": {
       "name": "Cardinal",
-      "definition": "the beginning of the season and the power of initiation",
-      "traits": "enterprising, creative, and assertive"
+      "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
+      "traits": ["enterprising", "creative", "assertive"],
+      "signs": ["aries", "cancer", "libra", "capricorn"]
     },
     "fixed": {
       "name": "Fixed",
-      "definition": "the middle of the season and the power of sustaining",
-      "traits": "stable, reliable, and determined"
+      "definition": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
+      "traits": ["stable", "reliable", "determined"],
+      "signs": ["taurus", "leo", "scorpio", "aquarius"]
     },
     "mutable": {
       "name": "Mutable",
-      "definition": "the end of the season and the power of change",
-      "traits": "adaptable, flexible, and communicative"
+      "definition": "The Mutable modality represents the end of the season and the power of change.",
+      "traits": ["adaptable", "flexible", "communicative"],
+      "signs": ["gemini", "virgo", "sagittarius", "pisces"]
     }
   },
   "planets": [{

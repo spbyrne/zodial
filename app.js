@@ -10,7 +10,6 @@ var fs = require('fs');
 var router = require('./routes/routes');
 var minifyHTML = require('express-minify-html');
 
-
 var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 var njk = expressNunjucks(app, {
   watch: isDev,
@@ -19,7 +18,6 @@ var njk = expressNunjucks(app, {
 });
 
 app.set('views', __dirname + '/views');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({

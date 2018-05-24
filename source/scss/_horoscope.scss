@@ -52,7 +52,6 @@
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 80%;
   &__item {
     flex: 1 0 33%;
     padding: 0 1rem 0.5rem 0;
@@ -73,6 +72,7 @@
   &__data {
     font-weight: 600;
     display: block;
+    white-space: nowrap;
   }
 }
 

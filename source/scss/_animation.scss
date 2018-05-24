@@ -1,5 +1,6 @@
 $easing: cubic-bezier(0.000, 0.015, 0.000, 1.005);
 $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
+$easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -19,6 +20,17 @@ $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
   100% {
     opacity: 1;
     transform: translate3d( 0, 0, 0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d( 0, 2rem, 0);
   }
 }
 
@@ -87,8 +99,10 @@ $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
 @keyframes mainNavLinkLoading {
   0% {
     opacity: initial;
+    color: initial;
   }
   100% {
     opacity: 1;
+    color: $color-primary;
   }
 }

@@ -18,6 +18,7 @@ var njk = expressNunjucks(app, {
 });
 
 app.set('views', __dirname + '/views');
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
@@ -35,9 +36,8 @@ app.use(minifyHTML({
     removeEmptyAttributes: true
   }
 }));
-app.use(compression());
 app.use(express.static('public'));
-
+app.use(compression());
 app.use('/', router);
 
 module.exports = app;

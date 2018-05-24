@@ -28,6 +28,12 @@ body {
 a,
 a:visited {
   color: $color-link;
+  text-decoration-color: $color-link-underline;
+  transition: all $time $easing;
+  &:hover {
+    color: $color-loading;
+    text-decoration-color: $color-loading;
+  }
 }
 
 h1,

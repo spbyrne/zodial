@@ -201,7 +201,7 @@
     },
     "earth": {
       "name": "Earth",
-      "definition": "Earth has to deal with loyalty..",
+      "definition": "Earth has to deal with loyalty.",
       "traits": [
         "practicality",
         "stability",
@@ -277,7 +277,7 @@
       ]
     }
   },
-  "planets": [{
+  "celelstial-bodies": [{
       "name": "Sun",
       "rules": "personality & ego"
     },

@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
-$color-dark: #0B0B0C;
+$color-dark: rgb(19,
+19,
+20);
 $color-green: #AAAA67;
+$color-gold: rgb(190,
+172,
+113);
 $color-light: #EBECE4;
 $color-red: #be3636;
 $color-grey: #78736F;
@@ -8,7 +13,7 @@ $color-link: #039BE5;
 $color-loading: rgb(104,
 205,
 255);
-$color-primary: $color-green;
+$color-primary: $color-gold;
 $border-radius: 0.2rem;
 $time: 0.25s;
 $time-fast: 0.125s;

@@ -3,7 +3,7 @@
     padding: 0.5rem 0;
     margin: 0 0 1rem 0;
     color: $color-light;
-    background-color: $color-green;
+    background-color: $color-primary;
   }
   &__wrapper {
     flex: 1 0 auto;
@@ -66,7 +66,7 @@
     text-transform: uppercase;
     opacity: 1;
     display: block;
-    color: $color-green;
+    color: $color-primary;
     white-space: nowrap;
   }
   &__data {
@@ -90,7 +90,7 @@
     flex: 0 1 auto;
     width: 100%;
     padding: 0.25rem 1rem;
-    background-color: $color-green;
+    background-color: $color-primary;
     margin-bottom: 2px;
     transition: all 0.1s $easing;
     &:first-child {
@@ -226,6 +226,7 @@
       }
       &.loading {
         animation-name: pageMenuLinkLoadingIndex;
+        animation-fill-mode: both;
       }
     }
   }
@@ -243,8 +244,8 @@
     &.loading {
       pointer-events: none;
       animation-name: pageMenuLinkLoading;
-      animation-duration: $time-long;
-      animation-timing-function: $easing;
+      animation-duration: $time;
+      animation-timing-function: $easing-in;
       animation-fill-mode: forwards;
     }
     &.active {

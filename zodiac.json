@@ -15,14 +15,6 @@
     "element": {
       "index": "/element/",
       "nav-title": "Elements"
-    },
-    "polarity": {
-      "index": "/polarity/",
-      "nav-title": "Polarity"
-    },
-    "celestial-body": {
-      "index": "/celestial-body/",
-      "nav-title": "Celestial Bodies"
     }
   },
   "signs": {
@@ -285,8 +277,7 @@
       ]
     }
   },
-  "planets": [
-    {
+  "planets": [{
       "name": "Sun",
       "rules": "personality & ego"
     },
@@ -327,8 +318,7 @@
       "rules": "power & transformation"
     }
   ],
-  "moon phases": [
-    {
+  "moon phases": [{
       "name": "New Moon",
       "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
     },

@@ -131,17 +131,21 @@
 
 .header-bar {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   &__title {
     color: $color-light;
     line-height: 1;
     white-space: nowrap;
+    position: absolute;
+    transform: translate3d(-100%, 0, 0);
+    margin-left: -1.5rem;
   }
   &__nav {
-    padding-left: 4rem;
-    flex: 0 0 auto;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
 
@@ -153,12 +157,12 @@
       animation-name: slideLeft;
       animation-iteration-count: 1;
       animation-timing-function: $easing;
-      animation-fill-mode: forward;
+      animation-fill-mode: both;
       transition: all $time $easing;
       @for $i from 0 through 12 {
         &:nth-child(#{$i + 1}) {
-          animation-delay: $i * 0.04s;
-          animation-duration: 0.35s - ($i * 0.015s);
+          animation-delay: $i * 0.07s;
+          animation-duration: 0.35s - ($i * 0.02s);
         }
       }
     }
@@ -166,7 +170,7 @@
   &__item {
     position: relative;
     display: inline-block;
-    padding: 0 2rem 0 0;
+    margin-right: 2rem;
   }
   &__link,
   a.main-nav__link {
@@ -205,20 +209,13 @@
   padding-right: 2rem;
   transition: all $time $easing;
   &--home,
-  &--sign-index,
-  &--modality-index {
+  &--index {
     .page-nav__item {
       animation-name: slideUp;
       animation-iteration-count: 1;
       animation-timing-function: $easing;
       animation-fill-mode: both;
       transition: all $time $easing;
-      a {
-        transform: translate3d(1.5rem, 0, 0);
-        .is-exiting & {
-          transform: translate3d(-100%, 0, 0);
-        }
-      }
       @for $i from 0 through 12 {
         &:nth-child(#{$i + 1}) {
           animation-delay: $i * 0.04s;
@@ -226,40 +223,48 @@
         }
       }
     }
+    .page-nav__link {
+      transform: translate3d(1.5rem, 0, 0);
+      .is-exiting & {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
   }
   &__item {
     position: relative;
     display: block;
     margin-left: -1.5rem;
-    a {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      transition: all $time $easing;
-      transform: translate3d(-100%, 0, 0);
-      &.loading {
-        pointer-events: none;
-        animation-name: loadingLink;
-        animation-duration: $time * .75;
-        animation-timing-function: $easing;
-        animation-fill-mode: forwards;
-      }
-      &.active {
-        pointer-events: none;
-        text-decoration-color: transparent;
-        animation-name: goActiveLink;
-        animation-duration: $time;
-        animation-timing-function: $easing;
-        animation-fill-mode: forwards;
-      }
-      &:after {
-        display: block;
-        content: attr(title);
-        font-weight: bold;
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
-      }
+  }
+  &__link {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    transition: all $time-fast $easing;
+    transform: translate3d(-100%, 0, 0);
+    &.loading {
+      pointer-events: none;
+      animation-name: pageMenuLinkLoading;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: forwards;
+    }
+    &.active {
+      color: $color-primary;
+      text-decoration-color: transparent;
+      font-weight: bold;
+      pointer-events: none;
+      animation-name: pageMenuLinkActive;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: backwards;
+    }
+    &:after {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
     }
   }
 }

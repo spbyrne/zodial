@@ -6,41 +6,35 @@ $(function () {
   var transition = 'inward';
   var $main = $('#main');
   var options = {
-    prefetch: true,
-    cacheLength: 4,
-    blacklist: '.no-transition',
-    onBefore: function ($anchor, $container) {
-      var depth = $('[data-depth]')
-        .first()
-        .data('depth');
-      var target = $anchor.data('target');
-      $('a:not(.main-nav__link)').removeClass('loading active');
-      $anchor.addClass('loading');
-      depth = depth ? depth : 0;
-      target = target ? target : 0;
-      if (depth <= target) {
-        transition = 'inward';
-      } else {
-        transition = 'outward';
+      prefetch: true,
+      cacheLength: 4,
+      blacklist: '.no-transition',
+      onBefore: function ($anchor, $container) {
+        var body = document.querySelector('body');
+        var target = $anchor.data('target');
+        var location = body.dataset.location;
+        if (target != location) {
+          body.dataset.location = target;
+        }
+        $('a:not(.main-nav__link)').removeClass('loading active');
+        $anchor.addClass('loading');
+      },
+      onStart: {
+        duration: 250,
+        render: function ($container) {
+          $container.addClass('is-exiting');
+          smoothState.restartCSSAnimations();
+        }
+      },
+      onReady: {
+        duration: 0,
+        render: function ($container, $newContent) {
+          $container.removeClass('is-exiting');
+          $container.html($newContent);
+        }
       }
     },
-    onStart: {
-      duration: 250,
-      render: function ($container) {
-        $main.attr('data-transition', transition);
-        $container.addClass('is-exiting');
-        smoothState.restartCSSAnimations();
-      }
-    },
-    onReady: {
-      duration: 0,
-      render: function ($container, $newContent) {
-        $container.removeClass('is-exiting');
-        $container.html($newContent);
-      }
-    }
-  },
     smoothState = $('#main')
-      .smoothState(options)
-      .data('smoothState');
+    .smoothState(options)
+    .data('smoothState');
 });

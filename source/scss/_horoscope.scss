@@ -192,6 +192,18 @@
   top: 0;
   padding-right: 2rem;
   transition: all $time $easing;
+  $pages: sign, modality, element, home;
+  @each $page in $pages {
+    &--#{$page} {
+      body:not([data-location="#{$page}"]) .is-exiting & {
+        animation-name: pageMenuFadeOut;
+        animation-iteration-count: 1;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+      }
+    }
+  }
   &--home,
   &--index {
     .page-nav__item {

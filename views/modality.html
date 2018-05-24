@@ -4,9 +4,9 @@
 {% block main %}
   <div class="container" data-depth="1">
     {% if modality %}
-      {{ navList(id,modalities,'modality','detail') }}
+      {{ pageNav(id,modalities,'modality','detail') }}
     {% else %}
-      {{ navList(id,modalities,'modality','index') }}
+      {{ pageNav(id,modalities,'modality','index') }}
     {% endif %}
     <div class="page-content">
       {% if modality %}

@@ -9,41 +9,70 @@ function horoscopeURL(interval, sign) {
 };
 
 router.get('/', function (req, res) {
-  res.render('index', {});
+  res.render('index', {
+    page: 'home'
+  });
+});
+
+router.get('/celestial-body', function (req, res) {
+  res.render('celestial-body', {
+    page: 'celestial-body'
+  });
 });
 
 router.get('/celestial-body/:id', function (req, res) {
   res.render('celestial-body', {
+    page: 'celestial-body',
     id: req.params.id
   });
 });
 
 router.get('/modality', function (req, res) {
-  res.render('modality', {});
+  res.render('modality', {
+    page: 'modality'
+  });
 });
 
 router.get('/modality/:id', function (req, res) {
   res.render('modality', {
+    page: 'modality',
     id: req.params.id,
     modality: zodiacData.modalities[req.params.id]
   });
 });
 
+router.get('/element', function (req, res) {
+  res.render('element', {
+    page: 'element'
+  });
+});
+
+
 router.get('/element/:id', function (req, res) {
   res.render('element', {
+    page: 'element',
     id: req.params.id,
     element: zodiacData.elements[req.params.id]
   });
 });
 
+router.get('/polarity', function (req, res) {
+  res.render('polarity', {
+    page: 'polarity'
+  });
+});
+
 router.get('/polarity/:id', function (req, res) {
   res.render('polarity', {
+    page: 'polarity',
     id: req.params.id
   });
 });
 
 router.get('/sign', function (req, res) {
-  res.render('sign', {});
+  res.render('sign', {
+    page: 'sign'
+  });
 });
 
 router.get('/sign/:id', function (req, res) {
@@ -57,6 +86,7 @@ router.get('/sign/:id', function (req, res) {
     }
     data = JSON.parse(body);
     res.render('sign', {
+      page: 'sign',
       interval: req.params.interval,
       id: req.params.id,
       sign: zodiacData.signs[req.params.id],

@@ -2,31 +2,10 @@
 $color-dark: #0B0B0C;
 $color-green: #AAAA67;
 $color-light: #EBECE4;
+$color-red: #be3636;
 $color-grey: #78736F;
 $color-link: #039BE5;
+$color-loading: rgb(104, 205, 255);
+$color-primary: $color-green;
 $border-radius: 0.2rem;
-$easing: cubic-bezier(0.000,
-0.015,
-0.000,
-1.005);
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translate3d( -2rem, 0, 0)
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d( 0, 0, 0)
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translate3d( 0, 2rem, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d( 0, 0, 0);
-  }
-}
+$time: 0.25s;

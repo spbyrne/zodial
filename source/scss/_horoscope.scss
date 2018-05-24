@@ -39,7 +39,7 @@
   position: relative;
   transition: all 250ms $easing;
   animation-name: fadeIn;
-  animation-duration: 0.25s;
+  animation-duration: $time;
   animation-timing-function: $easing;
   .is-exiting & {
     transform: translate3d(3rem, 0, 0);
@@ -129,28 +129,82 @@
   &__link {}
 }
 
-.page-header {
+.header-bar {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   &__title {
-    color: $color-green;
+    color: $color-light;
     line-height: 1;
+    white-space: nowrap;
+  }
+  &__nav {
+    padding-left: 2rem;
+    flex: 0 0 auto;
   }
 }
 
 .main-nav {
+  position: relative;
+  transition: all $time $easing;
+  &.home {
+    .main-nav__item {
+      animation-name: slideLeft;
+      animation-iteration-count: 1;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      transition: all $time $easing;
+      @for $i from 0 through 12 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: $i * 0.04s;
+          animation-duration: 0.35s - ($i * 0.015s);
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem 0 0;
+  }
+  &__link {
+    position: relative;
+    display: block;
+    line-height: 1;
+    transition: all $time $easing;
+    color: $color-light;
+    &:after {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+}
+
+.page-header {
+  &__title {
+    line-height: 1;
+  }
+}
+
+.page-nav {
   position: absolute;
   top: 0;
   padding-right: 2rem;
-  transition: all 0.25s $easing;
+  transition: all $time $easing;
   &--home,
   &--sign-index,
   &--modality-index {
-    .main-nav__item {
+    .page-nav__item {
       animation-name: slideUp;
       animation-iteration-count: 1;
       animation-timing-function: $easing;
       animation-fill-mode: both;
-      transition: all 0.25s $easing;
+      transition: all $time $easing;
       a {
         transform: translate3d(1.5rem, 0, 0);
         .is-exiting & {
@@ -169,20 +223,27 @@
     position: relative;
     display: block;
     margin-left: -1.5rem;
-    &.active {
-      a {
-        font-weight: bold;
-        text-decoration: none;
-        pointer-events: none;
-        color: $color-green;
-      }
-    }
     a {
       position: relative;
       display: inline-block;
       line-height: 1;
-      transition: all 0.25s $easing;
+      transition: all $time $easing;
       transform: translate3d(-100%, 0, 0);
+      &.loading {
+        pointer-events: none;
+        animation-name: loadingLink;
+        animation-duration: $time * .75;
+        animation-timing-function: $easing;
+        animation-fill-mode: forwards;
+      }
+      &.active {
+        pointer-events: none;
+        text-decoration-color: transparent;
+        animation-name: goActiveLink;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: forwards;
+      }
       &:after {
         display: block;
         content: attr(title);

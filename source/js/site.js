@@ -16,6 +16,12 @@ $(function () {
         if (target != location) {
           body.dataset.location = target;
         }
+        if ($anchor.hasClass("main-nav__link")) {
+          $('.main-nav__link').removeClass('active');
+        } else {
+          $('.main-nav__link[data-target="' + target + '"]:not(.active)').addClass('loading');
+        }
+        $('.main-nav__link:not([data-target="' + target + '"])').removeClass('active');
         $('a:not(.main-nav__link)').removeClass('loading active');
         $anchor.addClass('loading');
       },

@@ -74,3 +74,21 @@ $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
     transform: translate3d(6rem, 0, 0);
   }
 }
+
+@keyframes mainNavLinkBeforeLoading {
+  0% {
+    transform: scale3d(0, 1, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes mainNavLinkLoading {
+  0% {
+    opacity: initial;
+  }
+  100% {
+    opacity: 1;
+  }
+}

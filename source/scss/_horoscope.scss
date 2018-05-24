@@ -1,9 +1,6 @@
 .site {
   &__header {
-    padding: 0.5rem 0;
     margin: 0 0 1rem 0;
-    color: $color-light;
-    background-color: $color-primary;
   }
   &__wrapper {
     flex: 1 0 auto;
@@ -25,7 +22,7 @@
 }
 
 .container {
-  padding: 0 1rem 0 6rem;
+  padding: 0 1rem 0 8rem;
   margin: 0 auto;
   max-width: 40rem;
   position: relative;
@@ -131,6 +128,17 @@
 
 .header-bar {
   position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color-dark;
+    opacity: 0.1;
+  }
   &__title {
     color: $color-light;
     line-height: 1;
@@ -154,7 +162,7 @@
   &__item {
     position: relative;
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
   &__link,
   a.main-nav__link {
@@ -162,10 +170,14 @@
     display: block;
     line-height: 1;
     transition: all $time $easing;
-    color: $color-light;
+    color: $color-dark;
+    font-weight: 600;
     font-size: .85rem;
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+    padding: 1rem 0;
+    text-align: center;
     &:after {
       display: block;
       content: attr(title);
@@ -174,9 +186,38 @@
       overflow: hidden;
       visibility: hidden;
     }
-    &.active {
-      font-weight: bold;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $color-gold;
       opacity: 1;
+      transform-origin: 50% 50%;
+      transform: scale3d(0, 1, 1);
+    }
+    &.active {
+      opacity: 1;
+      font-weight: bold;
+      &:before {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    &.loading {
+      pointer-events: none;
+      animation-name: mainNavLinkLoading;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: forwards;
+      &:before {
+        animation-name: mainNavLinkBeforeLoading;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: forwards;
+      }
     }
   }
 }

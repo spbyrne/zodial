@@ -78,6 +78,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   &__item {
+    position: relative;
     flex: 1 0 33%;
     padding: 0 1rem 0.5rem 0;
     &--wide {

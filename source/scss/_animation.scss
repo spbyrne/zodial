@@ -23,6 +23,15 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes slideUp {
   0% {
     opacity: 0;

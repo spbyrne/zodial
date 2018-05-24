@@ -10,7 +10,7 @@
 html,
 body {
   height: 100%;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $font-primary, sans-serif;
   font-weight: 400;
   font-size: 115%;
   line-height: 1.5;
@@ -53,6 +53,7 @@ h3 {
 }
 
 p {
+  opacity: 0.9;
   margin-bottom: 1rem;
 }
 

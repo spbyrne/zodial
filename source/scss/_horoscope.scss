@@ -171,10 +171,10 @@
     line-height: 1;
     transition: all $time $easing;
     color: $color-dark;
-    font-weight: 600;
+    font-weight: 700;
     font-size: .85rem;
     text-decoration: none;
-    opacity: 0.6;
+    opacity: 0.5;
     letter-spacing: 0.5px;
     padding: 1rem 0;
     text-align: center;
@@ -201,7 +201,6 @@
     }
     &.active {
       opacity: 1;
-      font-weight: bold;
       &:before {
         transform: scale3d(1, 1, 1);
       }

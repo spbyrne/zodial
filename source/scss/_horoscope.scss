@@ -279,7 +279,7 @@
     position: relative;
     display: inline-block;
     line-height: 1;
-    transition: all $time $easing;
+    transition: transform $time-long $easing, color $time $easing, text-decoration-color $time $easing;
     transform: translate3d(-100%, 0, 0);
     &.loading {
       pointer-events: none;

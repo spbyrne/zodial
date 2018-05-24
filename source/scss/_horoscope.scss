@@ -140,7 +140,7 @@
     white-space: nowrap;
   }
   &__nav {
-    padding-left: 2rem;
+    padding-left: 4rem;
     flex: 0 0 auto;
   }
 }
@@ -153,7 +153,7 @@
       animation-name: slideLeft;
       animation-iteration-count: 1;
       animation-timing-function: $easing;
-      animation-fill-mode: both;
+      animation-fill-mode: forward;
       transition: all $time $easing;
       @for $i from 0 through 12 {
         &:nth-child(#{$i + 1}) {
@@ -168,12 +168,16 @@
     display: inline-block;
     padding: 0 2rem 0 0;
   }
-  &__link {
+  &__link,
+  a.main-nav__link {
     position: relative;
     display: block;
     line-height: 1;
     transition: all $time $easing;
     color: $color-light;
+    font-size: .85rem;
+    text-decoration: none;
+    opacity: 0.8;
     &:after {
       display: block;
       content: attr(title);
@@ -181,6 +185,10 @@
       height: 0;
       overflow: hidden;
       visibility: hidden;
+    }
+    &.active {
+      font-weight: bold;
+      opacity: 1;
     }
   }
 }

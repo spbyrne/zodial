@@ -1,7 +1,7 @@
 {% macro mainNav(pages,page,navClass) %}
   <ul class="main-nav {{ navClass }} {% if (page == 'home') %}home{% endif %}">
     {% for navPage, pageData in pages %}
-      <li class="main-nav__item {% if (navPage == page) %}active{% endif %}"><a class="main-nav__link {% if (navPage == page) %}active{% endif %}" href="{{ pageData.index }}" title="{{ pageData['nav-title'] }}" data-target="1">{{ navSign.name }}</a></li>
+      <li class="main-nav__item {% if (navPage == page) %}active{% endif %}"><a class="main-nav__link {% if (navPage == page) %}active{% endif %}" href="{{ pageData.index }}" title="{{ pageData['nav-title'] }}" data-target="1">{{ pageData["nav-title"] }}</a></li>
     {% endfor %}
   </ul>
 {% endmacro %}

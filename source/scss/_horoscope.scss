@@ -95,9 +95,11 @@
     white-space: nowrap;
   }
   &__data {
-    font-weight: 600;
     display: block;
     white-space: nowrap;
+    font-size: 1.1rem;
+    font-family: $font-accent;
+    font-weight: $font-accent--weight;
   }
 }
 
@@ -253,6 +255,9 @@
 .page-header {
   &__title {
     line-height: 1;
+    font-size: 2.6rem;
+    font-family: $font-accent;
+    font-weight: $font-accent--weight;
   }
 }
 

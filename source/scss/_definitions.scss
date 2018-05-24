@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=BioRhyme:700');
 $color-dark: rgb(19,
 19,
 20);
@@ -22,3 +23,6 @@ $border-radius: 0.2rem;
 $time: 0.25s;
 $time-fast: 0.125s;
 $time-long: 0.35s;
+$font-primary: 'Titillium Web';
+$font-accent: 'BioRhyme';
+$font-accent--weight: 700;

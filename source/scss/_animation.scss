@@ -1,14 +1,25 @@
 $easing: cubic-bezier(0.000, 0.015, 0.000, 1.005);
 $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
 $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
-@keyframes fadeIn {
+@keyframes animateIn {
   0% {
     opacity: 0;
-    transform: translate3d( -2rem, 0, 0)
+    transform: translate3d( -2rem, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translate3d( 0, 0, 0)
+    transform: translate3d( 0, 0, 0);
+  }
+}
+
+@keyframes animateOut {
+  0% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d( 2rem, 0, 0);
   }
 }
 
@@ -42,6 +53,15 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   100% {
     opacity: 1;
     transform: translate3d( 0, 0, 0);
+  }
+}
+
+@keyframes pageNavItemExit {
+  0% {
+    transform: translate3d( 0, 0, 0);
+  }
+  100% {
+    transform: translate3d( -2rem, 0, 0);
   }
 }
 

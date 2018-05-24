@@ -32,15 +32,43 @@
   position: relative;
 }
 
-.page-content {
+.animate {
   position: relative;
-  transition: all 250ms $easing;
-  animation-name: fadeIn;
-  animation-duration: $time;
+  animation-name: animateIn;
+  animation-duration: $time-long;
   animation-timing-function: $easing;
+  animation-fill-mode: both;
+  &--second {
+    animation-delay: .04s;
+  }
+  &--third {
+    animation-delay: .08s;
+  }
+  &--fourth {
+    animation-delay: .12s;
+  }
+  &--cascade-children {
+    >* {
+      position: relative;
+      animation-name: slideUp;
+      animation-iteration-count: 1;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      transition: all $time $easing;
+      @for $i from 0 through 12 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: $i * 0.04s;
+          animation-duration: 0.35s - ($i * 0.015s);
+        }
+      }
+    }
+  }
   .is-exiting & {
-    transform: translate3d(3rem, 0, 0);
-    opacity: 0;
+    animation-name: animateOut;
+    animation-duration: $time;
+    animation-timing-function: $easing-in;
+    animation-fill-mode: both;
+    animation-delay: 0s;
   }
 }
 
@@ -172,7 +200,7 @@
     transition: all $time $easing;
     color: $color-dark;
     font-weight: 700;
-    font-size: .85rem;
+    font-size: 0.85rem;
     text-decoration: none;
     opacity: 0.5;
     letter-spacing: 0.5px;
@@ -236,7 +264,7 @@
   $pages: sign, modality, element, home;
   @each $page in $pages {
     &--#{$page} {
-      body:not([data-location="#{$page}"]) .is-exiting & {
+      body:not([data-location='#{$page}']) .is-exiting & {
         animation-name: pageMenuFadeOut;
         animation-iteration-count: 1;
         animation-duration: $time;

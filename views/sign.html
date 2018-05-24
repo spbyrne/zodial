@@ -5,42 +5,40 @@
   <div class="container" data-depth="1">
     {% if sign %}
       {{ pageNav(id,signs,'sign','detail') }}
+      <div class="page-header animate animate--first">
+        <h1 class="page-header__title">{{ sign.name }}</h1>
+      </div>
+      <div class="animate animate--second">
+        <p>{{ horoscope }}</p>
+      </div>
+      <div class="info animate animate--third animate--cascade-children">
+        <div class="info__item">
+          <span class="info__label">Symbol</span>
+          <span class="info__data">{{ sign["symbol name"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Celestial Body</span>
+          <span class="info__data">{{ sign["celestial body"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Element</span>
+          <span class="info__data"><a href="/element/{{ sign["element"] | lower }}" data-target="element">{{ sign["element"] }}</a></span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Polarity</span>
+          <span class="info__data">{{ sign["polarity"] }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Modality</span>
+          <span class="info__data"><a href="/modality/{{ sign["modality"] | lower }}" data-target="modality">{{ sign["modality"] }}</a></span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Period</span>
+          <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
+        </div>
+      </div>
     {% else %}
       {{ pageNav(id,signs,'sign','index') }}
     {% endif %}
-    <div class="page-content">
-      {% if sign %}
-        <div class="page-header">
-          <h1 class="page-header__title">{{ sign.name }}</h1>
-        </div>
-        <p>{{ horoscope }}</p>
-        <div class="info">
-          <div class="info__item">
-            <span class="info__label">Symbol</span>
-            <span class="info__data">{{ sign["symbol name"] }}</span>
-          </div>
-          <div class="info__item">
-            <span class="info__label">Celestial Body</span>
-            <span class="info__data">{{ sign["celestial body"] }}</span>
-          </div>
-          <div class="info__item">
-            <span class="info__label">Element</span>
-            <span class="info__data"><a href="/element/{{ sign["element"] | lower }}" data-target="element">{{ sign["element"] }}</a></span>
-          </div>
-          <div class="info__item">
-            <span class="info__label">Polarity</span>
-            <span class="info__data">{{ sign["polarity"] }}</span>
-          </div>
-          <div class="info__item">
-            <span class="info__label">Modality</span>
-            <span class="info__data"><a href="/modality/{{ sign["modality"] | lower }}" data-target="modality">{{ sign["modality"] }}</a></span>
-          </div>
-          <div class="info__item">
-            <span class="info__label">Period</span>
-            <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
-          </div>
-        </div>
-      {% endif %}
-    </div>
   </div>
 {% endblock %}

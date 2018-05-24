@@ -135,38 +135,22 @@
     color: $color-light;
     line-height: 1;
     white-space: nowrap;
-    position: absolute;
-    transform: translate3d(-100%, 0, 0);
-    margin-left: -1.5rem;
+    display: none;
   }
   &__nav {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    position: absolute;
+    right: 0;
   }
 }
 
 .main-nav {
   position: relative;
   transition: all $time $easing;
-  &.home {
-    .main-nav__item {
-      animation-name: slideLeft;
-      animation-iteration-count: 1;
-      animation-timing-function: $easing;
-      animation-fill-mode: both;
-      transition: all $time $easing;
-      @for $i from 0 through 12 {
-        &:nth-child(#{$i + 1}) {
-          animation-delay: $i * 0.07s;
-          animation-duration: 0.35s - ($i * 0.02s);
-        }
-      }
-    }
-  }
   &__item {
     position: relative;
     display: inline-block;
@@ -228,6 +212,9 @@
       .is-exiting & {
         transform: translate3d(-100%, 0, 0);
       }
+      &.loading {
+        animation-name: pageMenuLinkLoadingIndex;
+      }
     }
   }
   &__item {
@@ -239,12 +226,12 @@
     position: relative;
     display: inline-block;
     line-height: 1;
-    transition: all $time-fast $easing;
+    transition: all $time $easing;
     transform: translate3d(-100%, 0, 0);
     &.loading {
       pointer-events: none;
       animation-name: pageMenuLinkLoading;
-      animation-duration: $time;
+      animation-duration: $time-long;
       animation-timing-function: $easing;
       animation-fill-mode: forwards;
     }

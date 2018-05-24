@@ -1,13 +1,13 @@
+{% set location = "home" %}
 {% extends "main.html" %}
 
 {% block main %}
   <div class="container" data-depth="0">
     <div class="page-content">
       <ul class="button-list">
-        <li class="button-list__item"><a class="button-list__link" href="/sign">View Signs</a></li>
-        <li class="button-list__item"><a class="button-list__link" href="/modality">View Modalities</a></li>
-        <li class="button-list__item"><a class="button-list__link" href="/elements">View Elements</a></li>
-        <li class="button-list__item"><a class="button-list__link" href="/celestial-bodies">View Celestial Bodies</a></li>
+        <li class="button-list__item"><a class="button-list__link" href="/sign" data-target="sign">View Signs</a></li>
+        <li class="button-list__item"><a class="button-list__link" href="/modality" data-target="modality">View Modalities</a></li>
+        <li class="button-list__item"><a class="button-list__link" href="/element" data-target="element">View Elements</a></li>
       </ul>
     </div>
   </div>

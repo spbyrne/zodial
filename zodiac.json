@@ -1,19 +1,19 @@
 {
   "pages": {
     "home": {
-      "index": "/",
+      "slug": "",
       "nav-title": "Home"
     },
     "sign": {
-      "index": "/sign/",
+      "slug": "sign",
       "nav-title": "Signs"
     },
     "modality": {
-      "index": "/modality/",
+      "slug": "modality",
       "nav-title": "Modalities"
     },
     "element": {
-      "index": "/element/",
+      "slug": "element",
       "nav-title": "Elements"
     }
   },

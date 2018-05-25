@@ -1,6 +1,6 @@
 {
-  "site_title": "Horoscope",
-  "site_color": "#ff304f",
+  "site_title": "Zodiac App",
+  "site_color": "#f1f1eb",
   "site_description": "",
   "pages": {
     "home": {
@@ -280,8 +280,7 @@
       ]
     }
   },
-  "celelstial-bodies": [
-    {
+  "celelstial-bodies": [{
       "name": "Sun",
       "rules": "personality & ego"
     },
@@ -322,8 +321,7 @@
       "rules": "power & transformation"
     }
   ],
-  "moon phases": [
-    {
+  "moon phases": [{
       "name": "New Moon",
       "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
     },

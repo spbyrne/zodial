@@ -279,15 +279,11 @@
   top: 0;
   padding-right: 2rem;
   transition: all $time $easing;
-  $pages: sign, modality, element, home;
+  $pages: sign, modality, element, home, polarity;
   @each $page in $pages {
     &--#{$page} {
       body:not([data-location='#{$page}']) .is-exiting & {
-        animation-name: pageNavFadeOut;
-        animation-iteration-count: 1;
-        animation-duration: $time;
-        animation-timing-function: $easing;
-        animation-fill-mode: both;
+        @extend .page-nav--exit-animation;
       }
     }
   }
@@ -316,6 +312,13 @@
         animation-fill-mode: both;
       }
     }
+  }
+  &.animate-in {
+    animation-name: animateIn;
+    animation-iteration-count: 1;
+    animation-timing-function: $easing;
+    animation-fill-mode: both;
+    animation-duration: $time;
   }
   &__item {
     position: relative;
@@ -360,5 +363,27 @@
     font-size: 0.75rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
+  }
+  &--exit-animation {
+    animation-name: slideLeftOut;
+    animation-iteration-count: 1;
+    animation-timing-function: $easing-in;
+    animation-fill-mode: both;
+    animation-duration: $time;
+    .page-nav__item {
+      animation-name: slideLeftOut;
+      animation-iteration-count: 1;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      $maxChildren: 12;
+      @for $children from 1 to $maxChildren {
+        @for $i from 0 through $children {
+          &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
+            animation-delay: ($time * 0.75) - ($i * ($time / $children));
+            animation-duration: $time * 0.75;
+          }
+        }
+      }
+    }
   }
 }

@@ -330,7 +330,6 @@
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
-  &--home,
   &--index {
     // This animation is for when you land on an index page, and to handle moving from an index to a details page
     .page-nav__item {
@@ -395,6 +394,12 @@
     &--#{$page}.page-nav--index {
       // Play the page nav (index page) exit animation when changing site sections (from an index page)
       body:not([data-location='#{$page}']) .is-exiting & {
+        animation-name: slideDownOut;
+        animation-iteration-count: 1;
+        animation-timing-function: $easing-in;
+        animation-fill-mode: both;
+        animation-delay: 0;
+        animation-duration: $time;
         .page-nav__item {
           animation-name: slideDownOut;
           animation-iteration-count: 1;

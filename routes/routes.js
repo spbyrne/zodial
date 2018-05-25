@@ -5,8 +5,10 @@ var fs = require('fs');
 var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 
 function horoscopeURL(interval, sign) {
-  return "http://sandipbgt.com/theastrologer/api/horoscope/" + sign + "/" + interval
-};
+  return (
+    'http://horoscope-api.herokuapp.com/horoscope/' + interval + '/' + sign
+  );
+}
 
 router.get('/', function (req, res) {
   res.render('index', {
@@ -53,8 +55,8 @@ router.get('/sign', function (req, res) {
 
 router.get('/sign/:id*?', function (req, res) {
   if (req.params.id) {
-    var id = req.params.id;
-    var url = horoscopeURL('today', id);
+    var sign = zodiacData.signs[req.params.id].name;
+    var url = horoscopeURL('today', sign);
     request(url, function (err, response, body) {
       if (err || response.statusCode !== 200) {
         console.log(url);
@@ -66,7 +68,7 @@ router.get('/sign/:id*?', function (req, res) {
         interval: req.params.interval,
         id: req.params.id,
         sign: zodiacData.signs[req.params.id],
-        horoscope: data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', '').replace('--', '–'),
+        horoscope: data.horoscope.replace("['", "").replace("']", ""),
         date: data.date
       });
     });

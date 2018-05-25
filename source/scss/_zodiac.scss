@@ -94,6 +94,20 @@
     display: block;
     color: $color-primary;
     white-space: nowrap;
+    margin-bottom: 0.125rem;
+  }
+  &__meta {
+    color: $color-dark;
+    opacity: 0.3;
+    display: inline-block;
+    .info__label & {
+      margin-left: 0.5rem;
+      &:before {
+        content: '–';
+        display: inline-block;
+        margin-right: 0.3rem;
+      }
+    }
   }
   &__data {
     display: block;

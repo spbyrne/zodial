@@ -279,13 +279,6 @@
   top: 0;
   padding-right: 2rem;
   transition: all $time $easing;
-  &.animate-in {
-    animation-name: animateIn;
-    animation-iteration-count: 1;
-    animation-timing-function: $easing;
-    animation-fill-mode: both;
-    animation-duration: $time;
-  }
   &__item {
     position: relative;
     display: block;
@@ -330,6 +323,22 @@
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
+  &--detail {
+    .new-location & {
+      .page-nav__item {
+        animation-name: animateIn;
+        animation-iteration-count: 1;
+        animation-timing-function: $easing;
+        animation-fill-mode: backwards;
+        @for $i from 0 through 12 {
+          &:nth-child(#{$i + 1}) {
+            animation-delay: ($i - 1) * 0.0175s;
+            animation-duration: 0.35s - ($i * 0.015s);
+          }
+        }
+      }
+    }
+  }
   &--index {
     // This animation is for when you land on an index page, and to handle moving from an index to a details page
     .page-nav__item {
@@ -340,7 +349,7 @@
       transition: all $time $easing;
       @for $i from 0 through 12 {
         &:nth-child(#{$i + 1}) {
-          animation-delay: $i * 0.04s;
+          animation-delay: ($i - 1) * 0.03s;
           animation-duration: 0.35s - ($i * 0.015s);
         }
       }

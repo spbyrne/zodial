@@ -13,8 +13,10 @@ $(function () {
         var body = document.querySelector('body');
         var target = $anchor.data('target');
         var location = body.dataset.location;
+        $container.removeClass('new-location');
         if (target != location) {
           body.dataset.location = target;
+          $container.addClass('new-location');
         }
         if ($anchor.hasClass("main-nav__link")) {
           $('.main-nav__link').removeClass('active');
@@ -33,11 +35,14 @@ $(function () {
         }
       },
       onReady: {
-        duration: 0,
+        duration: 625,
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);
         }
+      },
+      onAfter: function ($container, $newContent) {
+        $container.removeClass('new-location');
       }
     },
     smoothState = $('#main')

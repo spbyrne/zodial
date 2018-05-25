@@ -79,7 +79,7 @@
   flex-wrap: wrap;
   &__item {
     position: relative;
-    flex: 1 0 33%;
+    flex: 1 0 26%;
     padding: 0 1rem 0.5rem 0;
     &--wide {
       flex-basis: 100%;
@@ -97,8 +97,8 @@
   }
   &__data {
     display: block;
-    white-space: nowrap;
     font-size: 1.1rem;
+    line-height: 1.1;
     font-family: $font-accent;
     font-weight: $font-accent--weight;
   }

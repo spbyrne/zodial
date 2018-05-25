@@ -1,27 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=BioRhyme:700');
-$color-dark: rgb(19,
-19,
-20);
+$color-dark: rgb(19, 19, 20);
 $color-green: #AAAA67;
-$color-gold: rgb(190,
-172,
-113);
+$color-gold: rgb(190, 172, 113);
 $color-light: #f1f1eb;
 $color-red: #be3636;
 $color-pearl: #D3CEC4;
 $color-link: #039BE5;
-$color-link-underline: rgba($color-link,
-0.3);
-$color-loading: rgb(104,
-205,
-255);
+$color-link-underline: rgba($color-link, 0.3);
+$color-loading: rgb(104, 205, 255);
 $color-active: $color-loading;
 $color-primary: $color-gold;
 $border-radius: 0.2rem;
 $time: 0.25s;
 $time-fast: 0.125s;
 $time-long: 0.35s;
-$font-primary: 'Titillium Web';
-$font-accent: 'BioRhyme';
+$font-primary: 'Titillium Web',
+sans-serif;
+$font-accent: 'BioRhyme',
+sans-serif;
 $font-accent--weight: 700;

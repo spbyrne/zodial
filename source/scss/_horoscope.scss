@@ -279,14 +279,6 @@
   top: 0;
   padding-right: 2rem;
   transition: all $time $easing;
-  $pages: sign, modality, element, home, polarity;
-  @each $page in $pages {
-    &--#{$page} {
-      body:not([data-location='#{$page}']) .is-exiting & {
-        @extend .page-nav--exit-animation;
-      }
-    }
-  }
   &--home,
   &--index {
     .page-nav__item {
@@ -364,7 +356,7 @@
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
-  &--exit-animation {
+  &--exit-animation:not(.page-nav--index) {
     animation-name: slideLeftOut;
     animation-iteration-count: 1;
     animation-timing-function: $easing-in;
@@ -382,6 +374,40 @@
             animation-delay: ($time * 0.75) - ($i * ($time / $children));
             animation-duration: $time * 0.75;
           }
+        }
+      }
+    }
+  }
+  $pages: sign,
+  modality,
+  element,
+  home,
+  polarity;
+  @each $page in $pages {
+    &--#{$page}.page-nav--detail {
+      body:not([data-location='#{$page}']) .is-exiting & {
+        @extend .page-nav--exit-animation;
+      }
+    }
+    &--#{$page}.page-nav--index {
+      body:not([data-location='#{$page}']) .is-exiting & {
+        .page-nav__item {
+          animation-name: slideDownOut;
+          animation-iteration-count: 1;
+          animation-timing-function: $easing;
+          animation-fill-mode: both;
+          $maxChildren: 12;
+          @for $children from 1 to $maxChildren {
+            @for $i from 0 through $children {
+              &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
+                animation-delay: ($time * 0.75) - ($i * ($time / $children));
+                animation-duration: $time * 0.75;
+              }
+            }
+          }
+        }
+        .page-nav__link {
+          transform: translate3d(1.5rem, 0, 0);
         }
       }
     }

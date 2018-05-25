@@ -17,6 +17,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
     "gulp-webmake": "0.0.41",
     "jquery": "^3.3.1",
     "nodemon": "^1.17.4"

@@ -36,8 +36,8 @@ app.use(minifyHTML({
     removeEmptyAttributes: true
   }
 }));
-app.use(express.static('public'));
 app.use(compression());
+app.use(express.static('public'));
 app.use('/', router);
 
 module.exports = app;

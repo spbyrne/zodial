@@ -6,6 +6,7 @@ var prefixer = require('gulp-autoprefixer'); // Prefix CSS with Autoprefixer
 var plumber = require('gulp-plumber');
 var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules for web browsers using Gulp.
 var include = require("gulp-include"); // Makes inclusion of files a breeze.
+var uglify = require('gulp-uglify');
 
 
 gulp.task('styles', function () {
@@ -28,9 +29,10 @@ gulp.task('styles', function () {
 gulp.task('javascript', function () {
   return gulp.
   src('source/js/site.js').
+  pipe(plumber()).
   pipe(include()).
   pipe(webmake()).
-  pipe(plumber()).
+  pipe(uglify()).
   pipe(rename('site.js')).
   pipe(gulp.dest('public/js'));
 });

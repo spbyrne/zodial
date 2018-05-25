@@ -356,7 +356,7 @@
       }
     }
   }
-  &--exit-animation:not(.page-nav--index) {
+  &--exit-detail-animation:not(.page-nav--index) {
     // This animation is when changing from the details page of one section to another section
     animation-name: slideLeftOut;
     animation-iteration-count: 1;
@@ -379,6 +379,34 @@
       }
     }
   }
+  &--exit-index-animation:not(.page-nav--detail) {
+    // This animation is when changing from the index page of one section to another section
+    animation-name: slideDownOut;
+    animation-iteration-count: 1;
+    animation-timing-function: $easing-in;
+    animation-fill-mode: both;
+    animation-delay: 0;
+    animation-duration: $time;
+    .page-nav__item {
+      animation-name: slideDownOut;
+      animation-iteration-count: 1;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      $maxChildren: 12;
+      @for $children from 1 to $maxChildren {
+        // This SCSS adjusts the animation timing based on the number of elements in the nav
+        @for $i from 0 through $children {
+          &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
+            animation-delay: ($time * 0.75) - ($i * ($time / $children));
+            animation-duration: $time * 0.75;
+          }
+        }
+      }
+    }
+    .page-nav__link {
+      transform: translate3d(1.5rem, 0, 0);
+    }
+  }
   $pages: sign,
   modality,
   element,
@@ -388,37 +416,13 @@
     &--#{$page}.page-nav--detail {
       // Play the page nav (details page) exit animation when changing site sections (from a detail page)
       body:not([data-location='#{$page}']) .is-exiting & {
-        @extend .page-nav--exit-animation;
+        @extend .page-nav--exit-detail-animation;
       }
     }
     &--#{$page}.page-nav--index {
       // Play the page nav (index page) exit animation when changing site sections (from an index page)
       body:not([data-location='#{$page}']) .is-exiting & {
-        animation-name: slideDownOut;
-        animation-iteration-count: 1;
-        animation-timing-function: $easing-in;
-        animation-fill-mode: both;
-        animation-delay: 0;
-        animation-duration: $time;
-        .page-nav__item {
-          animation-name: slideDownOut;
-          animation-iteration-count: 1;
-          animation-timing-function: $easing;
-          animation-fill-mode: both;
-          $maxChildren: 12;
-          @for $children from 1 to $maxChildren {
-            // This SCSS adjusts the animation timing based on the number of elements in the nav
-            @for $i from 0 through $children {
-              &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
-                animation-delay: ($time * 0.75) - ($i * ($time / $children));
-                animation-duration: $time * 0.75;
-              }
-            }
-          }
-        }
-        .page-nav__link {
-          transform: translate3d(1.5rem, 0, 0);
-        }
+        @extend .page-nav--exit-index-animation;
       }
     }
   }

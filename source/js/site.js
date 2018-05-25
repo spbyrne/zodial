@@ -7,7 +7,7 @@ $(function () {
   var $main = $('#main');
   var options = {
       prefetch: true,
-      cacheLength: 4,
+      cacheLength: 10,
       blacklist: '.no-transition',
       onBefore: function ($anchor, $container) {
         var body = document.querySelector('body');

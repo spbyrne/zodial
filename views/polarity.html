@@ -1,0 +1,28 @@
+{% set location = "polarity" %}
+{% extends "main.html" %}
+
+{% block main %}
+  <div class="container" data-depth="1">
+    {% if polarity %}
+      {{ pageNav(id,polarities,'polarity','detail') }}
+      <div class="page-header animate animate--first">
+        <h1 class="page-header__title">{{ polarity.name }}</h1>
+      </div>
+      <div class="animate animate--second">
+        <p>{{ polarity.definition }}.</p>
+      </div>
+      <div class="info animate animate--third animate--cascade-children">
+        <div class="info__item info__item--wide">
+          <span class="info__label">Elements</span>
+          <span class="info__data">{{ elementList(polarity.elements) }}</span>
+        </div>
+        <div class="info__item info__item--wide">
+          <span class="info__label">{{ polarity.name }} Signs</span>
+          <span class="info__data">{{ signList(polarity.signs) }}</span>
+        </div>
+      </div>
+    {% else %}
+      {{ pageNav(id,polarities,'polarity','index') }}
+    {% endif %}
+  </div>
+{% endblock %}

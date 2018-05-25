@@ -36,7 +36,7 @@ app.use(minifyHTML({
     removeEmptyAttributes: true
   }
 }));
-app.use(express.static(__dirname + 'public'));
+app.use(express.static('public'));
 app.use(compression());
 app.use('/', router);
 

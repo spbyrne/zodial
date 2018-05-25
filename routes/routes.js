@@ -40,7 +40,8 @@ router.get('/element/:id*?', function (req, res) {
 router.get('/polarity/:id*?', function (req, res) {
   res.render('polarity', {
     page: 'polarity',
-    id: req.params.id
+    id: req.params.id,
+    polarity: zodiacData.polarities[req.params.id]
   });
 });
 

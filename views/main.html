@@ -1,16 +1,16 @@
 {% extends "blank.html" %}
 
 {% block body %}
-  <div class="site__wrapper">
 
-  <main id="main" role="main" class="site__main {{ main_class }}">
-  {% include "partials/header.html" %}
-  {% block main %}
+  <main id="main" role="main" class="site__wrapper">
 
-  {% endblock %}
-  </main>
+    {% include "partials/header.html" %}
+    
+    {% block main %}
+    {% endblock %}
 
-  </div> <!-- End Site Wrapper -->
+  </main> <!-- End Site Wrapper -->
 
   {% include "partials/footer.html" %}
+  
 {% endblock %}

@@ -32,7 +32,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
-@keyframes slideUp {
+@keyframes slideUpIn {
   0% {
     opacity: 0;
     transform: translate3d( 0, 2rem, 0);
@@ -74,7 +74,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
-@keyframes pageMenuFadeOut {
+@keyframes pageNavFadeOut {
   0% {
     opacity: 1;
     transform: translate3d( 0, 0, 0);
@@ -85,7 +85,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
-@keyframes pageMenuLinkActive {
+@keyframes pageNavLinkActive {
   0% {
     opacity: 0;
     transform: translate3d(-150%, 0, 0);
@@ -95,24 +95,28 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
-@keyframes pageMenuLinkLoading {
+@keyframes pageNavLinkLoading {
   0% {
     opacity: 1;
+    color: $color-active;
   }
   100% {
     opacity: 0;
     transform: translate3d(0, 0, 0);
+    color: $color-active;
   }
 }
 
-@keyframes pageMenuLinkLoadingIndex {
+@keyframes pageNavLinkLoadingIndex {
   0% {
     opacity: 1;
     transform: translate3d(1.5rem, 0, 0);
+    color: $color-active;
   }
   100% {
     opacity: 0;
     transform: translate3d(6rem, 0, 0);
+    color: $color-active;
   }
 }
 
@@ -128,7 +132,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
 @keyframes mainNavLinkLoading {
   0% {
     opacity: initial;
-    color: initial;
+    color: $color-active;
   }
   100% {
     opacity: 1;

@@ -4,9 +4,18 @@
 {% block main %}
   <div class="container" data-depth="0">
     <ul class="page-nav page-nav--home">
-      <li class="page-nav__item"><a class="page-nav__link" href="/sign" data-target="sign">View Signs</a></li>
-      <li class="page-nav__item"><a class="page-nav__link" href="/modality" data-target="modality">View Modalities</a></li>
-      <li class="page-nav__item"><a class="page-nav__link" href="/element" data-target="element">View Elements</a></li>
+      <li class="page-nav__item">
+        <a class="page-nav__link" href="/sign" data-target="sign">Signs</a>
+        <p class="page-nav__description">There are 12 zodiac signs, each representing a  30°  division of celestial longitude.</p>
+      </li>
+      <li class="page-nav__item">
+        <a class="page-nav__link" href="/element" data-target="element">Elements</a>
+        <p class="page-nav__description">The twelve zodiac signs are grouped into four elements.</p>
+      </li>
+      <li class="page-nav__item">
+        <a class="page-nav__link" href="/modality" data-target="modality">Modalities</a>
+        <p class="page-nav__description">Each of the four elements manifests in three modalities.</p>
+      </li>
     </ul>
   </div>
 {% endblock %}

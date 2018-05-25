@@ -10,10 +10,6 @@
 html,
 body {
   height: 100%;
-  font-family: $font-primary, sans-serif;
-  font-weight: 400;
-  font-size: 115%;
-  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -23,6 +19,9 @@ body {
   flex-direction: column;
   background: $color-light;
   color: $color-dark;
+  font-family: $font-primary, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 a,
@@ -33,6 +32,10 @@ a:visited {
   &:hover {
     color: $color-loading;
     text-decoration-color: $color-loading;
+  }
+  &:active {
+    color: $color-active;
+    text-decoration-color: $color-active;
   }
 }
 

@@ -11,13 +11,17 @@
       "slug": "sign",
       "nav-title": "Signs"
     },
+    "element": {
+      "slug": "element",
+      "nav-title": "Elements"
+    },
     "modality": {
       "slug": "modality",
       "nav-title": "Modalities"
     },
-    "element": {
-      "slug": "element",
-      "nav-title": "Elements"
+    "polarity": {
+      "slug": "polarity",
+      "nav-title": "Polarities"
     }
   },
   "signs": {
@@ -276,6 +280,40 @@
         "gemini",
         "virgo",
         "sagittarius",
+        "pisces"
+      ]
+    }
+  },
+  "polarities": {
+    "positive": {
+      "name": "Positive",
+      "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
+      "elements": [
+        "Earth",
+        "Water"
+      ],
+      "signs": [
+        "aries",
+        "libra",
+        "leo",
+        "aquarius",
+        "gemini",
+        "sagittarius"
+      ]
+    },
+    "negative": {
+      "name": "Negative",
+      "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
+      "elements": [
+        "Fire",
+        "Air"
+      ],
+      "signs": [
+        "taurus",
+        "cancer",
+        "virgo",
+        "scorpio",
+        "capricorn",
         "pisces"
       ]
     }

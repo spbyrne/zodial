@@ -2,9 +2,14 @@
 {% extends "main.html" %}
 
 {% block main %}
-  <div class="container" data-depth="1">
+  <div class="container pad-top">
     {% if polarity %}
       {{ pageNav(id,polarities,'polarity','detail') }}
+      <ul class="breadcrumb">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item"><a href="/polarity/" class="breadcrumb__link">Polarities</a></li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link active">{{ polarity.name }}</a></li>
+      </ul>
       <div class="page-header animate animate--first">
         <h1 class="page-header__title">{{ polarity.name }}</h1>
       </div>

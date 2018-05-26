@@ -289,8 +289,8 @@
       "name": "Positive",
       "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
       "elements": [
-        "Earth",
-        "Water"
+        "Fire",
+        "Air"
       ],
       "signs": [
         "aries",
@@ -305,8 +305,8 @@
       "name": "Negative",
       "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
       "elements": [
-        "Fire",
-        "Air"
+        "Earth",
+        "Water"
       ],
       "signs": [
         "taurus",
@@ -318,7 +318,8 @@
       ]
     }
   },
-  "celelstial-bodies": [{
+  "celelstial-bodies": [
+    {
       "name": "Sun",
       "rules": "personality & ego"
     },
@@ -359,7 +360,8 @@
       "rules": "power & transformation"
     }
   ],
-  "moon phases": [{
+  "moon phases": [
+    {
       "name": "New Moon",
       "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
     },

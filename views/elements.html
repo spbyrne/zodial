@@ -3,13 +3,8 @@
 
 {% block main %}
   <div class="container pad-top">
+    {{ pageNav(page,name) }}
     {% if element %}
-      {{ pageNav(id,elements,'element','detail') }}
-      <ul class="breadcrumb">
-        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
-        <li class="breadcrumb__item"><a href="/element/" class="breadcrumb__link">Elements</a></li>
-        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link active">{{ element.name }}</a></li>
-      </ul>
       <div class="page-header animate animate--first">
         <h1 class="page-header__title">{{ element.name }}</h1>
       </div>
@@ -26,8 +21,6 @@
           <span class="info__data">{{ signList(element.signs) }}</span>
         </div>
       </div>
-    {% else %}
-      {{ pageNav(id,elements,'element','index') }}
     {% endif %}
   </div>
 {% endblock %}

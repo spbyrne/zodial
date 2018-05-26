@@ -4,9 +4,37 @@ var request = require('request');
 var fs = require('fs');
 var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 
+function slugify(str) {
+  str = str.replace(/^\s+|\s+$/g, '');
+  str = str.toLowerCase();
+
+  var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+  var to = "aaaaeeeeiiiioooouuuunc------";
+  for (var i = 0, l = from.length; i < l; i++) {
+    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+
+  str = str.replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+
+  return str;
+}
+
 function horoscopeURL(interval, sign) {
   return (
     'http://horoscope-api.herokuapp.com/horoscope/' + interval + '/' + sign
+  );
+}
+
+function getIndexData(page) {
+  var selector = slugify(page);
+  return zodiacData.selector;
+}
+
+function getDetailsData(data, name) {
+  return data.filter(
+    function (data) { return data.name == name }
   );
 }
 
@@ -16,34 +44,32 @@ router.get('/', function (req, res) {
   });
 });
 
-router.get('/celestial-body/:id*?', function (req, res) {
-  res.render('celestial-body', {
-    page: 'celestial-body',
-    id: req.params.id
+router.get('/modalities/:name*?', function (req, res) {
+  var sectionName = 'Modalities';
+  var pageName = req.params.name;
+  var indexData = getIndexData(slugify(sectionName));
+  var detailsData = pageName ? getDetailsData(indexData, pageName) : "";
+  res.render('modalities', {
+    page: sectionName,
+    name: pageName,
+    list: indexData,
+    details: detailsData
   });
 });
 
-router.get('/modality/:id*?', function (req, res) {
-  res.render('modality', {
-    page: 'modality',
-    id: req.params.id,
-    modality: zodiacData.modalities[req.params.id]
+router.get('/elements/:name*?', function (req, res) {
+  res.render('elements', {
+    page: 'Elements',
+    name: req.params.name,
+    pageData: getPageData(page, name)
   });
 });
 
-router.get('/element/:id*?', function (req, res) {
-  res.render('element', {
-    page: 'element',
-    id: req.params.id,
-    element: zodiacData.elements[req.params.id]
-  });
-});
-
-router.get('/polarity/:id*?', function (req, res) {
-  res.render('polarity', {
-    page: 'polarity',
-    id: req.params.id,
-    polarity: zodiacData.polarities[req.params.id]
+router.get('/polarities/:name*?', function (req, res) {
+  res.render('polarities', {
+    page: 'Polarities',
+    name: req.params.name,
+    pageData: getPageData(page, name)
   });
 });
 
@@ -53,9 +79,9 @@ router.get('/sign', function (req, res) {
   });
 });
 
-router.get('/sign/:id*?', function (req, res) {
-  if (req.params.id) {
-    var sign = zodiacData.signs[req.params.id].name;
+router.get('/sign/:name*?', function (req, res) {
+  if (req.params.name) {
+    var sign = zodiacData.signs[req.params.name].name;
     var url = horoscopeURL('today', sign);
     request(url, function (err, response, body) {
       if (err || response.statusCode !== 200) {
@@ -66,8 +92,8 @@ router.get('/sign/:id*?', function (req, res) {
       res.render('sign', {
         page: 'sign',
         interval: req.params.interval,
-        id: req.params.id,
-        sign: zodiacData.signs[req.params.id],
+        name: req.params.name,
+        sign: zodiacData.signs[req.params.name],
         horoscope: data.horoscope.replace("['", "").replace("']", ""),
         date: data.date
       });

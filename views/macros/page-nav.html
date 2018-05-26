@@ -1,7 +1,22 @@
-{% macro pageNav(id,object,route,pageType) %}
-  <ul class="page-nav page-nav--{{ pageType }} page-nav--{{ route }}">
-    {% for navSlug, navSign in object %}
-      <li class="page-nav__item {% if (navSlug == id) %}active{% endif %}"><a class="page-nav__link {% if (navSlug == id) %}active{% endif %}" href="/{{ route }}/{{ navSlug }}" title="{{ navSign.name }}" data-target="{{ route }}">{{ navSign.name }}</a></li>
+{% macro pageNav(page,list,name) %}
+  <ul class="page-nav page-nav--{% if name %}details{% else %}index{% endif %} page-nav--{{ slug(page) }}">
+    {% for item in list %}
+      <li class="page-nav__item {% if (item.name == name) %}active{% endif %}">
+        <a
+        class="page-nav__link {% if (item.name == name) %}active{% endif %}"
+        href="/{{ slug(page) }}/{{ slug(item.name) }}"
+        title="{{ item.name }}"
+        data-target="{{ slug(item) }}">
+          {{ item.name }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
+  {% if name %}
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+      <li class="breadcrumb__item"><a href="/{{ slug(page) }}/" class="breadcrumb__link">{{ page }}</a></li>
+      <li class="breadcrumb__item"><a href="#" class="breadcrumb__link active">{{ slug(name) }}</a></li>
+    </ul>
+  {% endif %}
 {% endmacro %}

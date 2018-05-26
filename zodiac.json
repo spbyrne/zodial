@@ -1,177 +1,172 @@
 {
-  "site_title": "Zodiac App",
-  "site_color": "#f1f1eb",
-  "site_description": "",
-  "pages": {
-    "home": {
-      "slug": "",
-      "nav-title": "Home"
+  "title": "Zodiac App",
+  "color": "#f1f1eb",
+  "description": "",
+  "pages": [
+    {
+      "name": "Home"
     },
-    "sign": {
-      "slug": "sign",
-      "nav-title": "Signs"
+    {
+      "name": "Signs"
     },
-    "element": {
-      "slug": "element",
-      "nav-title": "Elements"
+    {
+      "name": "Elements"
     },
-    "modality": {
-      "slug": "modality",
-      "nav-title": "Modalities"
+    {
+      "name": "Modalities"
     },
-    "polarity": {
-      "slug": "polarity",
-      "nav-title": "Polarities"
+    {
+      "name": "Polarities"
     }
-  },
-  "signs": {
-    "aries": {
+  ],
+  "signs": [
+    {
       "name": "Aries",
-      "celestial longitude": "0° to 30°",
+      "celestialLongitude": "0° to 30°",
       "polarity": "Positive",
       "element": "Fire",
       "modality": "Cardinal",
-      "celestial body": "Mars",
+      "celestialBody": "Mars",
       "symbol": "",
       "symbol name": "The Ram",
-      "start date": "03/21",
-      "end date": "04/19"
+      "startDate": "03/21",
+      "endDate": "04/19"
     },
-    "taurus": {
+    {
       "name": "Taurus",
-      "celestial longitude": "30° to 60°",
+      "celestialLongitude": "30° to 60°",
       "polarity": "Negative",
       "element": "Earth",
       "modality": "Fixed",
-      "celestial body": "Venus",
+      "celestialBody": "Venus",
       "symbol": "",
       "symbol name": "The Bull",
-      "start date": "04/20",
-      "end date": "05/20"
+      "startDate": "04/20",
+      "endDate": "05/20"
     },
-    "gemini": {
+    {
       "name": "Gemini",
-      "celestial longitude": "60° to 90°",
+      "celestialLongitude": "60° to 90°",
       "polarity": "Positive",
       "element": "Air",
       "modality": "Mutable",
-      "celestial body": "Mercury",
+      "celestialBody": "Mercury",
       "symbol": "",
       "symbol name": "The Twins",
-      "start date": "05/21",
-      "end date": "06/20"
+      "startDate": "05/21",
+      "endDate": "06/20"
     },
-    "cancer": {
+    {
       "name": "Cancer",
-      "celestial longitude": "90° to 120°",
+      "celestialLongitude": "90° to 120°",
       "polarity": "Negative",
       "element": "Water",
       "modality": "Cardinal",
-      "celestial body": "Moon",
+      "celestialBody": "Moon",
       "symbol": "",
       "symbol name": "The Crab",
-      "start date": "06/21",
-      "end date": "07/22"
+      "startDate": "06/21",
+      "endDate": "07/22"
     },
-    "leo": {
+    {
       "name": "Leo",
-      "celestial longitude": "120° to 150°",
+      "celestialLongitude": "120° to 150°",
       "polarity": "Positive",
       "element": "Fire",
       "modality": "Fixed",
-      "celestial body": "Sun",
+      "celestialBody": "Sun",
       "symbol": "",
       "symbol name": "The Lion",
-      "start date": "07/23",
-      "end date": "08/22"
+      "startDate": "07/23",
+      "endDate": "08/22"
     },
-    "virgo": {
+    {
       "name": "Virgo",
-      "celestial longitude": "150° to 180°",
+      "celestialLongitude": "150° to 180°",
       "polarity": "Negative",
       "element": "Earth",
       "modality": "Mutable",
-      "celestial body": "Mercury",
+      "celestialBody": "Mercury",
       "symbol": "",
       "symbol name": "The Maiden",
-      "start date": "08/23",
-      "end date": "09/22"
+      "startDate": "08/23",
+      "endDate": "09/22"
     },
-    "libra": {
+    {
       "name": "Libra",
-      "celestial longitude": "180° to 210°",
+      "celestialLongitude": "180° to 210°",
       "polarity": "Positive",
       "element": "Air",
       "modality": "Cardinal",
-      "celestial body": "Venus",
+      "celestialBody": "Venus",
       "symbol": "",
       "symbol name": "The Scales",
-      "start date": "09/23",
-      "end date": "10/22"
+      "startDate": "09/23",
+      "endDate": "10/22"
     },
-    "scorpio": {
+    {
       "name": "Scorpio",
-      "celestial longitude": "210° to 240°",
+      "celestialLongitude": "210° to 240°",
       "polarity": "Negative",
       "element": "Water",
       "modality": "Fixed",
-      "celestial body": "Pluto",
+      "celestialBody": "Pluto",
       "symbol": "",
       "symbol name": "The Scorpion",
-      "start date": "10/23",
-      "end date": "11/21"
+      "startDate": "10/23",
+      "endDate": "11/21"
     },
-    "sagittarius": {
+    {
       "name": "Sagittarius",
-      "celestial longitude": "240° to 270°",
+      "celestialLongitude": "240° to 270°",
       "polarity": "Positive",
       "element": "Fire",
       "modality": "Mutable",
-      "celestial body": "Jupiter",
+      "celestialBody": "Jupiter",
       "symbol": "",
       "symbol name": "The Archer",
-      "start date": "11/22",
-      "end date": "12/21"
+      "startDate": "11/22",
+      "endDate": "12/21"
     },
-    "capricorn": {
+    {
       "name": "Capricorn",
-      "celestial longitude": "270° to 300°",
+      "celestialLongitude": "270° to 300°",
       "polarity": "Negative",
       "element": "Earth",
       "modality": "Cardinal",
-      "celestial body": "Saturn",
+      "celestialBody": "Saturn",
       "symbol": "",
       "symbol name": "The Goat",
-      "start date": "12/22",
-      "end date": "01/19"
+      "startDate": "12/22",
+      "endDate": "01/19"
     },
-    "aquarius": {
+    {
       "name": "Aquarius",
-      "celestial longitude": "300° to 330°",
+      "celestialLongitude": "300° to 330°",
       "polarity": "Positive",
       "element": "Air",
       "modality": "Fixed",
-      "celestial body": "Uranus",
+      "celestialBody": "Uranus",
       "symbol": "",
       "symbol name": "The Water Bearer",
-      "start date": "01/20",
-      "end date": "02/18"
+      "startDate": "01/20",
+      "endDate": "02/18"
     },
-    "pisces": {
+    {
       "name": "Pisces",
-      "celestial longitude": "330° to 360°",
+      "celestialLongitude": "330° to 360°",
       "polarity": "Negative",
       "element": "Water",
       "modality": "Mutable",
-      "celestial body": "Neptune",
+      "celestialBody": "Neptune",
       "symbol": "",
       "symbol name": "The Fish",
-      "start date": "02/19",
-      "end date": "03/20"
+      "startDate": "02/19",
+      "endDate": "03/20"
     }
-  },
-  "elements": {
-    "fire": {
+  ],
+  "elements": [
+    {
       "name": "Fire",
       "definition": "Fire has to deal with bravery.",
       "traits": [
@@ -182,14 +177,9 @@
         "inspiration",
         "idealism",
         "faith"
-      ],
-      "signs": [
-        "aries",
-        "leo",
-        "sagittarius"
       ]
     },
-    "air": {
+    {
       "name": "Air",
       "definition": "Air has to deal with playfulness and wits.",
       "traits": [
@@ -199,14 +189,9 @@
         "reason",
         "human communication",
         "social relationships"
-      ],
-      "signs": [
-        "gemini",
-        "libra",
-        "aquarius"
       ]
     },
-    "earth": {
+    {
       "name": "Earth",
       "definition": "Earth has to deal with loyalty.",
       "traits": [
@@ -214,14 +199,9 @@
         "stability",
         "materialism",
         "realism"
-      ],
-      "signs": [
-        "taurus",
-        "virgo",
-        "capricorn"
       ]
     },
-    "water": {
+    {
       "name": "Water",
       "definition": "Water has to deal with emotion, intuition, and intelligence.",
       "traits": [
@@ -229,95 +209,56 @@
         "psychism",
         "mysticism",
         "intuition"
-      ],
-      "signs": [
-        "cancer",
-        "scorpio",
-        "pisces"
       ]
     }
-  },
-  "modalities": {
-    "cardinal": {
+  ],
+  "modalities": [
+    {
       "name": "Cardinal",
       "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
       "traits": [
         "enterprising",
         "creative",
         "assertive"
-      ],
-      "signs": [
-        "aries",
-        "cancer",
-        "libra",
-        "capricorn"
       ]
     },
-    "fixed": {
+    {
       "name": "Fixed",
       "definition": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
       "traits": [
         "stable",
         "reliable",
         "determined"
-      ],
-      "signs": [
-        "taurus",
-        "leo",
-        "scorpio",
-        "aquarius"
       ]
     },
-    "mutable": {
+    {
       "name": "Mutable",
       "definition": "The Mutable modality represents the end of the season and the power of change.",
       "traits": [
         "adaptable",
         "flexible",
         "communicative"
-      ],
-      "signs": [
-        "gemini",
-        "virgo",
-        "sagittarius",
-        "pisces"
       ]
     }
-  },
-  "polarities": {
-    "positive": {
+  ],
+  "polarities": [
+    {
       "name": "Positive",
       "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
       "elements": [
         "Fire",
         "Air"
-      ],
-      "signs": [
-        "aries",
-        "libra",
-        "leo",
-        "aquarius",
-        "gemini",
-        "sagittarius"
       ]
     },
-    "negative": {
+    {
       "name": "Negative",
       "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
       "elements": [
         "Earth",
         "Water"
-      ],
-      "signs": [
-        "taurus",
-        "cancer",
-        "virgo",
-        "scorpio",
-        "capricorn",
-        "pisces"
       ]
     }
-  },
+  ],
   "celelstial-bodies": [
     {
       "name": "Sun",

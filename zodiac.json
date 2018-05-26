@@ -4,24 +4,35 @@
   "description": "",
   "pages": [
     {
-      "name": "Home"
+      "name": "Home",
+      "description": "",
+      "id": "home"
     },
     {
-      "name": "Signs"
+      "name": "Signs",
+      "description": "There are 12 zodiac signs, each representing a  30°  division of celestial longitude.",
+      "id": "signs"
     },
     {
-      "name": "Elements"
+      "name": "Elements",
+      "description": "The twelve zodiac signs are grouped into four elements.",
+      "id": "elements"
     },
     {
-      "name": "Modalities"
+      "name": "Modalities",
+      "description": "Each of the four elements manifests in three modalities.",
+      "id": "modalities"
     },
     {
-      "name": "Polarities"
+      "name": "Polarities",
+      "description": "",
+      "id": "polarities"
     }
   ],
   "signs": [
     {
       "name": "Aries",
+      "id": "aries",
       "celestialLongitude": "0° to 30°",
       "polarity": "Positive",
       "element": "Fire",
@@ -34,6 +45,7 @@
     },
     {
       "name": "Taurus",
+      "id": "taurus",
       "celestialLongitude": "30° to 60°",
       "polarity": "Negative",
       "element": "Earth",
@@ -46,6 +58,7 @@
     },
     {
       "name": "Gemini",
+      "id": "gemini",
       "celestialLongitude": "60° to 90°",
       "polarity": "Positive",
       "element": "Air",
@@ -58,6 +71,7 @@
     },
     {
       "name": "Cancer",
+      "id": "cancer",
       "celestialLongitude": "90° to 120°",
       "polarity": "Negative",
       "element": "Water",
@@ -70,6 +84,7 @@
     },
     {
       "name": "Leo",
+      "id": "leo",
       "celestialLongitude": "120° to 150°",
       "polarity": "Positive",
       "element": "Fire",
@@ -82,6 +97,7 @@
     },
     {
       "name": "Virgo",
+      "id": "virgo",
       "celestialLongitude": "150° to 180°",
       "polarity": "Negative",
       "element": "Earth",
@@ -94,6 +110,7 @@
     },
     {
       "name": "Libra",
+      "id": "libra",
       "celestialLongitude": "180° to 210°",
       "polarity": "Positive",
       "element": "Air",
@@ -106,6 +123,7 @@
     },
     {
       "name": "Scorpio",
+      "id": "scorpio",
       "celestialLongitude": "210° to 240°",
       "polarity": "Negative",
       "element": "Water",
@@ -118,6 +136,7 @@
     },
     {
       "name": "Sagittarius",
+      "id": "sagittarius",
       "celestialLongitude": "240° to 270°",
       "polarity": "Positive",
       "element": "Fire",
@@ -130,6 +149,7 @@
     },
     {
       "name": "Capricorn",
+      "id": "capricorn",
       "celestialLongitude": "270° to 300°",
       "polarity": "Negative",
       "element": "Earth",
@@ -142,6 +162,7 @@
     },
     {
       "name": "Aquarius",
+      "id": "aquarius",
       "celestialLongitude": "300° to 330°",
       "polarity": "Positive",
       "element": "Air",
@@ -154,6 +175,7 @@
     },
     {
       "name": "Pisces",
+      "id": "pisces",
       "celestialLongitude": "330° to 360°",
       "polarity": "Negative",
       "element": "Water",
@@ -168,6 +190,7 @@
   "elements": [
     {
       "name": "Fire",
+      "id": "fire",
       "definition": "Fire has to deal with bravery.",
       "traits": [
         "passion",
@@ -181,6 +204,7 @@
     },
     {
       "name": "Air",
+      "id": "air",
       "definition": "Air has to deal with playfulness and wits.",
       "traits": [
         "mental processes",
@@ -193,6 +217,7 @@
     },
     {
       "name": "Earth",
+      "id": "earth",
       "definition": "Earth has to deal with loyalty.",
       "traits": [
         "practicality",
@@ -203,6 +228,7 @@
     },
     {
       "name": "Water",
+      "id": "water",
       "definition": "Water has to deal with emotion, intuition, and intelligence.",
       "traits": [
         "emotion",
@@ -215,6 +241,7 @@
   "modalities": [
     {
       "name": "Cardinal",
+      "id": "cardinal",
       "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
       "traits": [
         "enterprising",
@@ -224,6 +251,7 @@
     },
     {
       "name": "Fixed",
+      "id": "fixed",
       "definition": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
       "traits": [
         "stable",
@@ -233,6 +261,7 @@
     },
     {
       "name": "Mutable",
+      "id": "mutable",
       "definition": "The Mutable modality represents the end of the season and the power of change.",
       "traits": [
         "adaptable",
@@ -244,6 +273,7 @@
   "polarities": [
     {
       "name": "Positive",
+      "id": "positive",
       "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
       "elements": [
         "Fire",
@@ -252,6 +282,7 @@
     },
     {
       "name": "Negative",
+      "id": "negative",
       "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
       "elements": [
         "Earth",

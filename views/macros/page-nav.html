@@ -1,12 +1,13 @@
-{% macro pageNav(page,list,name) %}
-  <ul class="page-nav page-nav--{% if name %}details{% else %}index{% endif %} page-nav--{{ slug(page) }}">
+{% from "./slug.html" import slug %}
+{% macro pageNav(page,list,id) %}
+  <ul class="page-nav page-nav--{% if id %}details{% else %}index{% endif %} page-nav--{{ slug(page) }}">
     {% for item in list %}
-      <li class="page-nav__item {% if (item.name == name) %}active{% endif %}">
+      <li class="page-nav__item {% if (item.id == id) %}active{% endif %}">
         <a
-        class="page-nav__link {% if (item.name == name) %}active{% endif %}"
+        class="page-nav__link {% if (item.id == id) %}active{% endif %}"
         href="/{{ slug(page) }}/{{ slug(item.name) }}"
         title="{{ item.name }}"
-        data-target="{{ slug(item) }}">
+        data-target="{{ slug(page) }}">
           {{ item.name }}
         </a>
       </li>

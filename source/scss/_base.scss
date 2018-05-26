@@ -26,7 +26,7 @@ body {
 
 a,
 a:visited {
-  color: $color-link!default;
+  color: $color-link;
   text-decoration-color: $color-link-underline;
   transition: all $time $easing;
   &:hover {

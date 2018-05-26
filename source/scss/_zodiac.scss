@@ -486,11 +486,11 @@
       transform: translate3d(1.5rem, 0, 0);
     }
   }
-  $pages: sign,
-  modality,
-  element,
+  $pages: signs,
+  modalities,
+  elements,
   home,
-  polarity;
+  polarities;
   @each $page in $pages {
     &--#{$page}.page-nav--detail {
       // Play the page nav (details page) exit animation when changing site sections (from a detail page)

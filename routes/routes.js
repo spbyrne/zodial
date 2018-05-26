@@ -67,7 +67,7 @@ router.get('/polarities/:id*?', function (req, res) {
 });
 
 router.get('/signs/:id*?', function (req, res) {
-  if (req.params.name) {
+  if (req.params.id) {
     var sign = zodiacData.signs.find(x => x.id === req.params.id).name;
     var url = horoscopeURL('today', sign);
     request(url, function (err, response, body) {

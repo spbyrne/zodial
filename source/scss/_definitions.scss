@@ -1,3 +1,4 @@
+// Colour
 $color-dark: rgb(19, 19, 20);
 $color-green: #AAAA67;
 $color-gold: rgb(190, 172, 113);
@@ -9,12 +10,47 @@ $color-link-underline: rgba($color-link, 0.3);
 $color-loading: rgb(104, 205, 255);
 $color-active: $color-loading;
 $color-primary: $color-gold;
+
+// Style
 $border-radius: 0.2rem;
+
+// Animation
 $time: 0.25s;
 $time-fast: 0.125s;
 $time-long: 0.35s;
+
+// Typography
 $font-primary: 'Titillium Web',
 sans-serif;
 $font-accent: 'BioRhyme',
 sans-serif;
 $font-accent--weight: 700;
+
+// Reponsiveness
+$breakpoint-small: 600;
+$breakpoint-medium: 900;
+$breakpoint-large: 1200;
+$breakpoint-huge: 1800;
+
+@mixin for-phone-only {
+  @media (max-width: ($breakpoint-small - 1) + px) { @content; }
+}
+@mixin for-small {
+  @media (min-width: $breakpoint-small + px) { @content; }
+}
+@mixin for-medium {
+  @media (min-width: $breakpoint-medium + px) { @content; }
+}
+@mixin for-large {
+  @media (min-width: $breakpoint-large + px) { @content; }
+}
+@mixin for-huge {
+  @media (min-width: $breakpoint-huge + px) { @content; }
+}
+
+// Pages
+$pages: signs,
+  modalities,
+  elements,
+  home,
+  polarities;

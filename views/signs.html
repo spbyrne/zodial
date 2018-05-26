@@ -1,12 +1,12 @@
-{% set location = "sign" %}
+{% set location = "signs" %}
 {% extends "main.html" %}
 
 {% block main %}
-  <div class="container" data-depth="1">
-    {% if sign %}
-      {{ pageNav(id,signs,'sign','detail') }}
+  <div class="container pad-top">
+    {{ pageNav(page,list,id) }}
+    {% if details %}
       <div class="page-header animate animate--first">
-        <h1 class="page-header__title">{{ sign.name }}</h1>
+        <h1 class="page-header__title">{{ details.name }}</h1>
       </div>
       <div class="animate animate--second">
         <p><span class="info__label">Daily Horoscope<span class="info__meta">{{ date }}</span></span> {{ horoscope }}</p>
@@ -14,31 +14,29 @@
       <div class="info animate animate--third animate--cascade-children">
         <div class="info__item">
           <span class="info__label">Symbol</span>
-          <span class="info__data">{{ sign["symbol name"] }}</span>
+          <span class="info__data">{{ details.name }}</span>
         </div>
         <div class="info__item">
           <span class="info__label">Celestial Body</span>
-          <span class="info__data">{{ sign["celestial body"] }}</span>
+          <span class="info__data">{{ details.celestialBody }}</span>
         </div>
         <div class="info__item">
           <span class="info__label">Element</span>
-          <span class="info__data"><a href="/element/{{ sign["element"] | lower }}" data-target="element">{{ sign["element"] }}</a></span>
+          <span class="info__data"><a href="/elements/{{ slug(details.element) }}" data-target="elements">{{ details.element }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Polarity</span>
-          <span class="info__data"><a href="/polarity/{{ sign["polarity"] | lower }}" data-target="polarity">{{ sign["polarity"] }}</a></span>
+          <span class="info__data"><a href="/polarities/{{ slug(details.polarity) }}" data-target="polarities">{{ details.polarity }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Modality</span>
-          <span class="info__data"><a href="/modality/{{ sign["modality"] | lower }}" data-target="modality">{{ sign["modality"] }}</a></span>
+          <span class="info__data"><a href="/modalities/{{ slug(details.modality) }}" data-target="modalities">{{ details.modality }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Period</span>
-          <span class="info__data">{{ sign["start date"] }} - {{sign["end date"] }}</span>
+          <span class="info__data">{{ details.startDate }} - {{ details.endDate }}</span>
         </div>
       </div>
-    {% else %}
-      {{ pageNav(id,signs,'sign','index') }}
     {% endif %}
   </div>
 {% endblock %}

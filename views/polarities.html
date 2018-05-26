@@ -1,0 +1,26 @@
+{% set location = "polarities" %}
+{% extends "main.html" %}
+
+{% block main %}
+  <div class="container pad-top">
+    {{ pageNav(page,list,id) }}
+    {% if details %}
+      <div class="page-header animate animate--first">
+        <h1 class="page-header__title">{{ details.name }}</h1>
+      </div>
+      <div class="animate animate--second">
+        <p>{{ details.definition }}.</p>
+      </div>
+      <div class="info animate animate--third animate--cascade-children">
+        <div class="info__item info__item--wide">
+          <span class="info__label">Elements</span>
+          <span class="info__data"></span>
+        </div>
+        <div class="info__item info__item--wide">
+          <span class="info__label">{{ details.name }} Signs</span>
+          <span class="info__data"></span>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

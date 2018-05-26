@@ -1,11 +1,11 @@
 {% macro mainNav(pages,page,navClass) %}
-  <ul class="main-nav {{ navClass }} {% if (page == 'home') %}home{% endif %}">
-    {% for navPage, pageData in pages %}
-      <li class="main-nav__item {% if (navPage == page) %}active{% endif %}">
-        <a class="main-nav__link {% if (navPage == page) %}active{% endif %}"
-          href="/{{ pageData.slug }}" title="{{ pageData['nav-title'] }}"
-          data-target="{{ pageData.slug }}{% if (navPage == 'home') %}home{% endif %}">
-          {{ pageData["nav-title"] }}
+  <ul class="main-nav {{ navClass }} {% if (page == 'Home') %}home{% endif %}">
+    {% for option in pages %}
+      <li class="main-nav__item {% if (option.name == page) %}active{% endif %}">
+        <a class="main-nav__link {% if (option.name == page) %}active{% endif %}"
+          href="/{% if (option.name != 'Home') %}{{ option.id }}{% endif %}" title="{{ option.name }}"
+          data-target="{{ option.id }}{% if (page == 'Home') %}home{% endif %}">
+          {{ option.name }}
         </a>
       </li>
     {% endfor %}

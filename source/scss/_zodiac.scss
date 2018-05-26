@@ -393,7 +393,7 @@
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
-  &--detail {
+  &--details {
     .new-location & {
       .page-nav__item {
         animation-name: animateIn;
@@ -435,7 +435,7 @@
       }
     }
   }
-  &--exit-detail-animation:not(.page-nav--index) {
+  &--exit-details-animation:not(.page-nav--index) {
     // This animation is when changing from the details page of one section to another section
     animation-name: slideLeftOut;
     animation-iteration-count: 1;
@@ -486,16 +486,11 @@
       transform: translate3d(1.5rem, 0, 0);
     }
   }
-  $pages: signs,
-  modalities,
-  elements,
-  home,
-  polarities;
   @each $page in $pages {
-    &--#{$page}.page-nav--detail {
+    &--#{$page}.page-nav--details {
       // Play the page nav (details page) exit animation when changing site sections (from a detail page)
       body:not([data-location='#{$page}']) .is-exiting & {
-        @extend .page-nav--exit-detail-animation;
+        @extend .page-nav--exit-details-animation;
       }
     }
     &--#{$page}.page-nav--index {

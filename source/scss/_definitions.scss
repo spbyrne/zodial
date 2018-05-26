@@ -47,3 +47,10 @@ $breakpoint-huge: 1800;
 @mixin for-huge {
   @media (min-width: $breakpoint-huge + px) { @content; }
 }
+
+// Pages
+$pages: signs,
+  modalities,
+  elements,
+  home,
+  polarities;

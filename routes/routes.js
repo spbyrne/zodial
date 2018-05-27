@@ -1,12 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
+var got = require('got');
 var fs = require('fs');
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 
 function filterArrayByValue(array, key, value) {
   return array.filter(
     object => object[key] == value
+  );
+}
+
+function horoscopeURL(interval, sign) {
+  return (
+    'http://horoscope-api.herokuapp.com/horoscope/' + interval + '/' + sign
   );
 }
 
@@ -80,11 +86,21 @@ router.get('/signs/:id?', function (req, res) {
     list: requestList
   };
   if (requestId) {
-    let requestDetails = filterArrayByValue(requestList, 'id', requestId)[0];
     options.id = requestId;
-    options.details = requestDetails;
+    let requestDetails = filterArrayByValue(requestList, 'id', requestId)[0];
+    got(horoscopeURL('today', requestDetails.name), { json: true }).then(response => {
+      requestDetails.horoscope = response.body.horoscope.replace("['", "").replace("']", "");
+      requestDetails.horoscopeDate = response.body.date;
+      options.details = requestDetails;
+      res.render(pageTemplate, options);
+    }).catch(error => {
+      console.log(error.response.body);
+      options.details = requestDetails;
+      res.render(pageTemplate, options);
+    });
+  } else {
+    res.render(pageTemplate, options);
   };
-  res.render(pageTemplate, options);
 });
 
 module.exports = router;

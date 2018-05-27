@@ -270,6 +270,18 @@
         transform: scale3d(1, 1, 1);
       }
     }
+    &.was-active {
+      animation-name: mainNavLinkWasActive;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      &:before {
+        animation-name: mainNavLinkBeforeWasActive;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+      }
+    }
     &.loading {
       color: $color-active;
       opacity: 1;
@@ -281,7 +293,7 @@
       &:before {
         animation-name: mainNavLinkBeforeLoading;
         animation-duration: $time;
-        animation-timing-function: $easing-in;
+        animation-timing-function: $easing;
         animation-fill-mode: forwards;
       }
     }

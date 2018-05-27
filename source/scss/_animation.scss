@@ -150,3 +150,25 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
     color: $color-primary;
   }
 }
+
+@keyframes mainNavLinkWasActive {
+  0% {
+    opacity: 1;
+    color: $color-primary;
+  }
+  100% {
+    opacity: 0.5;
+    color: $color-dark;
+  }
+}
+
+@keyframes mainNavLinkBeforeWasActive {
+  0% {
+    transform-origin: 100% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+  }
+}

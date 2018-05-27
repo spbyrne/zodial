@@ -18,6 +18,7 @@ $(function () {
         body.dataset.location = target;
         $container.addClass('new-location');
       }
+      $('.main-nav__link.active:not([data-target="' + target + '"])').addClass('was-active');
       if ($anchor.hasClass("main-nav__link")) {
         $('.main-nav__link').removeClass('active');
       } else {

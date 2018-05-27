@@ -8,6 +8,7 @@ var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules f
 var include = require("gulp-include"); // Makes inclusion of files a breeze.
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
+var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 
 gulp.task('styles', function () {
   var sassOptions = {
@@ -30,21 +31,34 @@ gulp.task('javascript', function () {
   return gulp.
     src('source/js/site.js').
     pipe(plumber()).
-    pipe(include()).
     pipe(babel({
       presets: ['env']
     })).
+    pipe(include()).
     pipe(webmake()).
     pipe(uglify()).
     pipe(rename('site.js')).
     pipe(gulp.dest('public/js'));
 });
 
+gulp.task('images', function () {
+  return gulp
+    .src('source/img/*')
+    .pipe(
+      image({
+        quiet: true
+      })
+    )
+    .pipe(gulp.dest('public/img'));
+});
+
+
 gulp.task('watch', function () {
   gulp.watch('source/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('source/js/**/*.js', gulp.series('javascript'));
+  gulp.watch('source/img/**/*', gulp.series('images'));
 });
 
-gulp.task('default', gulp.series('javascript', 'styles', 'watch'));
+gulp.task('default', gulp.series('javascript', 'styles', 'images', 'watch'));
 
-gulp.task('build', gulp.series('javascript', 'styles'));
+gulp.task('build', gulp.series('javascript', 'styles', 'images'));

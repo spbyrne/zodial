@@ -1,5 +1,6 @@
 // Colour
 $color-dark: rgb(19, 19, 20);
+$color-dark--glow: rgb(30, 30, 46);
 $color-gold: rgb(190, 172, 113);
 $color-light: #f1f1eb;
 $color-red: #be3636;
@@ -47,8 +48,8 @@ $breakpoint-huge: 1800;
 }
 
 // Pages
-$pages: signs,
-  modalities,
+$pages: home,
+  signs,
   elements,
-  home,
+  modalities,
   polarities;

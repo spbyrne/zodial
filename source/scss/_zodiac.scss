@@ -128,6 +128,28 @@
   }
 }
 
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400vw;
+  height: 100vh;
+  z-index: -1;
+  transition: all 1s cubic-bezier(0.375, 0.005, 0.070, 1.000); 
+  background-image: urL('../img/stars.jpg'), linear-gradient(to bottom, $color-dark--glow, $color-dark);
+  background-blend-mode: screen;
+  background-size: 100% auto;
+  opacity: 0.4;
+  $max: length($pages);
+  $max-transform: -300vw;
+  @for $index from 0 to $max {
+    $page: nth($pages, $index + 1);
+    body[data-location='#{$page}'] & {
+      transform: translate3d(($max-transform / $max) * $index, 0, 0);
+    }
+  }
+}
+
 .button-list {
   display: inline-flex;
   flex-direction: column;

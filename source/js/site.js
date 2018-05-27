@@ -35,6 +35,12 @@ $(function () {
         smoothState.restartCSSAnimations();
       }
     },
+    onProgress: {
+      duration: 0,
+      render: function ($container) {
+        // Do something while loading
+      }
+    },
     onReady: {
       duration: 625,
       render: function ($container, $newContent) {

@@ -17,21 +17,20 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: $color-light;
-  color: $color-dark;
+  background: $color-dark;
+  color: $color-light;
   font-family: $font-primary, sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }
 
-a,
-a:visited {
+a {
   color: $color-link;
-  text-decoration-color: $color-link-underline;
+  text-decoration-color: transparent;
   transition: all $time $easing;
   &:hover {
-    color: $color-loading;
-    text-decoration-color: $color-loading;
+    color: $color-link;
+    text-decoration-color: $color-link;
   }
   &:active {
     color: $color-active;

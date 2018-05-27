@@ -127,7 +127,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   100% {
     opacity: 0;
     transform: translate3d(6rem, 0, 0);
-    color: $color-active;
+    color: $color-primary;
   }
 }
 
@@ -157,8 +157,8 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
     color: $color-primary;
   }
   100% {
-    opacity: 0.5;
-    color: $color-dark;
+    opacity: 0.7;
+    color: $color-primary;
   }
 }
 

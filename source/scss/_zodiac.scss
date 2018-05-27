@@ -136,7 +136,7 @@
   height: 100vh;
   z-index: -1;
   transition: all 1s cubic-bezier(0.375, 0.005, 0.070, 1.000); 
-  background-image: urL('../img/stars.jpg'), linear-gradient(to bottom, $color-dark--glow, $color-dark);
+  background-image: /*urL('../img/stars.jpg'),*/ linear-gradient(to bottom, $color-dark--glow, $color-dark);
   background-blend-mode: screen;
   background-size: 100% auto;
   opacity: 0.4;
@@ -456,6 +456,12 @@
           }
         }
       }
+    }
+  }
+  &--home {
+    .page-nav__link {
+      opacity: 1;
+      font-weight: 700;
     }
   }
   &--index {

@@ -13,4 +13,10 @@
       </li>
     {% endfor %}
   </ul>
+  {% if id %}
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+      <li class="breadcrumb__item"><a href="/{{ slug(page) }}/" class="breadcrumb__link">{{ page }}</a></li>
+    </ul>
+  {% endif %}
 {% endmacro %}

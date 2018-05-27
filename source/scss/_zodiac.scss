@@ -25,52 +25,6 @@
   }
 }
 
-.breadcrumb {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 300;
-  &__item {
-    position: relative;
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 0.5rem;
-      padding-right: 0.5rem;
-      &:after {
-        font-size: 0.8rem;
-        line-height: 1;
-        content: '/';
-        position: absolute;
-        text-align: center;
-        right: 0;
-        top: 0;
-        display: inline-block;
-        color: $color-pearl;
-        transform: translate3d(0.15rem,0,0);
-      }
-    }
-  }
-  &__link {
-    line-height: 1;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    color: mix($color-dark,$color-pearl,25%);
-    &.active {
-      color: $color-primary;
-      text-decoration: none;
-      font-weight: bold;
-      pointer-events: none;
-    }
-  }
-}
-
 .container {
   padding: 0 1rem 0 1rem;
   margin: 0 auto;
@@ -327,7 +281,7 @@
       &:before {
         animation-name: mainNavLinkBeforeLoading;
         animation-duration: $time;
-        animation-timing-function: $easing;
+        animation-timing-function: $easing-in;
         animation-fill-mode: forwards;
       }
     }

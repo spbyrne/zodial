@@ -38,8 +38,7 @@
       "element": "Fire",
       "modality": "Cardinal",
       "celestialBody": "Mars",
-      "symbol": "",
-      "symbol name": "The Ram",
+      "symbol": "The Ram",
       "startDate": "03/21",
       "endDate": "04/19"
     },
@@ -51,8 +50,7 @@
       "element": "Earth",
       "modality": "Fixed",
       "celestialBody": "Venus",
-      "symbol": "",
-      "symbol name": "The Bull",
+      "symbol": "The Bull",
       "startDate": "04/20",
       "endDate": "05/20"
     },
@@ -64,8 +62,7 @@
       "element": "Air",
       "modality": "Mutable",
       "celestialBody": "Mercury",
-      "symbol": "",
-      "symbol name": "The Twins",
+      "symbol": "The Twins",
       "startDate": "05/21",
       "endDate": "06/20"
     },
@@ -77,8 +74,7 @@
       "element": "Water",
       "modality": "Cardinal",
       "celestialBody": "Moon",
-      "symbol": "",
-      "symbol name": "The Crab",
+      "symbol": "The Crab",
       "startDate": "06/21",
       "endDate": "07/22"
     },
@@ -90,8 +86,7 @@
       "element": "Fire",
       "modality": "Fixed",
       "celestialBody": "Sun",
-      "symbol": "",
-      "symbol name": "The Lion",
+      "symbol": "The Lion",
       "startDate": "07/23",
       "endDate": "08/22"
     },
@@ -103,8 +98,7 @@
       "element": "Earth",
       "modality": "Mutable",
       "celestialBody": "Mercury",
-      "symbol": "",
-      "symbol name": "The Maiden",
+      "symbol": "The Maiden",
       "startDate": "08/23",
       "endDate": "09/22"
     },
@@ -116,8 +110,7 @@
       "element": "Air",
       "modality": "Cardinal",
       "celestialBody": "Venus",
-      "symbol": "",
-      "symbol name": "The Scales",
+      "symbol": "The Scales",
       "startDate": "09/23",
       "endDate": "10/22"
     },
@@ -129,8 +122,7 @@
       "element": "Water",
       "modality": "Fixed",
       "celestialBody": "Pluto",
-      "symbol": "",
-      "symbol name": "The Scorpion",
+      "symbol": "The Scorpion",
       "startDate": "10/23",
       "endDate": "11/21"
     },
@@ -142,8 +134,7 @@
       "element": "Fire",
       "modality": "Mutable",
       "celestialBody": "Jupiter",
-      "symbol": "",
-      "symbol name": "The Archer",
+      "symbol": "The Archer",
       "startDate": "11/22",
       "endDate": "12/21"
     },
@@ -155,8 +146,7 @@
       "element": "Earth",
       "modality": "Cardinal",
       "celestialBody": "Saturn",
-      "symbol": "",
-      "symbol name": "The Goat",
+      "symbol": "The Goat",
       "startDate": "12/22",
       "endDate": "01/19"
     },
@@ -168,8 +158,7 @@
       "element": "Air",
       "modality": "Fixed",
       "celestialBody": "Uranus",
-      "symbol": "",
-      "symbol name": "The Water Bearer",
+      "symbol": "The Water Bearer",
       "startDate": "01/20",
       "endDate": "02/18"
     },
@@ -181,8 +170,7 @@
       "element": "Water",
       "modality": "Mutable",
       "celestialBody": "Neptune",
-      "symbol": "",
-      "symbol name": "The Fish",
+      "symbol": "The Fish",
       "startDate": "02/19",
       "endDate": "03/20"
     }

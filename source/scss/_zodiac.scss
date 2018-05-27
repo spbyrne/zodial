@@ -165,6 +165,20 @@
   &__item {
     position: relative;
     display: inline-block;
+    &:last-child {
+      .is-exiting.new-location & {
+        animation-name: breadcrumbOut;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+      }
+      .new-location:not(.is-exiting) & {
+        animation-name: breadcrumbIn;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+      }
+    }
     &:not(:last-child) {
       margin-right: 0.5rem;
       padding-right: 0.5rem;

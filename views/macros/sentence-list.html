@@ -1,7 +1,13 @@
-{% macro sentenceList(array) %}
+{% macro sentenceList(list,link) %}
   <ul class="sentence-list">
-    {% for element in array %}
-      <li class="sentence-list__item">{{ element | title }}</li>
+    {% for item in list %}
+      <li class="sentence-list__item">
+        {% if link %}
+          <a href="/{{ link }}/{{ item.id }}" title="{{ item.name }}" data-target="{{ link }}">{{ item.name }}</a>
+        {% else %}
+          {{ item | title }}
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 {% endmacro %}

@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var webmake = require('gulp-webmake'); // Bundles CommonJS and Node.JS modules for web browsers using Gulp.
 var include = require("gulp-include"); // Makes inclusion of files a breeze.
 var uglify = require('gulp-uglify');
-
+var babel = require('gulp-babel');
 
 gulp.task('styles', function () {
   var sassOptions = {
@@ -31,6 +31,9 @@ gulp.task('javascript', function () {
     src('source/js/site.js').
     pipe(plumber()).
     pipe(include()).
+    pipe(babel({
+      presets: ['env']
+    })).
     pipe(webmake()).
     pipe(uglify()).
     pipe(rename('site.js')).

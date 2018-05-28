@@ -2,13 +2,7 @@
   "title": "Zodiac App",
   "color": "#131314",
   "description": "",
-  "pages": [
-    {
-      "name": "Home",
-      "description": "",
-      "id": "home"
-    },
-    {
+  "pages": [{
       "name": "Signs",
       "description": "There are 12 zodiac signs, each representing a  30°  division of celestial longitude.",
       "id": "signs"
@@ -29,8 +23,7 @@
       "id": "polarities"
     }
   ],
-  "signs": [
-    {
+  "signs": [{
       "name": "Aries",
       "id": "aries",
       "celestialLongitude": "0° to 30°",
@@ -175,8 +168,7 @@
       "endDate": "03/20"
     }
   ],
-  "elements": [
-    {
+  "elements": [{
       "name": "Fire",
       "id": "fire",
       "definition": "Fire has to deal with bravery.",
@@ -226,8 +218,7 @@
       ]
     }
   ],
-  "modalities": [
-    {
+  "modalities": [{
       "name": "Cardinal",
       "id": "cardinal",
       "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
@@ -258,8 +249,7 @@
       ]
     }
   ],
-  "polarities": [
-    {
+  "polarities": [{
       "name": "Positive",
       "id": "positive",
       "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
@@ -278,8 +268,7 @@
       ]
     }
   ],
-  "celelstial-bodies": [
-    {
+  "celelstial-bodies": [{
       "name": "Sun",
       "rules": "personality & ego"
     },
@@ -320,8 +309,7 @@
       "rules": "power & transformation"
     }
   ],
-  "moon phases": [
-    {
+  "moon phases": [{
       "name": "New Moon",
       "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
     },

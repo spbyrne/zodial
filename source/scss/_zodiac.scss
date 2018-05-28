@@ -106,8 +106,9 @@
     margin-bottom: 0.125rem;
   }
   &__meta {
-    color: $color-dark;
+    color: $color-light;
     opacity: 0.3;
+    font-weight: 500;
     display: inline-block;
     .info__label & {
       margin-left: 0.5rem;
@@ -135,11 +136,11 @@
   width: 400vw;
   height: 100vh;
   z-index: -1;
-  transition: all 1s cubic-bezier(0.375, 0.005, 0.070, 1.000); 
-  background-image: /*urL('../img/stars.jpg'),*/ linear-gradient(to bottom, $color-dark--glow, $color-dark);
-  background-blend-mode: screen;
-  background-size: 100% auto;
-  opacity: 0.4;
+  transition: transform 1s cubic-bezier(0.375, 0.005, 0.070, 1.000);
+  background-image: /*urL('../img/stars.jpg'),*/
+  linear-gradient(to bottom, $color-dark--glow, $color-dark); //background-blend-mode: screen;
+  background-size: 100% 100%;
+  opacity: 1;
   $max: length($pages);
   $max-transform: -300vw;
   @for $index from 0 to $max {
@@ -169,7 +170,7 @@
       .is-exiting.new-location & {
         animation-name: breadcrumbOut;
         animation-duration: $time;
-        animation-timing-function: $easing;
+        animation-timing-function: $easing-in;
         animation-fill-mode: both;
       }
       .new-location:not(.is-exiting) & {
@@ -193,7 +194,7 @@
         display: inline-block;
         color: $color-light;
         opacity: 0.3;
-        transform: translate3d(0.15rem,-0.075rem,0);
+        transform: translate3d(0.15rem, -0.075rem, 0);
       }
     }
   }
@@ -274,6 +275,12 @@
 
 .header-bar {
   position: relative;
+  [data-location="home"] & {
+    &:after {
+      opacity: 0;
+      transform: scale3d(0, 1, 1);
+    }
+  }
   &:after {
     content: '';
     display: block;
@@ -281,19 +288,72 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    opacity: 1;
     height: 2px;
     background: $color-light;
     opacity: 0.2;
+    transition: all $time $easing;
+    transform-origin: 0 50%;
+    transform: scale3d(1, 1, 1);
   }
   &__title {
-    color: $color-light;
+    color: $color-accent;
     line-height: 1;
     white-space: nowrap;
-    display: none;
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    left: -1.5rem;
+    letter-spacing: 0.5px;
+    transform: translate3d(-100%, -50%, 0) scale3d(0.8, 0.8, 1);
+    transition: all $time $easing;
+    [data-location="home"] & {
+      pointer-events: none;
+      transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
+    }
+    a {
+      display: block;
+      position: relative;
+      transform: translate3d(0, 0, 0);
+      transition: transform $time $easing, opacity $time-fast $easing;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+      [data-location="home"] & {
+        transform: translate3d(1.5rem, 0, 0);
+        opacity: 1;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -1rem;
+      left: 1.5rem;
+      width: 100%;
+      opacity: 1;
+      height: 2px;
+      background: $color-light;
+      opacity: 0;
+      transition: all $time $easing;
+      transform-origin: 100% 50%;
+      transform: scale3d(1, 1, 1);
+      [data-location="home"] & {
+        opacity: 0.2;
+      }
+    }
   }
   &__nav {
     position: absolute;
     right: 0;
+    tranform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: all $time $easing;
+    [data-location="home"] & {
+      transform: translate3d(2rem, 0, 0);
+      opacity: 0;
+    }
   }
 }
 
@@ -411,7 +471,8 @@
     display: block;
     margin-left: -1.5rem;
   }
-  &__link, a.page-nav__Link {
+  &__link,
+  a.page-nav__Link {
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -493,9 +554,12 @@
         }
       }
     }
-    .page-nav__link, a.page-nav__Link {
+    .page-nav__link,
+    a.page-nav__Link {
+      opacity: 1;
       transform: translate3d(1.5rem, 0, 0);
       .is-exiting & {
+        opacity: 0.8;
         transform: translate3d(-100%, 0, 0);
       }
       &.loading {
@@ -551,7 +615,8 @@
         }
       }
     }
-    .page-nav__link, a.page-nav__Link {
+    .page-nav__link,
+    a.page-nav__Link {
       transform: translate3d(1.5rem, 0, 0);
     }
   }

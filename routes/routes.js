@@ -10,10 +10,8 @@ function filterArrayByValue(array, key, value) {
   );
 }
 
-function horoscopeURL(interval, sign) {
-  return (
-    'http://horoscope-api.herokuapp.com/horoscope/' + interval + '/' + sign
-  );
+function horoscopeURL(sign, day = 'today') {
+  return 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=' + day
 }
 
 router.get('/', function (req, res) {
@@ -88,9 +86,13 @@ router.get('/signs/:id?', function (req, res) {
   if (requestId) {
     options.id = requestId;
     let requestDetails = filterArrayByValue(requestList, 'id', requestId)[0];
-    got(horoscopeURL('today', requestDetails.name), { json: true }).then(response => {
-      requestDetails.horoscope = response.body.horoscope.replace("['", "").replace("']", "");
-      requestDetails.horoscopeDate = response.body.date;
+    got(horoscopeURL(requestId), {
+      method: 'POST',
+      json: true
+    }).then(response => {
+      console.log(response.body);
+      requestDetails.horoscope = response.body["description"].replace('--', '—');
+      requestDetails.horoscopeDate = response.body["current_date"];
       options.details = requestDetails;
       res.render(pageTemplate, options);
     }).catch(error => {

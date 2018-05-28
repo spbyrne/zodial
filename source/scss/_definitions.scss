@@ -1,6 +1,6 @@
 // Colour
 $color-dark: rgb(19, 19, 20);
-$color-dark--glow: rgb(30, 30, 46);
+$color-dark--glow: rgb(39, 39, 66);
 $color-gold: rgb(190, 172, 113);
 $color-light: #f1f1eb;
 $color-red: #be3636;
@@ -9,47 +9,56 @@ $color-primary: $color-gold;
 $color-accent: rgb(104, 205, 255);
 $color-active: $color-accent;
 $color-link: $color-accent;
-
 // Style
 $border-radius: 0.2rem;
-
 // Animation
 $time: 0.25s;
 $time-fast: 0.125s;
 $time-long: 0.35s;
-
 // Typography
 $font-primary: 'Titillium Web',
 sans-serif;
 $font-accent: 'BioRhyme',
 sans-serif;
 $font-accent--weight: 700;
-
 // Reponsiveness
 $breakpoint-small: 600;
 $breakpoint-medium: 900;
 $breakpoint-large: 1200;
 $breakpoint-huge: 1800;
-
 @mixin for-phone-only {
-  @media (max-width: ($breakpoint-small - 1) + px) { @content; }
+  @media (max-width: ($breakpoint-small - 1) + px) {
+    @content;
+  }
 }
+
 @mixin for-small {
-  @media (min-width: $breakpoint-small + px) { @content; }
+  @media (min-width: $breakpoint-small + px) {
+    @content;
+  }
 }
+
 @mixin for-medium {
-  @media (min-width: $breakpoint-medium + px) { @content; }
+  @media (min-width: $breakpoint-medium + px) {
+    @content;
+  }
 }
+
 @mixin for-large {
-  @media (min-width: $breakpoint-large + px) { @content; }
+  @media (min-width: $breakpoint-large + px) {
+    @content;
+  }
 }
+
 @mixin for-huge {
-  @media (min-width: $breakpoint-huge + px) { @content; }
+  @media (min-width: $breakpoint-huge + px) {
+    @content;
+  }
 }
 
 // Pages
 $pages: home,
-  signs,
-  elements,
-  modalities,
-  polarities;
+signs,
+elements,
+modalities,
+polarities;

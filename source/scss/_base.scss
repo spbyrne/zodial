@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   background: $color-dark;
-  background-image: radial-gradient(circle at 50% 25%, $color-dark--glow, $color-dark);
+  background-image: linear-gradient(to bottom, $color-dark--glow, $color-dark);
   color: $color-light;
   font-family: $font-primary, sans-serif;
   font-weight: 400;

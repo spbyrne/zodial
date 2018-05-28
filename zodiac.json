@@ -2,7 +2,8 @@
   "site": {
     "title": "Zodiapp",
     "color": "#232233",
-    "description": ""
+    "description": "",
+    "analytics": "UA-37878740-3"
   },
   "pages": [{
       "name": "Signs",

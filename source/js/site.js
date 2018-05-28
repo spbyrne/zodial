@@ -46,11 +46,11 @@ $(function () {
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);
+          googleAnalytics(window.location.pathname);
         }
       },
       onAfter: function ($container, $newContent) {
         $container.removeClass('new-location');
-        googleAnalytics();
       }
     },
     smoothState = $('#main')
@@ -58,7 +58,8 @@ $(function () {
     .data('smoothState');
 });
 
-function googleAnalytics() {
-  ga('set', 'page', smoothState.href);
+function googleAnalytics(url) {
+  console.log(url);
+  ga('set', 'page', url);
   ga('send', 'pageview');
 };

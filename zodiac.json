@@ -1,7 +1,9 @@
 {
-  "title": "Zodiac App",
-  "color": "#131314",
-  "description": "",
+  "site": {
+    "title": "Zodiapp",
+    "color": "#232233",
+    "description": ""
+  },
   "pages": [{
       "name": "Signs",
       "description": "There are 12 zodiac signs, each representing a  30°  division of celestial longitude.",

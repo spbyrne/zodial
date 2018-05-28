@@ -25,6 +25,181 @@
   }
 }
 
+.header-bar {
+  position: relative;
+  [data-location="home"] & {
+    &:after {
+      opacity: 0.2;
+      transform: scale3d(0.2, 1, 1);
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    height: 2px;
+    background: $color-light;
+    opacity: 0.2;
+    transition: all $time $easing;
+    transform-origin: 0 50%;
+    transform: scale3d(1, 1, 1);
+  }
+  &__title {
+    color: $color-accent;
+    line-height: 1;
+    white-space: nowrap;
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    left: -1.5rem;
+    letter-spacing: 0.5px;
+    transform: translate3d(-100%, -50%, 0) scale3d(0.8, 0.8, 1);
+    transition: all $time $easing;
+    [data-location="home"] & {
+      pointer-events: none;
+      transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
+    }
+    a {
+      display: block;
+      position: relative;
+      transform: translate3d(0, 0, 0);
+      transition: transform $time $easing, opacity $time-fast $easing;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+      [data-location="home"] & {
+        transform: translate3d(1.5rem, 0, 0);
+        opacity: 1;
+      }
+      &:after {
+        content: attr(title);
+        position: absolute;
+        color: $color-accent;
+        top: 0;
+        left: 0;
+        filter: blur(0.75rem);
+        opacity: 0;
+        z-index: -1;
+        transition: all $time $easing;
+        [data-location="home"] & {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &__nav {
+    position: absolute;
+    right: 0;
+    tranform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: all $time $easing;
+    [data-location="home"] & {
+      pointer-events: none;
+      transform: translate3d(2rem, 0, 0);
+      opacity: 0;
+    }
+  }
+}
+
+.main-nav {
+  position: relative;
+  transition: all $time $easing;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  &__item {
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  &__link,
+  a.main-nav__link {
+    position: relative;
+    display: block;
+    line-height: 1;
+    transition: all $time $easing;
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    padding: 1rem 0;
+    text-align: center;
+    &:after {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $color-gold;
+      opacity: 1;
+      transform-origin: 0 50%;
+      transform: scale3d(0, 1, 1);
+    }
+    &:hover {
+      color: $color-active;
+      opacity: 1;
+    }
+    &:active {
+      color: $color-active;
+      opacity: 1;
+    }
+    &.active {
+      pointer-events: none;
+      opacity: 1;
+      color: $color-primary;
+      &:before {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    &.was-active {
+      animation-name: mainNavLinkWasActive;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: both;
+      &:before {
+        animation-name: mainNavLinkBeforeWasActive;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+      }
+    }
+    &.loading {
+      color: $color-active;
+      opacity: 1;
+      pointer-events: none;
+      animation-name: mainNavLinkLoading;
+      animation-duration: $time;
+      animation-timing-function: $easing;
+      animation-fill-mode: forwards;
+      &:before {
+        animation-name: mainNavLinkBeforeLoading;
+        animation-duration: $time;
+        animation-timing-function: $easing;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
 .container {
   padding: 0 1rem 0 1rem;
   margin: 0 auto;
@@ -137,9 +312,11 @@
   height: 100vh;
   z-index: -1;
   transition: transform 1s cubic-bezier(0.375, 0.005, 0.070, 1.000);
-  background-image: /*urL('../img/stars.jpg'),*/
-  linear-gradient(to bottom, $color-dark--glow, $color-dark); //background-blend-mode: screen;
+  background-color: $color-dark--glow;
+  @include gradient('to top', $color-dark);
   background-size: 100% 100%;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
   opacity: 1;
   $max: length($pages);
   $max-transform: -300vw;
@@ -271,184 +448,6 @@
     }
   }
   &__link {}
-}
-
-.header-bar {
-  position: relative;
-  [data-location="home"] & {
-    &:after {
-      opacity: 0;
-      transform: scale3d(0, 1, 1);
-    }
-  }
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 1;
-    height: 2px;
-    background: $color-light;
-    opacity: 0.2;
-    transition: all $time $easing;
-    transform-origin: 0 50%;
-    transform: scale3d(1, 1, 1);
-  }
-  &__title {
-    color: $color-accent;
-    line-height: 1;
-    white-space: nowrap;
-    position: absolute;
-    font-size: 1rem;
-    top: 50%;
-    left: -1.5rem;
-    letter-spacing: 0.5px;
-    transform: translate3d(-100%, -50%, 0) scale3d(0.8, 0.8, 1);
-    transition: all $time $easing;
-    [data-location="home"] & {
-      pointer-events: none;
-      transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
-    }
-    a {
-      display: block;
-      position: relative;
-      transform: translate3d(0, 0, 0);
-      transition: transform $time $easing, opacity $time-fast $easing;
-      opacity: 0.7;
-      &:hover {
-        opacity: 1;
-      }
-      [data-location="home"] & {
-        transform: translate3d(1.5rem, 0, 0);
-        opacity: 1;
-      }
-    }
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: -1rem;
-      left: 1.5rem;
-      width: 100%;
-      opacity: 1;
-      height: 2px;
-      background: $color-light;
-      opacity: 0;
-      transition: all $time $easing;
-      transform-origin: 100% 50%;
-      transform: scale3d(1, 1, 1);
-      [data-location="home"] & {
-        opacity: 0.2;
-      }
-    }
-  }
-  &__nav {
-    position: absolute;
-    right: 0;
-    tranform: translate3d(0, 0, 0);
-    opacity: 1;
-    transition: all $time $easing;
-    [data-location="home"] & {
-      transform: translate3d(2rem, 0, 0);
-      opacity: 0;
-    }
-  }
-}
-
-.main-nav {
-  position: relative;
-  transition: all $time $easing;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  &__item {
-    position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-  }
-  &__link,
-  a.main-nav__link {
-    position: relative;
-    display: block;
-    line-height: 1;
-    transition: all $time $easing;
-    color: $color-primary;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-decoration: none;
-    opacity: 0.8;
-    letter-spacing: 0.5px;
-    padding: 1rem 0;
-    text-align: center;
-    &:after {
-      display: block;
-      content: attr(title);
-      font-weight: bold;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
-    }
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: $color-gold;
-      opacity: 1;
-      transform-origin: 0 50%;
-      transform: scale3d(0, 1, 1);
-    }
-    &:hover {
-      color: $color-active;
-      opacity: 1;
-    }
-    &:active {
-      color: $color-active;
-      opacity: 1;
-    }
-    &.active {
-      pointer-events: none;
-      opacity: 1;
-      color: $color-primary;
-      &:before {
-        transform: scale3d(1, 1, 1);
-      }
-    }
-    &.was-active {
-      animation-name: mainNavLinkWasActive;
-      animation-duration: $time;
-      animation-timing-function: $easing;
-      animation-fill-mode: both;
-      &:before {
-        animation-name: mainNavLinkBeforeWasActive;
-        animation-duration: $time;
-        animation-timing-function: $easing;
-        animation-fill-mode: both;
-      }
-    }
-    &.loading {
-      color: $color-active;
-      opacity: 1;
-      pointer-events: none;
-      animation-name: mainNavLinkLoading;
-      animation-duration: $time;
-      animation-timing-function: $easing;
-      animation-fill-mode: forwards;
-      &:before {
-        animation-name: mainNavLinkBeforeLoading;
-        animation-duration: $time;
-        animation-timing-function: $easing;
-        animation-fill-mode: forwards;
-      }
-    }
-  }
 }
 
 .page-header {

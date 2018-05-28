@@ -445,6 +445,12 @@
       &:before {
         content: 'and\0020';
       }
+      &:first-child {
+        &:before {
+          content: '';
+          display: none;
+        }
+      }
     }
   }
   &__link {}

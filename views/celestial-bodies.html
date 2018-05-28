@@ -1,0 +1,26 @@
+{% set location = "celestial-bodies" %}
+{% extends "main.html" %}
+
+{% block main %}
+  <div class="container pad-top">
+    {{ pageNav(page,list,id) }}
+    {% if details %}
+      <div class="page-header animate animate--first">
+        <h1 class="page-header__title">{{ details.name }}</h1>
+      </div>
+      <div class="animate animate--second">
+        <p>{{ details.description }}</p>
+      </div>
+      <div class="info animate animate--third animate--cascade-children">
+        <div class="info__item">
+          <span class="info__label">Rules</span>
+          <span class="info__data">{{ sentenceList(details.rules) }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">{{ details.name }} Sign</span>
+          <span class="info__data">{{ sentenceList(details.signs,'signs') }}</span>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -5,7 +5,7 @@
       <li class="page-nav__item {% if (item.id == id) %}active{% endif %}">
         <a
         class="page-nav__link {% if (item.id == id) %}active{% endif %}"
-        href="/{{ slug(page) }}/{{ slug(item.name) }}"
+        href="/{{ slug(page) }}/{{ item.id }}"
         title="{{ item.name }}"
         data-target="{{ slug(page) }}">
           {{ item.name }}

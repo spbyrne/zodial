@@ -36,6 +36,14 @@
           <span class="info__label">Period</span>
           <span class="info__data">{{ details.startDate }} - {{ details.endDate }}</span>
         </div>
+        <div class="info__item">
+          <span class="info__label">Celestial Longitude</span>
+          <span class="info__data">{{ details.celestialLongitude }}</span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Celestial Body</span>
+          <span class="info__data"><a href="/celestial-bodies/{{ slug(details.celestialBody) }}" data-target="celestial-bodies">{{ details.celestialBody }}</a></span>
+        </div>
       </div>
     {% endif %}
   </div>

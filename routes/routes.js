@@ -74,6 +74,24 @@ router.get('/polarities/:id?', function (req, res) {
   res.render(pageTemplate, options);
 });
 
+router.get('/celestial-bodies/:id?', function (req, res) {
+  let pageName = 'Celestial Bodies';
+  let pageTemplate = 'celestial-bodies';
+  let requestId = req.params.id;
+  let requestList = data.celestialBodies;
+  let options = {
+    page: pageName,
+    list: requestList
+  };
+  if (requestId) {
+    let requestDetails = filterArrayByValue(requestList, 'id', requestId)[0];
+    requestDetails.signs = filterArrayByValue(data.signs, 'celestialBody', requestDetails.name);
+    options.id = requestId;
+    options.details = requestDetails;
+  };
+  res.render(pageTemplate, options);
+});
+
 router.get('/signs/:id?', function (req, res) {
   let pageName = 'Signs';
   let pageTemplate = 'signs';
@@ -90,13 +108,11 @@ router.get('/signs/:id?', function (req, res) {
       method: 'POST',
       json: true
     }).then(response => {
-      console.log(response.body);
       requestDetails.horoscope = response.body["description"].replace('--', '—');
       requestDetails.horoscopeDate = response.body["current_date"];
       options.details = requestDetails;
       res.render(pageTemplate, options);
     }).catch(error => {
-      console.log(error.response.body);
       options.details = requestDetails;
       res.render(pageTemplate, options);
     });

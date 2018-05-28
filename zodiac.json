@@ -21,8 +21,13 @@
     },
     {
       "name": "Polarities",
-      "description": "",
+      "description": "The polarity of a sign is mirrored by the one opposite on the zodiac.",
       "id": "polarities"
+    },
+    {
+      "name": "Celestial Bodies",
+      "description": "",
+      "id": "celestial-bodies"
     }
   ],
   "signs": [{
@@ -270,45 +275,65 @@
       ]
     }
   ],
-  "celelstial-bodies": [{
-      "name": "Sun",
-      "rules": "personality & ego"
+  "celestialBodies": [{
+      "name": "The Sun",
+      "id": "sun",
+      "description": "The Sun tells us of the actual core of a person, the inner self, of that which is of central concern. It also shows us the general vitality and the ability to assert oneself, it describes a general tone of being which colors everything else.",
+      "rules": ["personality", "ego"]
     },
     {
-      "name": "Moon",
-      "rules": "moods & emotion"
+      "name": "The Moon",
+      "id": "moon",
+      "description": "The Moon represents our feelings and emotions, the receptivity, imagination and basic feeling tone of a person. It also has an effect on the sense of rhythm, time and timing, it influences our adaptability to change, our mobility and versatility.",
+      "rules": ["moods", "emotion"]
     },
     {
       "name": "Mercury",
-      "rules": "mind & communication"
+      "id": "mercury",
+      "description": "Mercury represents reason, reasonableness (common sense), that which is rational. It stands for the spoken and written word, putting in order, weighing and evaluating, the process of learning and skills.",
+      "rules": ["mind", "communication"]
     },
     {
       "name": "Venus",
-      "rules": "love & attraction"
+      "id": "venus",
+      "description": "Venus gives us a sense of beauty, the enjoyment of pleasure, aesthetic awareness, love of harmony, sociability, taking pleasure in relationships and eroticism.",
+      "rules": ["love", "attraction"]
     },
     {
       "name": "Mars",
-      "rules": "drive & energy"
+      "id": "mars",
+      "description": "Mars represents the energy and drive of a person, their courage, determination, the freedom of spontaneous impulse. It also describes the readiness for action, the way one goes about doing things as well as simple aggression.",
+      "rules": ["drive", "energy"]
     },
     {
       "name": "Jupiter",
-      "rules": "luck, growth & wisdom"
+      "id": "jupiter",
+      "description": "The search for individual meaning and purpose, optimism, hope and a sense of justice are represented by Jupiter. So also faith, a basic philosophy of life, the striving for spiritual growth and expansion.",
+      "rules": ["luck", "growth", "wisdom"]
     },
     {
       "name": "Saturn",
-      "rules": "discipline, fears & challenges"
+      "id": "saturn",
+      "description": "Saturn shows how we experience reality, where we meet with resistance and discover our limitations. It represents the conscience and moral conviction, the laws and rules which we choose to obey. It also tells us about  our powers of endurance and the ability to concentrate, it lends qualities like earnestness, caution and reserve.",
+      "rules": ["discipline", "fears", "challenges"]
     },
     {
       "name": "Uranus",
-      "rules": "change & originality"
+      "id": "uranus",
+      "description": "Uranus stands for intuition, it transmits sudden inspiration and lightning insights. An openness for all that is new, unknown and unusual. A sort of wrong-headed contrariness is also associated with this planet. It is said to be characteristic of astrology as such.",
+      "rules": ["change", "originality"]
     },
     {
       "name": "Neptune",
-      "rules": "dreams & healing"
+      "id": "neptune",
+      "description": "This planet gives us the supersensory, opens doors to mystical experience and the transcendental. On this level it is hard to discern where perception moves into deception, illusion and false appearances, and so Neptune is associated with all of these, with drugs and all kinds of pseudo-realities.",
+      "rules": ["dreams", "healing"]
     },
     {
       "name": "Pluto",
-      "rules": "power & transformation"
+      "id": "pluto",
+      "description": "Pluto describes how we deal with power, personal and non-personal, be it through suffering the power of others or exercising it ourselves. It describes how we meet the demonic and magical, our regenerative powers and our capacity for radical change and rebirth: the cycles of dying and becoming.",
+      "rules": ["power", "transformation"]
     }
   ],
   "moon phases": [{

@@ -59,7 +59,5 @@ $(function () {
 });
 
 function googleAnalytics(url) {
-  console.log(url);
-  ga('set', 'page', url);
-  ga('send', 'pageview');
+  ga('send', 'pageview', url);
 };

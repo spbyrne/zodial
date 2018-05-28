@@ -39,11 +39,13 @@
   {% block scripts %}
   {% endblock %}
   {% if site.analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics }}"></script>
     <script>
-      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-      ga('create', '{{ site.analytics }}', 'auto'); ga('send', 'pageview')
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics }}');
     </script>
-    <script src="//www.google-analytics.com/analytics.js" async defer></script>
   {% endif %}
 </body>
 

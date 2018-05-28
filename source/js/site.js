@@ -50,9 +50,15 @@ $(function () {
       },
       onAfter: function ($container, $newContent) {
         $container.removeClass('new-location');
+        googleAnalytics();
       }
     },
     smoothState = $('#main')
     .smoothState(options)
     .data('smoothState');
 });
+
+function googleAnalytics() {
+  ga('set', 'page', smoothState.href);
+  ga('send', 'pageview');
+};

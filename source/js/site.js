@@ -47,7 +47,7 @@ $(function () {
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);
-          googleAnalytics();
+          googleAnalytics(window.location.pathname);
         }
       },
       onAfter: function ($container, $newContent) {
@@ -59,6 +59,8 @@ $(function () {
     .data('smoothState');
 });
 
-function googleAnalytics() {
-  gtag('config', site.analytics);
+function googleAnalytics(url) {
+  gtag('config', site.analytics, {
+    'page_path': url
+  });
 };

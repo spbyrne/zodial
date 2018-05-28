@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var smoothState = require('./_smoothState.js');
+var site = require('../../zodiac.json').site;
 
 $(function () {
   'use strict';
@@ -46,7 +47,7 @@ $(function () {
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);
-          googleAnalytics(window.location.pathname);
+          googleAnalytics();
         }
       },
       onAfter: function ($container, $newContent) {
@@ -58,6 +59,6 @@ $(function () {
     .data('smoothState');
 });
 
-function googleAnalytics(url) {
-  ga('send', 'pageview', url);
+function googleAnalytics() {
+  gtag('config', site.analytics);
 };

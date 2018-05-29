@@ -1,5 +1,4 @@
 .site {
-  &__header {}
   &__content {
     padding: 1rem;
   }
@@ -129,7 +128,7 @@
   &__nav {
     position: absolute;
     right: 0;
-    tranform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: all $time $easing;
     [data-location="home"] & {
@@ -494,7 +493,6 @@
       }
     }
   }
-  &__link {}
 }
 
 .page-header {

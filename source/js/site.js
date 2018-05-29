@@ -12,9 +12,12 @@ $(function () {
       blacklist: '.no-transition',
       onBefore: function ($anchor, $container) {
         var body = document.querySelector('body');
+        var loadingIndicator = document.querySelector('.loading-indicator');
         var target = $anchor.data('target');
+        var targetName = $anchor.attr('title');
         var location = body.dataset.location;
         $container.removeClass('new-location');
+        loadingIndicator.dataset.loading = targetName;
         if (target != location) {
           body.dataset.location = target;
           $container.addClass('new-location');

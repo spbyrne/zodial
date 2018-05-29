@@ -28,6 +28,23 @@
   }
 }
 
+.loading-indicator {
+  &:before {
+    content: 'Loading ' attr(data-loading) '...';
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    transform: translate3d( -1.5rem, 100%, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: all $time-long $easing;
+    .is-loading & {
+      opacity: 1;
+      transform: translate3d( 0, 100%, 0);
+    }
+  }
+}
+
 .header-bar {
   position: relative;
   z-index: 50;
@@ -52,19 +69,6 @@
     transform-origin: 0 50%;
     transform: scale3d(1, 1, 1);
     z-index: -1;
-  }
-  &:before {
-    content: 'Loading...';
-    position: absolute;
-    left: 0;
-    bottom: -1rem;
-    transform: translate3d( 0, 100%, 0);
-    opacity: 0;
-    pointer-events: none;
-    transition: all $time $easing;
-    .is-loading & {
-      opacity: 1;
-    }
   }
   &__title {
     color: $color-accent;

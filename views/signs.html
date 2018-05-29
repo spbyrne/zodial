@@ -17,20 +17,16 @@
           <span class="info__data">{{ details.symbol }}</span>
         </div>
         <div class="info__item">
-          <span class="info__label">Celestial Body</span>
-          <span class="info__data">{{ details.celestialBody }}</span>
-        </div>
-        <div class="info__item">
           <span class="info__label">Element</span>
           <span class="info__data"><a href="/elements/{{ slug(details.element) }}" data-target="elements">{{ details.element }}</a></span>
         </div>
         <div class="info__item">
-          <span class="info__label">Polarity</span>
-          <span class="info__data"><a href="/polarities/{{ slug(details.polarity) }}" data-target="polarities">{{ details.polarity }}</a></span>
-        </div>
-        <div class="info__item">
           <span class="info__label">Modality</span>
           <span class="info__data"><a href="/modalities/{{ slug(details.modality) }}" data-target="modalities">{{ details.modality }}</a></span>
+        </div>
+        <div class="info__item">
+          <span class="info__label">Polarity</span>
+          <span class="info__data"><a href="/polarities/{{ slug(details.polarity) }}" data-target="polarities">{{ details.polarity }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Period</span>

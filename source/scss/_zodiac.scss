@@ -133,6 +133,7 @@
     letter-spacing: 0.5px;
     padding: 1rem 0;
     text-align: center;
+    user-select: none;
     &:after {
       display: block;
       content: attr(title);
@@ -486,6 +487,7 @@
     transition: all $time $easing;
     color: $color-primary;
     opacity: 0.8;
+    user-select: none;
     &:hover {
       opacity: 1;
     }

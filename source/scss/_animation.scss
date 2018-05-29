@@ -137,6 +137,17 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
+@keyframes pageNavLinkWasActive {
+  0% {
+    color: $color-light;
+    font-weight: bold;
+  }
+  100% {
+    color: $color-primary;
+    font-weight: inherit;
+  }
+}
+
 @keyframes pageNavLinkLoading {
   0% {
     opacity: 1;

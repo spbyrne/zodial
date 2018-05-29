@@ -39,6 +39,7 @@
   "signs": [{
       "name": "Aries",
       "id": "aries",
+      "description": "",
       "celestialLongitude": "0° to 30°",
       "polarity": "Positive",
       "element": "Fire",
@@ -51,6 +52,7 @@
     {
       "name": "Taurus",
       "id": "taurus",
+      "description": "",
       "celestialLongitude": "30° to 60°",
       "polarity": "Negative",
       "element": "Earth",
@@ -63,6 +65,7 @@
     {
       "name": "Gemini",
       "id": "gemini",
+      "description": "",
       "celestialLongitude": "60° to 90°",
       "polarity": "Positive",
       "element": "Air",
@@ -75,6 +78,7 @@
     {
       "name": "Cancer",
       "id": "cancer",
+      "description": "",
       "celestialLongitude": "90° to 120°",
       "polarity": "Negative",
       "element": "Water",
@@ -87,6 +91,7 @@
     {
       "name": "Leo",
       "id": "leo",
+      "description": "",
       "celestialLongitude": "120° to 150°",
       "polarity": "Positive",
       "element": "Fire",
@@ -99,6 +104,7 @@
     {
       "name": "Virgo",
       "id": "virgo",
+      "description": "",
       "celestialLongitude": "150° to 180°",
       "polarity": "Negative",
       "element": "Earth",
@@ -111,6 +117,7 @@
     {
       "name": "Libra",
       "id": "libra",
+      "description": "",
       "celestialLongitude": "180° to 210°",
       "polarity": "Positive",
       "element": "Air",
@@ -123,6 +130,7 @@
     {
       "name": "Scorpio",
       "id": "scorpio",
+      "description": "",
       "celestialLongitude": "210° to 240°",
       "polarity": "Negative",
       "element": "Water",
@@ -135,6 +143,7 @@
     {
       "name": "Sagittarius",
       "id": "sagittarius",
+      "description": "",
       "celestialLongitude": "240° to 270°",
       "polarity": "Positive",
       "element": "Fire",
@@ -147,6 +156,7 @@
     {
       "name": "Capricorn",
       "id": "capricorn",
+      "description": "",
       "celestialLongitude": "270° to 300°",
       "polarity": "Negative",
       "element": "Earth",
@@ -159,6 +169,7 @@
     {
       "name": "Aquarius",
       "id": "aquarius",
+      "description": "",
       "celestialLongitude": "300° to 330°",
       "polarity": "Positive",
       "element": "Air",
@@ -171,6 +182,7 @@
     {
       "name": "Pisces",
       "id": "pisces",
+      "description": "",
       "celestialLongitude": "330° to 360°",
       "polarity": "Negative",
       "element": "Water",

@@ -541,6 +541,7 @@
       text-decoration-color: transparent;
       font-weight: bold;
       pointer-events: none;
+      opacity: 1;
       animation-name: pageNavLinkActive;
       animation-duration: $time;
       animation-timing-function: $easing;

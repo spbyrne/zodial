@@ -18,6 +18,7 @@ $(function () {
         if (target != location) {
           body.dataset.location = target;
           $container.addClass('new-location');
+          $('.page-nav').addClass('exit');
         }
         $('.main-nav__link.active:not([data-target="' + target + '"])').addClass('was-active');
         if ($anchor.hasClass("main-nav__link")) {
@@ -47,6 +48,7 @@ $(function () {
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);
+          $('.page-nav').removeClass('exit');
           googleAnalytics(window.location.pathname);
         }
       },

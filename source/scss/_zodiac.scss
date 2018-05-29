@@ -5,6 +5,9 @@
       display: block;
     }
   }
+  &__content {
+    padding: 1rem;
+  }
   &__wrapper {
     position: relative;
     flex: 1 0 auto;
@@ -49,6 +52,19 @@
     transform-origin: 0 50%;
     transform: scale3d(1, 1, 1);
     z-index: -1;
+  }
+  &:before {
+    content: 'Loading...';
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    transform: translate3d( 0, 100%, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: all $time $easing;
+    .is-loading & {
+      opacity: 1;
+    }
   }
   &__title {
     color: $color-accent;
@@ -209,10 +225,13 @@
   max-width: 40rem;
   position: relative;
   @include for-small {
-    padding: 0 1rem 0 8rem;
+    padding-left: 8rem;
   }
-  &.pad-top {
-    margin-top: 1rem;
+  &.site__content {
+    padding: 1rem;
+    @include for-small {
+      padding-left: 8rem;
+    }
   }
 }
 
@@ -471,7 +490,7 @@
 
 .page-nav {
   position: absolute;
-  top: 0.1rem;
+  top: 1rem;
   padding-right: 2rem;
   transition: all $time $easing;
   &__item {
@@ -499,12 +518,6 @@
       animation-duration: $time;
       animation-timing-function: $easing-in;
       animation-fill-mode: forwards;
-      .is-loading & {
-        &:before {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
     }
     &.active {
       color: $color-light;
@@ -515,31 +528,6 @@
       animation-duration: $time;
       animation-timing-function: $easing;
       animation-fill-mode: backwards;
-    }
-    &:before {
-      content: 'Loading...';
-      position: absolute;
-      right: -0.25rem;
-      top: 50%;
-      transform: translate3d( 100%, -50%, 0);
-      transition: all $time $easing;
-      animation-name: loadingAnimation;
-      animation-duration: 0.7s;
-      animation-fill-mode: both;
-      animation-timing-function: $easing-in-out;
-      animation-iteration-count: infinite;
-      visibility: hidden;
-      opacity: 0;
-      color: $color-primary;
-      font-weight: bold;
-    }
-    &:after {
-      display: block;
-      content: attr(title);
-      font-weight: bold;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
     }
   }
   &__description {
@@ -572,7 +560,6 @@
     }
   }
   &--index {
-    // This animation is for when you land on an index page, and to handle moving from an index to a details page
     .page-nav__item {
       animation-name: slideUpIn;
       animation-iteration-count: 1;
@@ -599,70 +586,54 @@
         animation-fill-mode: both;
       }
     }
-  }
-  &--exit-details-animation:not(.page-nav--index) {
-    // This animation is when changing from the details page of one section to another section
-    animation-name: slideLeftOut;
-    animation-iteration-count: 1;
-    animation-timing-function: $easing-in;
-    animation-fill-mode: both;
-    animation-duration: $time;
-    .page-nav__item {
-      animation-name: slideLeftOut;
-      animation-iteration-count: 1;
-      animation-timing-function: $easing;
-      animation-fill-mode: both;
-      $maxChildren: 12;
-      @for $children from 1 to $maxChildren {
-        @for $i from 0 through $children {
-          &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
-            animation-delay: ($time * 0.75) - ($i * ($time / $children));
-            animation-duration: $time * 0.75;
-          }
-        }
-      }
-    }
-  }
-  &--exit-index-animation:not(.page-nav--detail) {
-    // This animation is when changing from the index page of one section to another section
-    animation-name: slideDownOut;
-    animation-iteration-count: 1;
-    animation-timing-function: $easing-in;
-    animation-fill-mode: both;
-    animation-delay: 0;
-    animation-duration: $time;
-    .page-nav__item {
+    &.exit {
       animation-name: slideDownOut;
       animation-iteration-count: 1;
-      animation-timing-function: $easing;
+      animation-timing-function: $easing-in;
       animation-fill-mode: both;
-      $maxChildren: 12;
-      @for $children from 1 to $maxChildren {
-        // This SCSS adjusts the animation timing based on the number of elements in the nav
-        @for $i from 0 through $children {
-          &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
-            animation-delay: ($time * 0.75) - ($i * ($time / $children));
-            animation-duration: $time * 0.75;
+      animation-delay: 0;
+      animation-duration: $time;
+      .page-nav__item {
+        animation-name: slideDownOut;
+        animation-iteration-count: 1;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+        @for $children from 1 to $maxChildren {
+          // This SCSS adjusts the animation timing based on the number of elements in the nav
+          @for $i from 0 through $children {
+            &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
+              animation-delay: ($time * 0.75) - ($i * ($time / $children));
+              animation-duration: $time * 0.75;
+            }
           }
         }
       }
-    }
-    .page-nav__link,
-    a.page-nav__Link {
-      transform: translate3d(1.5rem, 0, 0);
-    }
-  }
-  @each $page in $pages {
-    &--#{$page}.page-nav--details {
-      // Play the page nav (details page) exit animation when changing site sections (from a detail page)
-      body:not([data-location='#{$page}']) .is-exiting & {
-        @extend .page-nav--exit-details-animation;
+      .page-nav__link,
+      a.page-nav__Link {
+        transform: translate3d(1.5rem, 0, 0);
       }
     }
-    &--#{$page}.page-nav--index {
-      // Play the page nav (index page) exit animation when changing site sections (from an index page)
-      body:not([data-location='#{$page}']) .is-exiting & {
-        @extend .page-nav--exit-index-animation;
+  }
+  &--details {
+    &.exit {
+      animation-name: slideLeftOut;
+      animation-iteration-count: 1;
+      animation-timing-function: $easing-in;
+      animation-fill-mode: both;
+      animation-duration: $time;
+      .page-nav__item {
+        animation-name: slideLeftOut;
+        animation-iteration-count: 1;
+        animation-timing-function: $easing;
+        animation-fill-mode: both;
+        @for $children from 1 to $maxChildren {
+          @for $i from 0 through $children {
+            &:nth-child(#{$i + 1}):nth-last-child(#{$children - ($i - 1)}) {
+              animation-delay: ($time * 0.75) - ($i * ($time / $children));
+              animation-duration: $time * 0.75;
+            }
+          }
+        }
       }
     }
   }

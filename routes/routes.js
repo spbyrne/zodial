@@ -22,13 +22,15 @@ router.get('/', function (req, res) {
 
 router.get('/:page/:id?', function (req, res, next) {
   let pageInfo = filterArrayByValue(data.pages, 'id', req.params.page)[0];
-  req.pageId = req.params.page;
-  req.pageName = pageInfo.name;
-  req.pageTemplate = req.params.page;
-  req.options = {
-    page: req.pageName,
-    list: data[req.params.page]
-  };
+  if (pageInfo) {
+    req.pageId = req.params.page;
+    req.pageName = pageInfo.name;
+    req.pageTemplate = req.params.page;
+    req.options = {
+      page: req.pageName,
+      list: data[req.params.page]
+    };
+  }
   next();
 });
 

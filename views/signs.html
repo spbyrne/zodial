@@ -9,7 +9,12 @@
         <h1 class="page-header__title">{{ details.name }}</h1>
       </div>
       <div class="animate animate--second">
-        <p><span class="info__label">Daily Horoscope<span class="info__meta">{{ details.horoscopeDate }}</span></span> {{ details.horoscope }}</p>
+        {% if details.horoscope %}
+          <p>
+            <span class="info__label">Daily Horoscope <span class="info__meta">{{ details.horoscopeDate }}</span></span>
+            {{ details.horoscope }}
+          </p>
+        {% endif %}
       </div>
       <div class="info animate animate--third animate--cascade-children">
         <div class="info__item">

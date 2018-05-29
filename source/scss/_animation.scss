@@ -1,6 +1,18 @@
 $easing: cubic-bezier(0.000, 0.015, 0.000, 1.005);
 $easing-in: cubic-bezier(0.735, 0.005, 1.000, 0.395);
 $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
+@keyframes loadingAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -143,7 +155,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
     color: $color-active;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     transform: translate3d(0, 0, 0);
     color: $color-active;
   }

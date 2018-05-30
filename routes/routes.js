@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var got = require('got');
 var fs = require('fs');
+var path = require('path');
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 
 function filterArrayByValue(array, key, value) {
@@ -13,6 +14,10 @@ function filterArrayByValue(array, key, value) {
 function horoscopeURL(sign, day = 'today') {
   return 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=' + day
 }
+
+router.get('/loaderio-8ea5277070e204bc056a91e59c0bab65', function (req, res) {
+  res.sendFile(path.join(__dirname, '../loaderio-8ea5277070e204bc056a91e59c0bab65.txt'));
+});
 
 router.get('/', function (req, res) {
   res.render('index', {

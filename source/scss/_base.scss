@@ -25,6 +25,14 @@ body {
   line-height: 1.5;
 }
 
+::selection {
+  background: $color-accent;
+}
+
+::-moz-selection {
+  background: $color-accent;
+}
+
 a {
   color: $color-link;
   text-decoration-color: transparent;

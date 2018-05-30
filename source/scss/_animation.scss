@@ -130,7 +130,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
 @keyframes pageNavLinkActive {
   0% {
     opacity: 0;
-    transform: translate3d(-150%, 0, 0);
+    transform: translate3d(calc(-100% - 2rem), 0, 0);
   }
   100% {
     opacity: 1;

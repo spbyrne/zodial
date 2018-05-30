@@ -47,7 +47,7 @@ $(function () {
         }
       },
       onReady: {
-        duration: 625,
+        duration: 1000,
         render: function ($container, $newContent) {
           $container.removeClass('is-exiting');
           $container.html($newContent);

@@ -4,26 +4,18 @@
 {% block main %}
   <div class="container site__content">
     <ul class="page-nav page-nav--home page-nav--index">
-      <li class="page-nav__item">
-        <a class="page-nav__link" href="/signs" data-target="signs">Signs</a>
-        <p class="page-nav__description">There are 12 zodiac signs, each representing a  30°  division of celestial longitude.</p>
-      </li>
-      <li class="page-nav__item">
-        <a class="page-nav__link" href="/elements" data-target="elements">Elements</a>
-        <p class="page-nav__description">The twelve zodiac signs are grouped into four elements.</p>
-      </li>
-      <li class="page-nav__item">
-        <a class="page-nav__link" href="/modalities" data-target="modalities">Modalities</a>
-        <p class="page-nav__description">Each of the four elements manifests in three modalities.</p>
-      </li>
-      <li class="page-nav__item">
-        <a class="page-nav__link" href="/polarities" data-target="modalities">Polarities</a>
-        <p class="page-nav__description">The polarity of a sign is mirrored by the one opposite on the zodiac. </p>
-      </li>
-      <li class="page-nav__item">
-        <a class="page-nav__link" href="/celestial-bodies" data-target="celestial-bodies">Celestial Bodies</a>
-        <p class="page-nav__description">Each astrological sign is ruled by a single celestial body.</p>
-      </li>
+      {% for page in pages %}
+        <li class="page-nav__item">
+          <a
+          class="page-nav__link"
+          href="/{{ page.id }}"
+          title="{{ page.name }}"
+          data-target="{{ page.id }}">
+            {{ page.name }}
+          </a>
+          <p class="page-nav__description">{{ page.description }}</p>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 {% endblock %}

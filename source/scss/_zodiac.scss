@@ -72,6 +72,26 @@
       z-index: -1;
     }
   }
+  &:before {
+    @include for-small {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      height: 4rem;
+      transform: translate3d(-50%, 100%, 0);
+      opacity: 1;
+      background-image: radial-gradient(ellipse farthest-side, rgba($color-accent, 0.12), rgba($color-accent, 0.07), rgba($color-accent, 0.03), rgba($color-accent, 0));
+      background-position: bottom center;
+      background-size: 100% 200%;
+      transition: all $time-long $easing;
+      [data-location="home"] & {
+        opacity: 0;
+      }
+    }
+  }
   &__title {
     color: $color-accent;
     line-height: 1;
@@ -172,6 +192,7 @@
     padding: 1rem 0;
     text-align: center;
     user-select: none;
+    text-shadow: 0 0.1rem 1rem rgba($color-accent, 0);
     &:after {
       display: block;
       content: attr(title);
@@ -204,7 +225,9 @@
     &.active {
       pointer-events: none;
       opacity: 1;
+      position: relative;
       color: $color-primary;
+      text-shadow: 0 0.1rem 1rem rgba($color-accent, 0.3);
       &:before {
         transform: scale3d(1, 1, 1);
       }
@@ -360,10 +383,9 @@
   height: 100vh;
   z-index: -1;
   transition: transform 1s cubic-bezier(0.375, 0.005, 0.070, 1.000);
-  background-color: $color-dark--glow;
-  @include gradient('to bottom', $color-dark);
-  background-size: 100% 30%;
-  background-position: 0 0;
+  background-color: $color-dark;
+  background-size: 100% 100%;
+  background-position: bottom;
   background-repeat: repeat-x;
   opacity: 1;
   $max: length($pages);
@@ -372,20 +394,6 @@
     $page: nth($pages, $index + 1);
     body[data-location='#{$page}'] & {
       transform: translate3d(($max-transform / $max) * $index, 0, 0);
-    }
-  }
-  @include for-small {
-    &:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      @include gradient('to top', $color-dark);
-      background-size: 100% 30%;
-      background-position: bottom;
-      background-repeat: repeat-x;
     }
   }
 }

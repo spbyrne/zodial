@@ -5,15 +5,14 @@ var compression = require('compression');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var isDev = app.get('env') === 'development';
 var fs = require('fs');
 var router = require('./routes/routes');
 var minifyHTML = require('express-minify-html');
 
 var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 var njk = expressNunjucks(app, {
-  watch: isDev,
-  noCache: isDev,
+  watch: false,
+  noCache: false,
   globals: zodiacData
 });
 

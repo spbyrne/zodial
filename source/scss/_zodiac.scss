@@ -54,23 +54,22 @@
     }
   }
   &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 1;
-    height: 2px;
-    background-color: $color-light;
-    opacity: 0;
-    transition: all $time $easing;
-    transform-origin: 0 50%;
-    transform: scale3d(0.2, 1, 1);
-    z-index: -1;
+    display: none;
     @include for-small {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 1;
+      height: 2px;
+      background-color: $color-light;
       opacity: 0.15;
+      transition: all $time $easing;
+      transform-origin: 0 50%;
       transform: scale3d(1, 1, 1);
+      z-index: -1;
     }
   }
   &__title {
@@ -168,7 +167,7 @@
     font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.7;
     letter-spacing: 0.5px;
     padding: 1rem 0;
     text-align: center;
@@ -243,7 +242,7 @@
 .container {
   padding: 0 1rem 0 1rem;
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 44rem;
   position: relative;
   @include for-small {
     padding-left: 8rem;
@@ -373,6 +372,20 @@
     $page: nth($pages, $index + 1);
     body[data-location='#{$page}'] & {
       transform: translate3d(($max-transform / $max) * $index, 0, 0);
+    }
+  }
+  @include for-small {
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      @include gradient('to top', $color-dark);
+      background-size: 100% 30%;
+      background-position: bottom;
+      background-repeat: repeat-x;
     }
   }
 }

@@ -569,6 +569,11 @@
       animation-fill-mode: backwards;
     }
   }
+  &__title {
+    font-family: $font-accent;
+    font-weight: $font-accent--weight;
+    font-size: 1.3rem;
+  }
   &__description {
     display: block;
     padding-left: 1.5rem;
@@ -674,6 +679,11 @@
           }
         }
       }
+    }
+  }
+  &--home {
+    .page-nav__item {
+      margin-bottom: 0.75rem;
     }
   }
 }

@@ -44,6 +44,7 @@
   left: 0;
   &:before {
     content: 'Loading ' attr(data-loading) '...';
+    white-space: nowrap;
     position: absolute;
     left: 0;
     bottom: -1.75rem;

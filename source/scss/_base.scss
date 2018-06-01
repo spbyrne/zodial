@@ -36,6 +36,8 @@ a {
   color: $color-link;
   text-decoration-color: transparent;
   transition: all $time $easing;
+  transform: translateZ(0);
+  will-change: transform;
   &:hover {
     color: $color-link;
     text-decoration-color: $color-grey;

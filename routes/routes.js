@@ -22,6 +22,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/:page/:id?', function (req, res, next) {
+  if (['img','css','js'].indexOf(req.params.page) > -1) next();
   let pageInfo = filterArrayByValue(data.pages, 'id', req.params.page)[0];
   if (pageInfo) {
     req.pageId = req.params.page;

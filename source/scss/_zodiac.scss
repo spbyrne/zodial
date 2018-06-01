@@ -5,6 +5,21 @@
   &__wrapper {
     position: relative;
     flex: 1 0 auto;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 8rem;
+      transform: translate3d(-50%, 0%, 0);
+      opacity: 1;
+      background-image: radial-gradient(ellipse farthest-side, rgba($color-accent, 0.12), rgba($color-accent, 0.07), rgba($color-accent, 0.03), rgba($color-accent, 0));
+      background-position: bottom center;
+      background-size: 100% 200%;
+      transition: all $time-long $easing;
+    }
   }
   &__footer {
     padding-top: 0.5rem;
@@ -23,6 +38,9 @@
 }
 
 .loading-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   &:before {
     content: 'Loading ' attr(data-loading) '...';
     position: absolute;
@@ -49,7 +67,6 @@
   z-index: 50;
   [data-location="home"] & {
     &:after {
-      opacity: 0.2;
       transform: scale3d(0.2, 1, 1);
     }
   }
@@ -64,12 +81,31 @@
       width: 100%;
       opacity: 1;
       height: 2px;
-      background-color: $color-light;
-      opacity: 0.15;
+      background-color: $color-grey;
       transition: all $time $easing;
       transform-origin: 0 50%;
       transform: scale3d(1, 1, 1);
       z-index: -1;
+    }
+  }
+  &:before {
+    @include for-small {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      height: 4rem;
+      transform: translate3d(-50%, 100%, 0);
+      opacity: 1;
+      background-image: radial-gradient(ellipse farthest-side, rgba($color-accent, 0.12), rgba($color-accent, 0.07), rgba($color-accent, 0.03), rgba($color-accent, 0));
+      background-position: bottom center;
+      background-size: 100% 200%;
+      transition: all $time-long $easing;
+      [data-location="home"] & {
+        opacity: 0;
+      }
     }
   }
   &__title {
@@ -172,14 +208,6 @@
     padding: 1rem 0;
     text-align: center;
     user-select: none;
-    &:after {
-      display: block;
-      content: attr(title);
-      font-weight: bold;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
-    }
     &:before {
       content: '';
       display: block;
@@ -204,6 +232,7 @@
     &.active {
       pointer-events: none;
       opacity: 1;
+      position: relative;
       color: $color-primary;
       &:before {
         transform: scale3d(1, 1, 1);
@@ -323,8 +352,7 @@
     margin-bottom: 0.125rem;
   }
   &__meta {
-    color: $color-light;
-    opacity: 0.4;
+    color: $color-accent;
     font-weight: 500;
     .info__label & {
       float: right;
@@ -360,10 +388,9 @@
   height: 100vh;
   z-index: -1;
   transition: transform 1s cubic-bezier(0.375, 0.005, 0.070, 1.000);
-  background-color: $color-dark--glow;
-  @include gradient('to bottom', $color-dark);
-  background-size: 100% 30%;
-  background-position: 0 0;
+  background-color: $color-dark;
+  background-size: 100% 100%;
+  background-position: bottom;
   background-repeat: repeat-x;
   opacity: 1;
   $max: length($pages);
@@ -372,20 +399,6 @@
     $page: nth($pages, $index + 1);
     body[data-location='#{$page}'] & {
       transform: translate3d(($max-transform / $max) * $index, 0, 0);
-    }
-  }
-  @include for-small {
-    &:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      @include gradient('to top', $color-dark);
-      background-size: 100% 30%;
-      background-position: bottom;
-      background-repeat: repeat-x;
     }
   }
 }

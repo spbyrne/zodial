@@ -38,7 +38,7 @@ a {
   transition: all $time $easing;
   &:hover {
     color: $color-link;
-    text-decoration-color: $color-link;
+    text-decoration-color: $color-grey;
   }
   &:active {
     color: $color-active;

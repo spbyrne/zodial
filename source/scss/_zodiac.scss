@@ -428,9 +428,10 @@
     transition: all $time-long $easing-in-out;
     transform: translate3d( 0, 0, 0);
     animation-name: spin;
-    animation-duration: 220s;
+    animation-duration: 320s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
     will-change: transform;
   }
 }

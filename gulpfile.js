@@ -9,6 +9,7 @@ var include = require("gulp-include"); // Makes inclusion of files a breeze.
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
 var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
+var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 var fs = require('fs'); // File system access
 
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
@@ -23,27 +24,38 @@ gulp.task('styles', function () {
     browsers: ['last 2 versions']
   };
   return gulp.
-    src('source/scss/site.scss').
-    pipe(plumber()).
-    pipe(sass(sassOptions)).
-    pipe(prefixer(prefixerOptions)).
-    pipe(csso()).
-    pipe(rename('site.css')).
-    pipe(gulp.dest('public/css'));
+  src('source/scss/site.scss').
+  pipe(plumber()).
+  pipe(sass(sassOptions)).
+  pipe(prefixer(prefixerOptions)).
+  pipe(csso()).
+  pipe(rename('site.css')).
+  pipe(gulp.dest('public/css'));
 });
 
 gulp.task('javascript', function () {
   return gulp.
-    src('source/js/site.js').
-    pipe(plumber()).
-    pipe(babel({
-      presets: ['env']
-    })).
-    pipe(include()).
-    pipe(webmake()).
-    pipe(uglify()).
-    pipe(rename('site.js')).
-    pipe(gulp.dest('public/js'));
+  src('source/js/site.js').
+  pipe(plumber()).
+  pipe(babel({
+    presets: ['env']
+  })).
+  pipe(include()).
+  pipe(webmake()).
+  pipe(uglify()).
+  pipe(rename('site.js')).
+  pipe(gulp.dest('public/js'));
+});
+
+gulp.task('images', function () {
+  return gulp
+    .src('source/img/*')
+    .pipe(
+      image({
+        quiet: true
+      })
+    )
+    .pipe(gulp.dest('public/img'));
 });
 
 gulp.task('favicon', function (done) {
@@ -111,7 +123,9 @@ gulp.task('favicon', function (done) {
 
 gulp.task('favicon-html', function () { // Only run manually; the existing favicon.html file will suffice unless removed. Please go to the file and clean out extra HTML elements after generation
   return gulp
-    .src('./views/partials/favicon.html', { base: './' })
+    .src('./views/partials/favicon.html', {
+      base: './'
+    })
     .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
     .pipe(gulp.dest('./'));
 });
@@ -119,8 +133,9 @@ gulp.task('favicon-html', function () { // Only run manually; the existing favic
 gulp.task('watch', function () {
   gulp.watch('source/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('source/js/**/*.js', gulp.series('javascript'));
+  gulp.watch('source/img/*', gulp.series('images'));
 });
 
-gulp.task('default', gulp.series('javascript', 'styles', 'watch'));
+gulp.task('default', gulp.series('javascript', 'styles', 'watch', 'images'));
 
-gulp.task('build', gulp.series('favicon', 'javascript', 'styles'));
+gulp.task('build', gulp.series('favicon', 'javascript', 'styles', 'images'));

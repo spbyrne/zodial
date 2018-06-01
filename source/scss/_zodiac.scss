@@ -406,6 +406,37 @@
   }
 }
 
+.wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 50% 50%;
+  transform: translate3d( 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: all $time-long $easing-in-out;
+  overflow: hidden;
+  z-index: -1;
+  &__image {
+    display: block;
+    width: 120%;
+    left: -10%;
+    top: 15%;
+    height: auto;
+    margin: 0;
+    opacity: 0.1;
+    transform-origin: 50% 50%;
+    position: relative;
+    transition: all $time-long $easing-in-out;
+    animation-name: spin;
+    animation-duration: 220s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+}
+
 .breadcrumb {
   display: flex;
   flex-wrap: nowrap;

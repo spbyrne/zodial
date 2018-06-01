@@ -3,7 +3,8 @@
     "title": "Zodiapp",
     "color": "#27252d",
     "description": "A work-in-progress progressive web application / project website.",
-    "analytics": "UA-37878740-3"
+    "analytics": "UA-37878740-3",
+    "root": "//zodiac.scottbyrne.ca/"
   },
   "pages": [{
       "name": "Signs",

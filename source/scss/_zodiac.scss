@@ -417,9 +417,9 @@
   z-index: -1;
   &__image {
     display: block;
-    width: 120%;
-    left: -10%;
-    top: 15%;
+    width: 200%;
+    left: -50%;
+    top: 25%;
     height: auto;
     margin: 0;
     opacity: 0.05;
@@ -433,6 +433,11 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     will-change: transform;
+    @include for-small() {
+      width: 120%;
+      left: -10%;
+      top: 15%;
+    }
   }
 }
 

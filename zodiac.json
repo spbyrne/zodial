@@ -2,7 +2,7 @@
   "site": {
     "title": "Zodial",
     "color": "#27252d",
-    "description": "A work-in-progress progressive web application / project website.",
+    "description": "Find your place in the cosmos. Explore the zodiac and learn more about your astrological sign.",
     "analytics": "UA-37878740-3",
     "root": "//www.zodial.app/"
   },

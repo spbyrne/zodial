@@ -1,10 +1,10 @@
 {
   "site": {
-    "title": "Zodiapp",
+    "title": "Zodial",
     "color": "#27252d",
     "description": "A work-in-progress progressive web application / project website.",
     "analytics": "UA-37878740-3",
-    "root": "//zodiac.scottbyrne.ca/"
+    "root": "//www.zodial.app/"
   },
   "pages": [{
       "name": "Signs",

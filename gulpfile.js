@@ -20,43 +20,43 @@ gulp.task('styles', function () {
     outputStyle: 'expanded'
   };
   var prefixerOptions = {
-    browsers: ['last 2 versions']
+    browsers: ['last 10 versions']
   };
   return gulp.
-  src('source/scss/site.scss').
-  pipe(plumber()).
-  pipe(sass(sassOptions)).
-  pipe(prefixer(prefixerOptions)).
-  pipe(csso()).
-  pipe(rename('site.css')).
-  pipe(gulp.dest('public/css'));
+    src('source/scss/site.scss').
+    pipe(plumber()).
+    pipe(sass(sassOptions)).
+    pipe(prefixer(prefixerOptions)).
+    pipe(csso()).
+    pipe(rename('site.css')).
+    pipe(gulp.dest('public/css'));
 });
 
 gulp.task('javascript', function () {
   return gulp.
-  src('source/js/site.js').
-  pipe(plumber()).
-  pipe(babel({
-    presets: ['env']
-  })).
-  pipe(include()).
-  pipe(webmake()).
-  pipe(uglify()).
-  pipe(rename('site.js')).
-  pipe(gulp.dest('public/js'));
+    src('source/js/site.js').
+    pipe(plumber()).
+    pipe(babel({
+      presets: ['env']
+    })).
+    pipe(include()).
+    pipe(webmake()).
+    pipe(uglify()).
+    pipe(rename('site.js')).
+    pipe(gulp.dest('public/js'));
 });
 
 gulp.task('images', function () {
   return gulp.
-  src('source/img/*').
-  pipe(
-    image({
-      jpegRecompress: false,
-      mozjpeg: false,
-      quiet: true
-    })
-  ).
-  pipe(gulp.dest('public/img'));
+    src('source/img/*').
+    pipe(
+      image({
+        jpegRecompress: false,
+        mozjpeg: false,
+        quiet: true
+      })
+    ).
+    pipe(gulp.dest('public/img'));
 });
 
 gulp.task('favicon', function (done) {

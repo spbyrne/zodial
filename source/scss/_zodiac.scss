@@ -144,20 +144,7 @@
       opacity: 0.7;
       &:hover {
         opacity: 1;
-      }
-      &:after {
-        content: attr(title);
-        position: absolute;
-        color: $color-accent;
-        top: 0;
-        left: 0;
-        filter: blur(0.8rem);
-        opacity: 0;
-        z-index: -1;
-        transition: all $time $easing;
-        [data-location="home"] & {
-          opacity: 0.4;
-        }
+        @include shineText();
       }
       @include for-small {
         [data-location="home"] & {
@@ -386,6 +373,13 @@
     white-space: nowrap;
     font-family: $font-accent;
     font-weight: $font-accent--weight;
+    a {
+      display: inline-block;
+      position: relative;
+      &:hover {
+        @include shineText();
+      }
+    }
   }
 }
 
@@ -417,6 +411,32 @@
   transition: all $time-long $easing-in-out;
   overflow: hidden;
   z-index: -1;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+    mix-blend-mode: multiply;
+    transform-origin: 50% 50%;
+    transform: translate3d(50%,0,0) rotate3d(0, 0, 1, -45deg);
+    background: linear-gradient(to bottom, rgba($color-dark,0),  rgba($color-dark,0.7), rgba($color-dark,1));
+  }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%,0,0) rotate3d(0, 0, 1, 45deg);
+    background: linear-gradient(to bottom, rgba($color-dark,0),  rgba($color-dark,0.7), rgba($color-dark,1));
+  }
   &__image {
     display: block;
     width: 200%;
@@ -580,6 +600,43 @@
   }
 }
 
+.gold-text {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+  margin-bottom: -0.25rem;
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-gold;
+    background-image: linear-gradient(to right, rgba(white,0) 1rem, white 3.5rem, rgba(white,0) 3.6rem, rgba(white,0) 5rem, rgba(white,0.5) 10rem, rgba(white,0) 12.5rem,rgba(white,0) 100%);
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    color: transparent;
+    animation-name: goldText;
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: $easing;
+    .animate--second & {
+      animation-delay: .04s;
+    }
+    .animate--third & {
+      animation-delay: .08s;
+    }
+    .animate--fourth & {
+      animation-delay: .12s;
+    }
+  }
+}
+
 .page-header {
   &--index {
     pointer-events: none;
@@ -636,6 +693,9 @@
     }
     &:hover {
       opacity: 1;
+      &:hover {
+        @include shineText();
+      }
     }
     &.loading {
       pointer-events: none;

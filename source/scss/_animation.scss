@@ -214,3 +214,29 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
     transform: scale3d(0, 1, 1);
   }
 }
+
+@keyframes goldText {
+  0% {
+    opacity: 0;
+    background-position: 75% 0;
+  }
+  100% {
+    opacity: 0.6;
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shineText {
+  0% {
+    opacity: 0.1;
+    background-position: 100% 0;
+  }
+  50% {
+    opacity: 0.6;
+    background-position: -100% 0;
+  }
+  100% {
+    opacity: 0.25;
+    background-position: 100% 0;
+  }
+}

@@ -1,6 +1,50 @@
-{% extends "blank.html" %}
+{% from "macros/main-nav.html" import mainNav %}
+{% from "macros/page-nav.html" import pageNav %}
+{% from "macros/sign-list.html" import signList %}
+{% from "macros/element-list.html" import elementList %}
+{% from "macros/sentence-list.html" import sentenceList %}
+{% from "macros/slug.html" import slug %}
+{% from "macros/meta-title.html" import metaTitle %}
+{% from "macros/meta-description.html" import metaDescription %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
+<head>
+  {% if site.analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics }}');
+    </script>
+  {% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="application-name" content="Zodial">
+  <title>{{ metaTitle(site,page,details) }}</title>
+  <meta name="description" content="{{ metaDescription(site,page,details) }}">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:site_name" content="Zodial">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ metaTitle(site,page,details) }}">
+  <meta property="og:description" content="{{ metaDescription(site,page,details) }}">
+  <meta property="og:image" content="https://www.zodial.app/img/thumbnail.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  {% include "partials/favicon.html" %}
+  <meta name="theme-color" content="{{ site.color }}">
+  <link rel="stylesheet" type="text/css" href="/css/site.css">
+  {% block head %}
+  {% endblock %}
+
+  <meta name="author" content="Scott Byrne" />
+  <meta name="contact" content="admin@zodial.app">
+</head>
+
+<body class="{{ body_class }}" data-location="{% if page.id %}{{ page.id }}{% else %}home{% endif %}">
 
   <main id="main" role="main" class="site__wrapper">
 
@@ -17,5 +61,18 @@
   <div class="wheel" style="opacity:0.5;">
     <img class="wheel__image" src="{{ site.root }}img/wheel.svg" style="opacity:0.1;" alt="">
   </div>
-  
-{% endblock %}
+
+  <script src="/js/site.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['BioRhyme:700', 'Kanit:300,600']
+      }
+    });
+  </script>
+  {% block scripts %}
+  {% endblock %}
+</body>
+
+</html>

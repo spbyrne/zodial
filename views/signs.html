@@ -5,7 +5,7 @@
     {{ pageNav(page,list,id) }}
     {% if details %}
       <div class="page-header animate animate--first">
-        <h1 class="page-header__title">{{ details.name }}</h1>
+        <h1 class="page-header__title"><span class="gold-text" data-text="{{ details.name }}">{{ details.name }}</span></h1>
       </div>
       <div class="animate animate--second">
         {% if details.horoscope %}
@@ -22,15 +22,15 @@
         </div>
         <div class="info__item">
           <span class="info__label">Element</span>
-          <span class="info__data"><a href="/elements/{{ slug(details.element) }}" data-section="elements">{{ details.element }}</a></span>
+          <span class="info__data"><a href="/elements/{{ slug(details.element) }}" title="{{ details.element }}" data-section="elements">{{ details.element }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Modality</span>
-          <span class="info__data"><a href="/modalities/{{ slug(details.modality) }}" data-section="modalities">{{ details.modality }}</a></span>
+          <span class="info__data"><a href="/modalities/{{ slug(details.modality) }}" title="{{ details.modality }}" data-section="modalities">{{ details.modality }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Polarity</span>
-          <span class="info__data"><a href="/polarities/{{ slug(details.polarity) }}" data-section="polarities">{{ details.polarity }}</a></span>
+          <span class="info__data"><a href="/polarities/{{ slug(details.polarity) }}" title="{{ details.polarity }}" data-section="polarities">{{ details.polarity }}</a></span>
         </div>
         <div class="info__item">
           <span class="info__label">Period</span>
@@ -42,7 +42,7 @@
         </div>
         <div class="info__item">
           <span class="info__label">Celestial Body</span>
-          <span class="info__data"><a href="/celestial-bodies/{{ slug(details.celestialBody) }}" data-section="celestial-bodies">{{ details.celestialBody }}</a></span>
+          <span class="info__data"><a href="/celestial-bodies/{{ slug(details.celestialBody) }}" title="{{ details.celestialBody }}" data-section="celestial-bodies">{{ details.celestialBody }}</a></span>
         </div>
       </div>
     {% endif %}

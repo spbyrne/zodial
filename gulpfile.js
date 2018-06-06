@@ -51,6 +51,8 @@ gulp.task('images', function () {
   src('source/img/*').
   pipe(
     image({
+      jpegRecompress: false,
+      mozjpeg: false,
       quiet: true
     })
   ).

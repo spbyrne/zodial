@@ -1,0 +1,1 @@
+{% macro metaDescription(site,page,details) %}{% if details.description %}{{ details.description }} {{ site.description | truncate(49, true, '.') }}{% elif page %}{{ page.description }} {{ site.description | truncate(49, true, '.') }}{% else %}{{ site.description }}{% endif %}{% endmacro %}

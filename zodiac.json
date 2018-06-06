@@ -209,7 +209,7 @@
   "elements": [{
       "name": "Fire",
       "id": "fire",
-      "definition": "Fire has to deal with bravery.",
+      "description": "Fire has to deal with bravery.",
       "traits": [
         "passion",
         "energy",
@@ -223,7 +223,7 @@
     {
       "name": "Air",
       "id": "air",
-      "definition": "Air has to deal with playfulness and wits.",
+      "description": "Air has to deal with playfulness and wits.",
       "traits": [
         "mental processes",
         "language",
@@ -236,7 +236,7 @@
     {
       "name": "Earth",
       "id": "earth",
-      "definition": "Earth has to deal with loyalty.",
+      "description": "Earth has to deal with loyalty.",
       "traits": [
         "practicality",
         "stability",
@@ -247,7 +247,7 @@
     {
       "name": "Water",
       "id": "water",
-      "definition": "Water has to deal with emotion, intuition, and intelligence.",
+      "description": "Water has to deal with emotion, intuition, and intelligence.",
       "traits": [
         "emotion",
         "psychism",
@@ -259,7 +259,7 @@
   "modalities": [{
       "name": "Cardinal",
       "id": "cardinal",
-      "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
+      "description": "The Cardinal modality marks the beginning of the season and the power of initiation.",
       "traits": [
         "enterprising",
         "creative",
@@ -269,7 +269,7 @@
     {
       "name": "Fixed",
       "id": "fixed",
-      "definition": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
+      "description": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
       "traits": [
         "stable",
         "reliable",
@@ -279,7 +279,7 @@
     {
       "name": "Mutable",
       "id": "mutable",
-      "definition": "The Mutable modality represents the end of the season and the power of change.",
+      "description": "The Mutable modality represents the end of the season and the power of change.",
       "traits": [
         "adaptable",
         "flexible",
@@ -290,7 +290,7 @@
   "polarities": [{
       "name": "Positive",
       "id": "positive",
-      "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
+      "description": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
       "elements": [
         "Fire",
         "Air"
@@ -299,7 +299,7 @@
     {
       "name": "Negative",
       "id": "negative",
-      "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
+      "description": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
       "elements": [
         "Earth",
         "Water"

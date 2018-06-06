@@ -7,7 +7,7 @@
         class="page-nav__link {% if (item.id == id) %}active{% endif %}"
         href="/{{ slug(page) }}/{{ item.id }}"
         title="{{ item.name }}"
-        data-target="{{ slug(page) }}">
+        data-section="{{ slug(page) }}">
           {{ item.name }}
         </a>
       </li>
@@ -15,8 +15,8 @@
   </ul>
   {% if id %}
     <ul class="breadcrumb">
-      <li class="breadcrumb__item"><a href="/" data-target="home" class="breadcrumb__link">Home</a></li>
-      <li class="breadcrumb__item"><a href="/{{ slug(page) }}/" data-target="slug(page)" class="breadcrumb__link">{{ page }}</a></li>
+      <li class="breadcrumb__item"><a href="/" data-section="home" class="breadcrumb__link">Home</a></li>
+      <li class="breadcrumb__item"><a href="/{{ slug(page) }}/" data-section="slug(page)" class="breadcrumb__link">{{ page }}</a></li>
     </ul>
   {% endif %}
 {% endmacro %}

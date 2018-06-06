@@ -4,7 +4,7 @@
       <li class="main-nav__item {% if (option.name == page) %}active{% endif %}">
         <a class="main-nav__link {% if (option.name == page) %}active{% endif %}"
           href="/{% if (option.name != 'Home') %}{{ option.id }}{% endif %}" title="{{ option.name }}"
-          data-target="{{ option.id }}">
+          data-section="{{ option.id }}">
           {{ option.name }}
         </a>
       </li>

@@ -21,6 +21,10 @@
           <span class="info__data">{{ sentenceList(details.signs,'signs') }}</span>
         </div>
       </div>
+    {% else %}
+      <div class="page-header page-header--index animate animate--first">
+        <p class="page-header__hero-text"><strong>Empedocles — fifth-century BC Greek philosopher — identified Fire, Earth, Air, and Water as the basic building blocks of the universe.</strong> Classification according to the elements has gained such importance that some astrologers start their interpretation of a natal chart by studying the balance of the elements.</p>
+      </div>
     {% endif %}
   </div>
 {% endblock %}

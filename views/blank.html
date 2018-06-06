@@ -20,7 +20,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{{ site.title }}</title>
+  <title>{{ site.title }} - {% if page == "Home" %}{{ site.tagline }}{% else %}{{ page }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <meta name="robots" content="index,follow">
   
@@ -31,7 +31,7 @@
   {% endblock %}
 </head>
 
-<body class="{{ body_class }}" data-location="{{ location }}" data-sign="">
+<body class="{{ body_class }}" data-location="{{ location }}" data-id="{{ id }}">
 
   {% block body %}
   {% endblock %}

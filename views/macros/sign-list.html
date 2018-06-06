@@ -1,7 +1,7 @@
 {% macro signList(signs) %}
   <ul class="sentence-list">
     {% for sign in signs %}
-      <li class="sentence-list__item"><a class="sentence-list__link" href="/sign/{{ sign }}" data-target="sign">{{ sign | title }}</a></li>
+      <li class="sentence-list__item"><a class="sentence-list__link" href="/sign/{{ sign }}" data-section="sign">{{ sign | title }}</a></li>
     {% endfor %}
   </ul>
 {% endmacro %}

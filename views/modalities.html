@@ -21,6 +21,10 @@
           <span class="info__data">{{ sentenceList(details.signs,'signs') }}</span>
         </div>
       </div>
+    {% else %}
+      <div class="page-header page-header--index animate animate--first">
+        <p class="page-header__hero-text"><strong>Each of the four elements manifests in three modalities: Cardinal, Fixed and Mutable.</strong> As each modality comprehends four signs, these are also known as Quadruplicities. The combination of element and modality provides a basic sign characterization.</p>
+      </div>
     {% endif %}
   </div>
 {% endblock %}

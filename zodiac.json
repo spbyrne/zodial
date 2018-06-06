@@ -2,11 +2,13 @@
   "site": {
     "title": "Zodial",
     "color": "#27252d",
+    "tagline": "Astrological Information Compendium",
     "description": "Find your place in the cosmos. Explore the zodiac and learn more about your astrological sign.",
     "analytics": "UA-37878740-3",
     "root": "//www.zodial.app/"
   },
-  "pages": [{
+  "pages": [
+    {
       "name": "Signs",
       "singular": "Sign",
       "description": "There are 12 zodiac signs, each representing a  30°  division of celestial longitude.",
@@ -37,7 +39,8 @@
       "id": "celestial-bodies"
     }
   ],
-  "signs": [{
+  "signs": [
+    {
       "name": "Aries",
       "id": "aries",
       "description": "",
@@ -194,7 +197,8 @@
       "endDate": "03/20"
     }
   ],
-  "elements": [{
+  "elements": [
+    {
       "name": "Fire",
       "id": "fire",
       "definition": "Fire has to deal with bravery.",
@@ -225,109 +229,173 @@
       "name": "Earth",
       "id": "earth",
       "definition": "Earth has to deal with loyalty.",
-      "traits": ["practicality", "stability", "materialism", "realism"]
+      "traits": [
+        "practicality",
+        "stability",
+        "materialism",
+        "realism"
+      ]
     },
     {
       "name": "Water",
       "id": "water",
       "definition": "Water has to deal with emotion, intuition, and intelligence.",
-      "traits": ["emotion", "psychism", "mysticism", "intuition"]
+      "traits": [
+        "emotion",
+        "psychism",
+        "mysticism",
+        "intuition"
+      ]
     }
   ],
-  "modalities": [{
+  "modalities": [
+    {
       "name": "Cardinal",
       "id": "cardinal",
       "definition": "The Cardinal modality marks the beginning of the season and the power of initiation.",
-      "traits": ["enterprising", "creative", "assertive"]
+      "traits": [
+        "enterprising",
+        "creative",
+        "assertive"
+      ]
     },
     {
       "name": "Fixed",
       "id": "fixed",
       "definition": "The Fixed modality corresponds to the middle of the season and the power of sustaining.",
-      "traits": ["stable", "reliable", "determined"]
+      "traits": [
+        "stable",
+        "reliable",
+        "determined"
+      ]
     },
     {
       "name": "Mutable",
       "id": "mutable",
       "definition": "The Mutable modality represents the end of the season and the power of change.",
-      "traits": ["adaptable", "flexible", "communicative"]
+      "traits": [
+        "adaptable",
+        "flexible",
+        "communicative"
+      ]
     }
   ],
-  "polarities": [{
+  "polarities": [
+    {
       "name": "Positive",
       "id": "positive",
       "definition": "Six of the zodiac signs are yang energy, which is also known as “masculine” energy. These signs are more active and assertive rather than receptive.",
-      "elements": ["Fire", "Air"]
+      "elements": [
+        "Fire",
+        "Air"
+      ]
     },
     {
       "name": "Negative",
       "id": "negative",
       "definition": "Six of the zodiac signs are yin energy, which is also known as “feminine” energy. These signs are more receptive and reactive rather than active.",
-      "elements": ["Earth", "Water"]
+      "elements": [
+        "Earth",
+        "Water"
+      ]
     }
   ],
-  "celestial-bodies": [{
+  "celestial-bodies": [
+    {
       "name": "Sun",
       "id": "sun",
       "description": "The Sun tells us of the actual core of a person, the inner self, of that which is of central concern. It also shows us the general vitality and the ability to assert oneself, it describes a general tone of being which colors everything else.",
-      "rules": ["personality", "ego"]
+      "rules": [
+        "personality",
+        "ego"
+      ]
     },
     {
       "name": "Moon",
       "id": "moon",
       "description": "The Moon represents our feelings and emotions, the receptivity, imagination and basic feeling tone of a person. It also has an effect on the sense of rhythm, time and timing, it influences our adaptability to change, our mobility and versatility.",
-      "rules": ["moods", "emotion"]
+      "rules": [
+        "moods",
+        "emotion"
+      ]
     },
     {
       "name": "Mercury",
       "id": "mercury",
       "description": "Mercury represents reason, reasonableness (common sense), that which is rational. It stands for the spoken and written word, putting in order, weighing and evaluating, the process of learning and skills.",
-      "rules": ["mind", "communication"]
+      "rules": [
+        "mind",
+        "communication"
+      ]
     },
     {
       "name": "Venus",
       "id": "venus",
       "description": "Venus gives us a sense of beauty, the enjoyment of pleasure, aesthetic awareness, love of harmony, sociability, taking pleasure in relationships and eroticism.",
-      "rules": ["love", "attraction"]
+      "rules": [
+        "love",
+        "attraction"
+      ]
     },
     {
       "name": "Mars",
       "id": "mars",
       "description": "Mars represents the energy and drive of a person, their courage, determination, the freedom of spontaneous impulse. It also describes the readiness for action, the way one goes about doing things as well as simple aggression.",
-      "rules": ["drive", "energy"]
+      "rules": [
+        "drive",
+        "energy"
+      ]
     },
     {
       "name": "Jupiter",
       "id": "jupiter",
       "description": "The search for individual meaning and purpose, optimism, hope and a sense of justice are represented by Jupiter. So also faith, a basic philosophy of life, the striving for spiritual growth and expansion.",
-      "rules": ["luck", "growth", "wisdom"]
+      "rules": [
+        "luck",
+        "growth",
+        "wisdom"
+      ]
     },
     {
       "name": "Saturn",
       "id": "saturn",
       "description": "Saturn shows how we experience reality, where we meet with resistance and discover our limitations. It represents the conscience and moral conviction, the laws and rules which we choose to obey. It also tells us about  our powers of endurance and the ability to concentrate, it lends qualities like earnestness, caution and reserve.",
-      "rules": ["discipline", "fears", "challenges"]
+      "rules": [
+        "discipline",
+        "fears",
+        "challenges"
+      ]
     },
     {
       "name": "Uranus",
       "id": "uranus",
       "description": "Uranus stands for intuition, it transmits sudden inspiration and lightning insights. An openness for all that is new, unknown and unusual. A sort of wrong-headed contrariness is also associated with this planet. It is said to be characteristic of astrology as such.",
-      "rules": ["change", "originality"]
+      "rules": [
+        "change",
+        "originality"
+      ]
     },
     {
       "name": "Neptune",
       "id": "neptune",
       "description": "This planet gives us the supersensory, opens doors to mystical experience and the transcendental. On this level it is hard to discern where perception moves into deception, illusion and false appearances, and so Neptune is associated with all of these, with drugs and all kinds of pseudo-realities.",
-      "rules": ["dreams", "healing"]
+      "rules": [
+        "dreams",
+        "healing"
+      ]
     },
     {
       "name": "Pluto",
       "id": "pluto",
       "description": "Pluto describes how we deal with power, personal and non-personal, be it through suffering the power of others or exercising it ourselves. It describes how we meet the demonic and magical, our regenerative powers and our capacity for radical change and rebirth: the cycles of dying and becoming.",
-      "rules": ["power", "transformation"]
+      "rules": [
+        "power",
+        "transformation"
+      ]
     }
   ],
-  "moon phases": [{
+  "moon phases": [
+    {
       "name": "New Moon",
       "time for": "planning and conceiving, recharging, opening yourself up, setting new goals"
     },

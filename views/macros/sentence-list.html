@@ -3,7 +3,7 @@
     {% for item in list %}
       <li class="sentence-list__item">
         {% if link %}
-          <a href="/{{ link }}/{{ item.id }}" title="{{ item.name }}" data-target="{{ link }}">{{ item.name }}</a>
+          <a href="/{{ link }}/{{ item.id }}" title="{{ item.name }}" data-section="{{ link }}">{{ item.name }}</a>
         {% else %}
           {{ item | title }}
         {% endif %}

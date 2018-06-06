@@ -20,7 +20,7 @@ body {
   background: $color-dark;
   color: $color-light;
   font-family: $font-primary, sans-serif;
-  font-weight: 400;
+  font-weight: $font-primary--weight;
   line-height: 1.5;
 }
 
@@ -55,7 +55,7 @@ h4,
 h5,
 h6,
 b {
-  font-weight: 700;
+  font-weight: $font-primary--bold;
 }
 
 h1,

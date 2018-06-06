@@ -29,6 +29,7 @@
   &__title {
     font-size: 0.9rem;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: $color-light;
     margin: 0;
     a {
@@ -205,7 +206,6 @@
     line-height: 1;
     transition: all $time $easing;
     color: $color-primary;
-    font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;
     opacity: 0.7;
@@ -213,6 +213,7 @@
     padding: 1rem 0;
     text-align: center;
     user-select: none;
+    text-align: center;
     &:before {
       content: '';
       display: block;
@@ -348,10 +349,11 @@
     }
   }
   &__label {
-    font-weight: 700;
+    font-weight: $font-primary--bold;
     line-height: 1;
     font-size: 0.9rem;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     opacity: 1;
     display: block;
     color: $color-primary;
@@ -360,7 +362,7 @@
   }
   &__meta {
     color: $color-accent;
-    font-weight: 500;
+    font-weight: $font-primary--weight;
     .info__label & {
       float: right;
     }
@@ -503,8 +505,8 @@
     font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     text-decoration: none;
-    letter-spacing: 0.5px;
     opacity: 0.8;
     display: block;
     color: $color-primary;
@@ -514,7 +516,7 @@
     &.active {
       color: $color-primary;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: $font-primary--bold;
       pointer-events: none;
     }
   }
@@ -596,6 +598,7 @@
       display: block;
       color: $color-light;
       font-family: $font-accent;
+      font-weight: $font-accent--weight;
       font-size: 1.2rem;
       line-height: 1.3;
       margin-bottom: 0.5rem;
@@ -644,7 +647,7 @@
     &.active {
       color: $color-light;
       text-decoration-color: transparent;
-      font-weight: bold;
+      font-weight: $font-primary--bold;
       pointer-events: none;
       opacity: 1;
       animation-name: pageNavLinkActive;
@@ -662,7 +665,7 @@
   &__description {
     display: block;
     padding-left: 1.5rem;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }

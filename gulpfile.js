@@ -9,12 +9,18 @@ var include = require("gulp-include"); // Makes inclusion of files a breeze.
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
 var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
-var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 var fs = require('fs'); // File system access
+
+// Specific to image minifier
+var cache = require('gulp-cache');
+var imagemin = require('gulp-imagemin');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminZopfli = require('imagemin-zopfli');
+var imageminMozjpeg = require('imagemin-mozjpeg'); //need to run 'brew install libpng'
+var imageminGiflossy = require('imagemin-giflossy');
 
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 var FAVICON_DATA_FILE = 'source/favicon/favicon-settings.json';
-
 
 gulp.task('styles', function () {
   var sassOptions = {
@@ -47,15 +53,34 @@ gulp.task('javascript', function () {
   pipe(gulp.dest('public/js'));
 });
 
-gulp.task('images', function () {
-  return gulp
-    .src('source/img/*')
-    .pipe(
-      image({
-        quiet: true
-      })
-    )
-    .pipe(gulp.dest('public/img'));
+gulp.task('images', function() {
+    return gulp.src('source/img/*')
+        .pipe(cache(imagemin([
+            imageminPngquant({
+                speed: 1,
+                quality: 98
+            }),
+            imageminZopfli({
+                more: true
+            }),
+            imageminGiflossy({
+                optimizationLevel: 3,
+                optimize: 3,
+                lossy: 2
+            }),
+            imagemin.svgo({
+                plugins: [{
+                    removeViewBox: false
+                }]
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imageminMozjpeg({
+                quality: 70
+            })
+        ])))
+        .pipe(gulp.dest('public/img'));
 });
 
 gulp.task('favicon', function (done) {

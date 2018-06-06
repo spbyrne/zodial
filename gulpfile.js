@@ -53,34 +53,30 @@ gulp.task('javascript', function () {
   pipe(gulp.dest('public/js'));
 });
 
-gulp.task('images', function() {
-    return gulp.src('source/img/*')
-        .pipe(cache(imagemin([
-            imageminPngquant({
-                speed: 1,
-                quality: 98
-            }),
-            imageminZopfli({
-                more: true
-            }),
-            imageminGiflossy({
-                optimizationLevel: 3,
-                optimize: 3,
-                lossy: 2
-            }),
-            imagemin.svgo({
-                plugins: [{
-                    removeViewBox: false
-                }]
-            }),
-            imagemin.jpegtran({
-                progressive: true
-            }),
-            imageminMozjpeg({
-                quality: 70
-            })
-        ])))
-        .pipe(gulp.dest('public/img'));
+gulp.task('images', function () {
+  return gulp.
+  src('source/img/*').
+  pipe(imagemin([
+    imageminPngquant({
+      speed: 1,
+      quality: 98
+    }),
+    imageminZopfli({
+      more: true
+    }),
+    imagemin.svgo({
+      plugins: [{
+        removeViewBox: false
+      }]
+    }),
+    imagemin.jpegtran({
+      progressive: true
+    }),
+    imageminMozjpeg({
+      quality: 70
+    })
+  ])).
+  pipe(gulp.dest('public/img'));
 });
 
 gulp.task('favicon', function (done) {

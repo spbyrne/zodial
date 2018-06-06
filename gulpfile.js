@@ -10,14 +10,7 @@ var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
 var realFavicon = require('gulp-real-favicon'); // Auto generates favicon images and markup
 var fs = require('fs'); // File system access
-
-// Specific to image minifier
-var cache = require('gulp-cache');
-var imagemin = require('gulp-imagemin');
-var imageminPngquant = require('imagemin-pngquant');
-var imageminZopfli = require('imagemin-zopfli');
-var imageminMozjpeg = require('imagemin-mozjpeg'); //need to run 'brew install libpng'
-var imageminGiflossy = require('imagemin-giflossy');
+var image = require('gulp-image'); // Optimize PNG, JPEG, GIF, SVG images with gulp task
 
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
 var FAVICON_DATA_FILE = 'source/favicon/favicon-settings.json';
@@ -56,26 +49,11 @@ gulp.task('javascript', function () {
 gulp.task('images', function () {
   return gulp.
   src('source/img/*').
-  pipe(imagemin([
-    imageminPngquant({
-      speed: 1,
-      quality: 98
-    }),
-    imageminZopfli({
-      more: true
-    }),
-    imagemin.svgo({
-      plugins: [{
-        removeViewBox: false
-      }]
-    }),
-    imagemin.jpegtran({
-      progressive: true
-    }),
-    imageminMozjpeg({
-      quality: 70
+  pipe(
+    image({
+      quiet: true
     })
-  ])).
+  ).
   pipe(gulp.dest('public/img'));
 });
 

@@ -1,13 +1,13 @@
 {% from "./slug.html" import slug %}
 {% macro pageNav(page,list,id) %}
-  <ul class="page-nav page-nav--{% if id %}details{% else %}index{% endif %} page-nav--{{ slug(page) }}">
+  <ul class="page-nav page-nav--{% if id %}details{% else %}index{% endif %} page-nav--{{ page.id }}">
     {% for item in list %}
       <li class="page-nav__item {% if (item.id == id) %}active{% endif %}">
         <a
         class="page-nav__link {% if (item.id == id) %}active{% endif %}"
-        href="/{{ slug(page) }}/{{ item.id }}"
+        href="/{{ page.id }}/{{ item.id }}"
         title="{{ item.name }}"
-        data-section="{{ slug(page) }}">
+        data-section="{{ page.id }}">
           {{ item.name }}
         </a>
       </li>
@@ -16,7 +16,7 @@
   {% if id %}
     <ul class="breadcrumb">
       <li class="breadcrumb__item"><a href="/" data-section="home" class="breadcrumb__link">Home</a></li>
-      <li class="breadcrumb__item"><a href="/{{ slug(page) }}/" data-section="slug(page)" class="breadcrumb__link">{{ page }}</a></li>
+      <li class="breadcrumb__item"><a href="/{{ page.id }}/" data-section="{{ page.id }}" class="breadcrumb__link">{{ page }}</a></li>
     </ul>
   {% endif %}
 {% endmacro %}

@@ -1,0 +1,1 @@
+{% macro metaTitle(site,page,details) %}{% if details %}{{ page.name }} – {{ details.name }} | {{ site.title }}{% elif page.tagline %}{{ page.name }} – {{ page.tagline }} | {{ site.title }}{% elif page %}{{ page.name }} | {{ site.title }}{% else %}{{ site.title }} – {{ site.tagline }}{% endif %}{% endmacro %}

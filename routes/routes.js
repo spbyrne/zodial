@@ -16,9 +16,7 @@ function horoscopeURL(sign, day = 'today') {
 }
 
 router.get('/', function (req, res) {
-  res.render('index', {
-    page: 'Home'
-  });
+  res.render('index');
 });
 
 router.get('/:page/:id?', function (req, res, next) {
@@ -29,7 +27,7 @@ router.get('/:page/:id?', function (req, res, next) {
     req.pageName = pageInfo.name;
     req.pageTemplate = req.params.page;
     req.options = {
-      page: req.pageName,
+      page: pageInfo,
       list: data[req.params.page]
     };
   }

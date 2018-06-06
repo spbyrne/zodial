@@ -1,9 +1,9 @@
 {% macro mainNav(pages,page,navClass) %}
-  <ul class="main-nav {{ navClass }} {% if (page == 'Home') %}home{% endif %}">
+  <ul class="main-nav {{ navClass }} {% if not page %}home{% endif %}">
     {% for option in pages %}
-      <li class="main-nav__item {% if (option.name == page) %}active{% endif %}">
-        <a class="main-nav__link {% if (option.name == page) %}active{% endif %}"
-          href="/{% if (option.name != 'Home') %}{{ option.id }}{% endif %}" title="{{ option.name }}"
+      <li class="main-nav__item {% if (option.name == page.name) %}active{% endif %}">
+        <a class="main-nav__link {% if (option.name == page.name) %}active{% endif %}"
+          href="/{{ option.id }}" title="{{ option.name }}"
           data-section="{{ option.id }}">
           {{ option.name }}
         </a>

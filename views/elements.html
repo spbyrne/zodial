@@ -1,4 +1,3 @@
-{% set location = "elements" %}
 {% extends "main.html" %}
 
 {% block main %}
@@ -23,7 +22,7 @@
       </div>
     {% else %}
       <div class="page-header page-header--index animate animate--first">
-        <p class="page-header__hero-text"><strong>Empedocles — fifth-century BC Greek philosopher — identified Fire, Earth, Air, and Water as the basic building blocks of the universe.</strong> Classification according to the elements has gained such importance that some astrologers start their interpretation of a natal chart by studying the balance of the elements.</p>
+        <p class="page-header__hero-text">{{ page.content | safe }}</p>
       </div>
     {% endif %}
   </div>

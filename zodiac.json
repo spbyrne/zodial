@@ -6,7 +6,7 @@
     "description": "Find your place in the cosmos. Explore the zodiac and learn more about your astrological sign.",
     "content": "The zodiac is the belt or band of constellations through which the Sun, Moon, and planets move on their journey across the sky. Learn more about how it affects your personality by exploring the links below.",
     "analytics": "UA-37878740-3",
-    "root": "//localhost:3000/"
+    "root": "//www.zodial.app/"
   },
   "pages": [
     {

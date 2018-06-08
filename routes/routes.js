@@ -30,67 +30,56 @@ router.get('/:page/:id?', function (req, res, next) {
       page: pageInfo,
       list: data[req.params.page]
     };
-  }
+  };
+  if (req.params.id) {
+    req.options.details = filterArrayByValue(req.options.list, 'id', req.params.id)[0];
+    req.options.id = req.params.id;
+  };
   next();
 });
 
 router.get('/modalities/:id?', function (req, res) {
-  let options = req.options;
   if (req.params.id) {
-    options.details = filterArrayByValue(options.list, 'id', req.params.id)[0];
-    options.details.signs = filterArrayByValue(data.signs, 'modality', options.details.name);
-    options.id = req.params.id;
+    req.options.details.signs = filterArrayByValue(data.signs, 'modality', req.options.details.name);
   };
-  res.render(req.pageTemplate, options);
+  res.render(req.pageTemplate, req.options);
 });
 
 router.get('/elements/:id?', function (req, res) {
-  let options = req.options;
   if (req.params.id) {
-    options.details = filterArrayByValue(options.list, 'id', req.params.id)[0];
-    options.details.signs = filterArrayByValue(data.signs, 'element', options.details.name);
-    options.id = req.params.id;
+    req.options.details.signs = filterArrayByValue(data.signs, 'element', req.options.details.name);
   };
-  res.render(req.pageTemplate, options);
+  res.render(req.pageTemplate, req.options);
 });
 
 router.get('/polarities/:id?', function (req, res) {
-  let options = req.options;
   if (req.params.id) {
-    options.details = filterArrayByValue(options.list, 'id', req.params.id)[0];
-    options.details.signs = filterArrayByValue(data.signs, 'polarity', options.details.name);
-    options.id = req.params.id;
+    req.options.details.signs = filterArrayByValue(data.signs, 'polarity', req.options.details.name);
   };
-  res.render(req.pageTemplate, options);
+  res.render(req.pageTemplate, req.options);
 });
 
 router.get('/celestial-bodies/:id?', function (req, res) {
-  let options = req.options;
   if (req.params.id) {
-    options.details = filterArrayByValue(options.list, 'id', req.params.id)[0];
-    options.details.signs = filterArrayByValue(data.signs, 'celestialBody', options.details.name);
-    options.id = req.params.id;
+    req.options.details.signs = filterArrayByValue(data.signs, 'celestialBody', req.options.details.name);
   };
-  res.render(req.pageTemplate, options);
+  res.render(req.pageTemplate, req.options);
 });
 
 router.get('/signs/:id?', function (req, res) {
-  let options = req.options;
   if (req.params.id) {
-    options.id = req.params.id;
-    options.details = filterArrayByValue(options.list, 'id', req.params.id)[0];
     got(horoscopeURL(req.params.id), {
       method: 'POST',
       json: true
     }).then(response => {
-      options.details.horoscope = response.body["description"].replace('--', '—');
-      options.details.horoscopeDate = response.body["current_date"];
-      res.render(req.pageTemplate, options);
+      req.options.details.horoscope = response.body["description"].replace('--', '—');
+      req.options.details.horoscopeDate = response.body["current_date"];
+      res.render(req.pageTemplate, req.options);
     }).catch(error => {
-      res.render(req.pageTemplate, options);
+      res.render(req.pageTemplate, req.options);
     });
   } else {
-    res.render(req.pageTemplate, options);
+    res.render(req.pageTemplate, req.options);
   };
 });
 

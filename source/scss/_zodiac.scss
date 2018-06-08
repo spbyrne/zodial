@@ -414,29 +414,13 @@
   @include for-small {
     &:after {
       content: '';
-      width: 100%;
-      height: 100%;
       position: absolute;
-      z-index: 2;
-      bottom: 0;
-      right: 0;
-      mix-blend-mode: multiply;
-      transform-origin: 50% 50%;
-      transform: translate3d(50%,0,0) rotate3d(0, 0, 1, -45deg);
-      background: linear-gradient(to bottom, rgba($color-dark,0),  rgba($color-dark,0.7), rgba($color-dark,1));
-    }
-    &:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 2;
       bottom: 0;
       left: 0;
-      mix-blend-mode: multiply;
-      transform-origin: 50% 50%;
-      transform: translate3d(-50%,0,0) rotate3d(0, 0, 1, 45deg);
-      background: linear-gradient(to bottom, rgba($color-dark,0),  rgba($color-dark,0.7), rgba($color-dark,1));
+      right: 0;
+      width: 100%;
+      height: 25%;
+      background-image: linear-gradient( to bottom, transparent, $color-dark);
     }
   }
   &__image {
@@ -616,7 +600,7 @@
     width: 100%;
     height: 100%;
     background-color: $color-gold;
-    background-image: linear-gradient(to right, rgba(white,0) 1rem, white 3.5rem, rgba(white,0) 3.6rem, rgba(white,0) 5rem, rgba(white,0.5) 10rem, rgba(white,0) 12.5rem,rgba(white,0) 100%);
+    background-image: linear-gradient(to right, rgba(white, 0) 1rem, white 3.5rem, rgba(white, 0) 3.6rem, rgba(white, 0) 5rem, rgba(white, 0.5) 10rem, rgba(white, 0) 12.5rem, rgba(white, 0) 100%);
     background-size: 300% 100%;
     background-repeat: no-repeat;
     background-clip: text;

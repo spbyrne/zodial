@@ -4,6 +4,25 @@ var got = require('got');
 var fs = require('fs');
 var path = require('path');
 var data = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
+var mcache = require('memory-cache');
+
+var cache = (duration) => {
+  return (req, res, next) => {
+    let key = '__express__' + req.originalUrl || req.url
+    let cachedBody = mcache.get(key)
+    if (cachedBody) {
+      res.send(cachedBody)
+      return
+    } else {
+      res.sendResponse = res.send
+      res.send = (body) => {
+        mcache.put(key, body, duration * 1000);
+        res.sendResponse(body)
+      }
+      next()
+    }
+  }
+}
 
 function filterArrayByValue(array, key, value) {
   return array.filter(
@@ -15,11 +34,11 @@ function horoscopeURL(sign, day = 'today') {
   return 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=' + day
 }
 
-router.get('/', function (req, res) {
+router.get('/', cache(30), function (req, res) {
   res.render('index');
 });
 
-router.get('/:page/:id?', function (req, res, next) {
+router.get('/:page/:id?', cache(30), function (req, res, next) {
   if (['img', 'css', 'js'].indexOf(req.params.page) > -1) next();
   let pageInfo = filterArrayByValue(data.pages, 'id', req.params.page)[0];
   if (pageInfo) {

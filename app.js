@@ -1,16 +1,15 @@
-var express = require('express');
-var app = express();
-var expressNunjucks = require('express-nunjucks');
-var compression = require('compression');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var fs = require('fs');
-var router = require('./routes/routes');
-var minifyHTML = require('express-minify-html');
-
-var zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
-var njk = expressNunjucks(app, {
+const express = require('express');
+const app = express();
+const expressNunjucks = require('express-nunjucks');
+const compression = require('compression');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const fs = require('fs');
+const router = require('./routes/routes');
+const minifyHTML = require('express-minify-html');
+const zodiacData = JSON.parse(fs.readFileSync('zodiac.json', 'utf8'));
+const njk = expressNunjucks(app, {
   watch: false,
   noCache: false,
   globals: zodiacData

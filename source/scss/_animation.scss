@@ -32,6 +32,28 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
   }
 }
 
+@keyframes animateInVertical {
+  0% {
+    opacity: 0;
+    transform: translate3d( 0, 1.5rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+  }
+}
+
+@keyframes animateOutVertical {
+  0% {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d( 0, 1.5rem, 0);
+  }
+}
+
 @keyframes spin {
   0% {
     transform: translate3d( 0, 0, 0) rotate3d( 0, 0, 1, 0deg);

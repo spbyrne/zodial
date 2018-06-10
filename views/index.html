@@ -2,7 +2,7 @@
 
 {% block main %}
   <div class="container site__content">
-    <p></p>
+    <p class="hero-text animate animate--first animate--vertical">{{ site.content | safe }}</p>
     <ul class="page-nav page-nav--home page-nav--index">
       {% for page in pages %}
         <li class="page-nav__item">

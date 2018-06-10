@@ -4,7 +4,7 @@
     "color": "#27252d",
     "tagline": "Astrological Information Compendium",
     "description": "Find your place in the cosmos. Explore the zodiac and learn more about your astrological sign.",
-    "content": "The zodiac is the belt or band of constellations through which the Sun, Moon, and planets move on their journey across the sky. Learn more about how it affects your personality by exploring the links below.",
+    "content": "<strong>The zodiac is the band of constellations through which the Sun, Moon, and planets move on their journey across the sky.",
     "analytics": "UA-37878740-3",
     "root": "//www.zodial.app/"
   },
@@ -22,7 +22,7 @@
       "singular": "Element",
       "tagline": "Astronomical Building Blocks",
       "description": "The twelve zodiac signs are grouped into four elements.",
-      "content": "<strong>Empedocles — fifth-century BC Greek philosopher — identified Fire, Earth, Air, and Water as the basic building blocks of the universe.</strong> Classification according to the elements has gained such importance that some astrologers start their interpretation of a natal chart by studying the balance of the elements.",
+      "content": "<strong>Empedocles — fifth-century BC Greek philosopher — identified Fire, Earth, Air, and Water as the basic building blocks of the universe.</strong> Elemental classification holds an important place in natal chart interpretation with modern astrologers. Studying the balance of the elements can reveal essential personality traits.",
       "id": "elements"
     },
     {
@@ -54,7 +54,9 @@
     {
       "name": "Aries",
       "id": "aries",
-      "description": "",
+      "tagline": "Courageous and Independant",
+      "description": "Aries is the first sign of the zodiac. Courageous and independant, those born Aries will seek to initiate and move others to action.",
+      "content": "<strong>Aries — the first sign of the zodiac — is courageous and independant.</strong> Those born Aries will seek to initiate and move others to action, and will step forward when others may be too cautious.",
       "celestialLongitude": "0° to 30°",
       "polarity": "Positive",
       "element": "Fire",
@@ -67,7 +69,9 @@
     {
       "name": "Taurus",
       "id": "taurus",
-      "description": "",
+      "tagline": "Reliable and Practical",
+      "description": "Taurus is a sign that denotes practicality and reliability. Those born under this sign make dependable workers, friends and lovers.",
+      "content": "<strong>Taurus is a sign that denotes practicality and reliability.</strong> Those born under this sign make dependable workers, friends and lovers. Ruled by Venus, the planet of love, Taureans feel the need to surround themselves with love and beauty. Though they have a reputation for being stubborn, in many ways this comes from their steadfastness and should be seen as a virtue. ",
       "celestialLongitude": "30° to 60°",
       "polarity": "Negative",
       "element": "Earth",
@@ -80,7 +84,9 @@
     {
       "name": "Gemini",
       "id": "gemini",
+      "tagline": "Passionate and Dynamic",
       "description": "",
+      "content": "",
       "celestialLongitude": "60° to 90°",
       "polarity": "Positive",
       "element": "Air",
@@ -93,7 +99,9 @@
     {
       "name": "Cancer",
       "id": "cancer",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "90° to 120°",
       "polarity": "Negative",
       "element": "Water",
@@ -106,7 +114,9 @@
     {
       "name": "Leo",
       "id": "leo",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "120° to 150°",
       "polarity": "Positive",
       "element": "Fire",
@@ -119,7 +129,9 @@
     {
       "name": "Virgo",
       "id": "virgo",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "150° to 180°",
       "polarity": "Negative",
       "element": "Earth",
@@ -132,7 +144,9 @@
     {
       "name": "Libra",
       "id": "libra",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "180° to 210°",
       "polarity": "Positive",
       "element": "Air",
@@ -145,7 +159,9 @@
     {
       "name": "Scorpio",
       "id": "scorpio",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "210° to 240°",
       "polarity": "Negative",
       "element": "Water",
@@ -158,7 +174,9 @@
     {
       "name": "Sagittarius",
       "id": "sagittarius",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "240° to 270°",
       "polarity": "Positive",
       "element": "Fire",
@@ -171,7 +189,9 @@
     {
       "name": "Capricorn",
       "id": "capricorn",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "270° to 300°",
       "polarity": "Negative",
       "element": "Earth",
@@ -184,7 +204,9 @@
     {
       "name": "Aquarius",
       "id": "aquarius",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "300° to 330°",
       "polarity": "Positive",
       "element": "Air",
@@ -197,7 +219,9 @@
     {
       "name": "Pisces",
       "id": "pisces",
+      "tagline": "",
       "description": "",
+      "content": "",
       "celestialLongitude": "330° to 360°",
       "polarity": "Negative",
       "element": "Water",

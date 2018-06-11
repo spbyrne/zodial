@@ -239,7 +239,7 @@ $easing-in-out: cubic-bezier(0.685, 0.005, 0.580, 1.000);
 
 @keyframes shineText {
   0% {
-    opacity: 0.1;
+    opacity: 0.3;
     background-position: (-$max-width*0.25) 0;
   }
   50% {

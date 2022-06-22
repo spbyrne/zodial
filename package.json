@@ -20,7 +20,7 @@
     "express": "^4.16.3",
     "express-minify-html": "^0.12.0",
     "express-nunjucks": "^2.2.3",
-    "got": "^8.3.1",
+    "got": "^11.8.5",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",

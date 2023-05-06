@@ -34,7 +34,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "gulp-webmake": "0.0.41",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "memory-cache": "^0.2.0",
     "morgan": "^1.9.0",
     "npm": "^6.1.0",
